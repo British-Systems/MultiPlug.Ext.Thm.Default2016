@@ -1,0 +1,54 @@
+﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.HousekeepingModel
+@{
+    Layout = "layout";
+}
+
+<style>
+    .setting-heading img,
+    .setting-heading h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .setting-heading img {
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+
+    .setting-heading h2 {
+        margin-left: 0.1em;
+    }
+</style>
+
+<div class="setting-heading">
+    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
+    <h2>Housekeeping</h2>
+</div>
+
+<div class="box">
+    <div class="row-fluid">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Assembly</th>
+                    <th>Extension</th>
+                    <th>Disk Size (MB)</th>
+                    <th>Current Memory (bytes)</th>
+                    <th>Lifetime Allocated (bytes)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in @Model.ExtensionResourceUsages)
+                {
+                    <tr>
+                        <td>@x.AssemblyName</td>
+                        <td>@x.FriendlyName</td>
+                        <td>@x.DiskSize</td>
+                        <td>@x.Memory</td>
+                        <td>@x.MemoryAllocated</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

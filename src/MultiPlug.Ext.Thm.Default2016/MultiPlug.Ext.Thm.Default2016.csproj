@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{006895A7-85A2-4C7A-902D-D5C25856CD0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiPlug.Theme.Default2016</RootNamespace>
+    <AssemblyName>MultiPlug.Ext.Thm.Default2016</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MultiPlug.Base, Version=1.0.32.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MultiPlug.Base.1.0.38\lib\net472\MultiPlug.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="MultiPlug.Extension.Core, Version=1.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MultiPlug.Extension.Core.1.0.52\lib\net472\MultiPlug.Extension.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\FontsController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\ScriptsController.cs" />
+    <Compile Include="Controllers\StylesController.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Default2016.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\Authorisation.cshtml" />
+    <None Include="Resources\Fonts\59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\Fonts\cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo-zkhivY.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2" />
+    <None Include="Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2" />
+    <None Include="Resources\Fonts\fontawesome-webfont.eot" />
+    <None Include="Resources\Fonts\fontawesome-webfont.ttf" />
+    <None Include="Resources\Fonts\fontawesome-webfont.woff" />
+    <None Include="Resources\Fonts\FontAwesome.otf" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo-zkhivY.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzD0LW-43aMEzIO6XUTLjad8.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzJX5f-9o1vgP2EXwfjgl7AY.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzK-j2U0lmluP9RWlSytm3ho.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2" />
+    <None Include="Resources\Fonts\k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w.woff2" />
+    <None Include="Resources\Fonts\K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\Fonts\LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo-zkhivY.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSpX5f-9o1vgP2EXwfjgl7AY.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSq-j2U0lmluP9RWlSytm3ho.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2" />
+    <None Include="Resources\Fonts\MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxgalQocB-__pDVGhF3uS2Ks.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxgyhumQnPMBCoGYhRaNxyyY.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxhUVAXEdVvYDDqrz3aeR0Yc.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxlf4y_3s5bcYyyLIFUSWYUU.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxmgpAmOCqD37_tyH_8Ri5MM.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxmhQUTDJGru-0vvUpABgH8I.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxnywqdtBbUHn3VPgzuFrCy8.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxpiMaisvaUVUsYyVzOmndek.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxqfJul7RR1X4poJgi27uS4w.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxqvyPXdneeGd26m9EmFSSWg.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxrBAWGjcah5Ky0jbCgIwDB8.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxsPNMTLbnS9uQzHQlYieHUU.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0.woff2" />
+    <None Include="Resources\Fonts\PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4.woff2" />
+    <None Include="Resources\Fonts\RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\Fonts\u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBiYE0-AqJ3nfInTTiDXDjU4.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2" />
+    <None Include="Resources\Fonts\xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0.woff2" />
+    <None Include="Resources\Fonts\xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2" />
+    <None Include="Resources\FrameApp.cshtml" />
+    <None Include="Resources\FrameExtension.cshtml" />
+    <None Include="Resources\HomeApps.cshtml" />
+    <None Include="Resources\HomeExtensions.cshtml" />
+    <None Include="Resources\InternalServerError.cshtml" />
+    <None Include="Resources\SettingsAdd.cshtml" />
+    <None Include="Resources\SettingsApps.cshtml" />
+    <None Include="Resources\SettingsExtensions.cshtml" />
+    <None Include="Resources\SettingsHosting.cshtml" />
+    <None Include="Resources\SettingsHousekeeping.cshtml" />
+    <None Include="Resources\SettingsPerformance.cshtml" />
+    <None Include="Resources\SettingsRecipes.cshtml" />
+    <None Include="Resources\SettingsSecurity.cshtml" />
+    <None Include="Resources\SettingsSystem.cshtml" />
+    <None Include="Resources\SettingsUpdate.cshtml" />
+    <None Include="Resources\HomeSettings.cshtml" />
+    <None Include="Resources\Layout.cshtml" />
+    <None Include="Resources\NotFoundApp.cshtml" />
+    <None Include="Resources\NotFoundExtension.cshtml" />
+    <None Include="Resources\NotFoundGlobal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\body-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\British-Systems-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\British-Systems-Logo-Fade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\evaluation-stamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\left-menu-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\MultiPlug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\MultiPlug-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\MultiPlug-Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\MultiPlug-Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\throbber.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\adminflare.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\adminflare-demo.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\jquery.signalR-2.2.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\jquery-1.6.4.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\jstree.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\modernizr-jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\multiplug.selectize.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\select2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\selectize.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Styles\adminflare.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Styles\jstree.style.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Styles\pages.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Styles\select2.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Styles\selectize.default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Resources\Styles\font.awesome.css" />
+    <Content Include="Resources\Styles\fonts.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

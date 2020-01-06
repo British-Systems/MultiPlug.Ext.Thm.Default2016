@@ -1,0 +1,89 @@
+﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.ExtensionsModel
+@{
+    Layout = "layout";
+}
+
+<style>
+    .setting-heading img,
+    .setting-heading h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .setting-heading img {
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+
+    .setting-heading h2 {
+        margin-left: 0.1em;
+    }
+</style>
+
+<div class="setting-heading">
+    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
+    <h2>Extensions</h2>
+</div>
+<form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+
+    <div class="box">
+        <div class="row-fluid">
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Assembly Name</th>
+                        <th>Friendly Name</th>
+                        <th>Enabled</th>
+                        <th>Loaded</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in @Model.ExtensionStatuses)
+                    {
+                        <tr>
+                            <td>@x.AssemblyName</td>
+                            <td>@x.FriendlyName</td>
+                            <td><input type="checkbox" name="ExtensionsToLoad" value="@x.AssemblyName" @(x.Enabled ? "checked" : "") /></td>
+                            <td>@if (x.Loaded)
+                            { <text> <i class="icon-ok"></i> </text> }@if (!x.Loaded && x.Enabled)
+                            { <text> <i class="icon-exclamation-sign"></i> </text> }@if (!x.Loaded && !x.Enabled)
+                            { <text> <i class="icon-pause"></i> </text> }</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(x.Status))
+                                {
+                                    <textarea>@x.Status</textarea>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row-fluid">
+            <a href="settings/add/" class="btn btn-blue">Add</a>
+            <a href="settings/update/" class="btn btn-blue">Update</a>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span4"></div>
+        <div class="span2">
+            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
+        </div>
+        <div class="span2">
+            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
+        </div>
+        <div class="span4">
+        </div>
+    </div>
+</form>
+
+<script>
+    $('#cancel-btn').click(function () {
+        location.reload();
+    });
+</script>

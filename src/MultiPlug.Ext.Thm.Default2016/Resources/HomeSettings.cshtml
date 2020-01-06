@@ -1,0 +1,393 @@
+﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.OverviewModel
+@{
+    Layout = "layout";
+}
+
+<style>
+    .setting-heading img,
+    .setting-heading h2 {
+      display:inline-block;
+      vertical-align:middle;
+    }
+    .setting-heading img {
+    opacity: 0.7; filter: alpha(opacity=70);
+    }
+
+    .setting-heading h2 {
+    margin-left:0.1em;
+    }
+</style>
+
+<div class="setting-heading">
+    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
+    <h2>Multiplug Settings</h2>
+</div>
+<form class="" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+    @*<h3 class="box-header">
+        Global
+    </h3>
+
+    <div class="box">
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="row-fluid"><div class="span12">Default App</div></div>
+                <div class="row-fluid">
+                    <select name="DefaultDashboard">
+                        @foreach (var x in @Model.Dashboards)
+                        {
+                            <option value="@x.Key" @if (x.Value) { <text> selected </text>     }>@x.Key</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="row-fluid"><div class="span12">Logging</div></div>
+                <div class="row-fluid">
+                    <select name="LoggingLevel">
+                        @foreach (var x in @Model.LoggingLevel)
+                        {
+                            <option value="@x.Key" @if (x.Value) { <text> selected </text>      }>@x.Key</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Local Host Name</label>
+                <div class="controls">
+                    <input name="LocalHostName" class="input-xxlarge" type="text" id="Param_LocalHostName" placeholder="localhost" value="@Model.LocalHostName">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Local Host Port</label>
+                <div class="controls">
+                    <input name="LocalHostPort" class="input-small" type="text" id="Param_LocalHostPort" placeholder="80" value="@Model.LocalHostPort">
+                </div>
+            </div>
+            <div class="control-group form-horizontal">
+                <label class="control-label" for="inputPassword">Default App</label>
+                <div class="controls">
+                    <select name="DefaultDashboard">
+                        @foreach (var x in @Model.Dashboards)
+                        {
+                            <option value="@x.Key" @if (x.Value) { <text> selected </text>    }>@x.Key</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+    <div class="box">
+        <div class="row-fluid">
+            <table class="table table-condensed" id="bindings-table">
+                <tbody>
+                    <tr>
+                        <th>System</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Version</td>
+                        <td>@Model.Version</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Licensee</td>
+                        <td>@Model.Licensee</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/system/">Logging</a></td>
+                        <td>
+                            @foreach (var x in @Model.LoggingLevel)
+                            {
+                                if (x.Value)
+                                { @x.Key }
+                            }
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <th><a href="/settings/apps/">Apps</a></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/apps/">Default App</a></td>
+                        <td>
+                            @foreach (var x in @Model.Dashboards)
+                            {
+                                if (x.Value){ @x.Key }
+                            }
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr>
+                        <th><a href="/settings/hosting/">Hosting</a></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/hosting/">Host by IP</a></td>
+                        <td>
+                            @if (Model.HostByIP)
+                        { <text> <i class="icon-ok"></i> </text> }
+                        else
+                        { <text> <i class="icon-remove"></i> </text> }</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/hosting/">Host Port</a></td>
+                        <td>@Model.HostByIPPort</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/hosting/">Secure</a></td>
+                        <td>
+                            @if (Model.HostByIPSecure)
+                        { <text> <i class="icon-ok"></i> </text> }
+                        else
+                        { <text> <i class="icon-remove"></i> </text> }</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/hosting/">Hosting</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                @foreach (var Binding in @Model.HostBindings)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@Binding</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+
+                    <tr>
+                        <th><a href="/settings/extensions/">Extensions</a></th>
+                        <th>Assembly Name</th>
+                        <th>Friendly Name</th>
+                        <th>Enabled</th>
+                        <th>Loaded</th>
+                        <th></th>
+                    </tr>
+
+                @foreach (var x in @Model.ExtensionStatuses)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@x.AssemblyName</td>
+                        <td>@x.FriendlyName</td>
+                        <td>@if (x.Enabled)
+                        { <text> <i class="icon-ok"></i> </text> }</td>
+                        <td>
+                            @if (x.Loaded){ <text> <i class="icon-ok"></i> </text> }
+                            @if (!x.Loaded && x.Enabled){ <text> <i class="icon-exclamation-sign"></i> </text> }
+                            @if (!x.Loaded && !x.Enabled){ <text> <i class="icon-pause"></i> </text> }</td>
+                        <td></td>
+                    </tr>
+                }
+
+                    <tr>
+                        <th><a href="/settings/recipes/">Recipe Configurators</a></th>
+                        <th>Friendly Name</th>
+                        <th>Order</th>
+                        <th>Load</th>
+                        <th>Save</th>
+                        <th>Wait to start</th>
+                    </tr>
+
+                @foreach (var x in @Model.Configurators)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@x.Name</td>
+                        <td>@x.Order</td>
+                        <td>@if (x.EnabledLoad){ <text> <i class="icon-ok"></i> </text> }</td>
+                        <td>@if (x.EnabledSave){ <text> <i class="icon-ok"></i> </text> }</td>
+                        <td>@if (x.WaitForStart){ <text> <i class="icon-ok"></i> </text> }</td>
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2">
+            @*<button type="button" class="btn btn-red  btn-block" data-toggle="modal" data-target="#reboot-modal">System Restart</button>*@
+            <div class="btn-group">
+                <button class="btn btn-red" data-toggle="modal" data-target="#reboot-modal">System Restart</button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-toggle="modal" data-target="#shutdown-modal">Shutdown host device</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span10"></div>
+        @*<div class="span2">
+            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
+        </div>
+        <div class="span2">
+            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
+        </div>
+        <div class="span4">
+        </div>*@
+    </div>
+</form> 
+
+<!-- Reboot Modal -->
+<div id="reboot-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="x-restart-btn" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="restart-title" class="modal-title">System Restart</h4>
+            </div>
+            <div class="modal-body">
+                <p id="restart-txt-line1">While the system restarts the user interface will become unresponsive. The page will be refreshed automatically once the system has been restarted.</p>
+                <p id="restart-txt-line2">Confirm your required action now and then wait for the system to be restarted.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-restart-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="restart-btn" class="btn btn-red">Restart</button>
+            </div>
+            <form id="restart-form">
+                <input type="hidden" name="Command" value="restart"/>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Shutdown Modal -->
+<div id="shutdown-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="x-shutdown-btn" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="shutdown-title" class="modal-title">System Shutdown</h4>
+            </div>
+            <div class="modal-body">
+                <p id="shutdown-txt-line1">After this point the user interface will become unresponsive.</p>
+                <p id="shutdown-txt-line2">Confirm your required action now.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-shutdown-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="shutdown-btn" class="btn btn-red">Shutdown</button>
+            </div>
+            <form id="shutdown-form">
+                <input type="hidden" name="Command" value="shutdown" />
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $('#cancel-btn').click(function () {
+        location.reload();
+    });
+
+    var oldStartupTime = "";
+
+    $('#restart-btn').click(function () {
+        $("#restart-btn").hide();
+        $("#cancel-restart-btn").hide();
+        $("#x-restart-btn").hide();
+        $("#restart-title").text("System Restarting...");
+        $("#restart-txt-line2").text($("#restart-txt-line1").text());
+        $("#restart-txt-line1").text("The system is restarting, please wait.");
+
+        $.get("/multiplug/status/", function (data) {
+            oldStartupTime = data.startuptime;
+            $.post("", $("#restart-form").serialize());
+            check();
+        });
+    });
+
+    $('#shutdown-btn').click(function () {
+        $("#shutdown-btn").hide();
+        $("#cancel-shutdown-btn").hide();
+        $("#x-shutdown-btn").hide();
+        $("#shutdown-title").text("System Shutdown...");
+        $("#shutdown-txt-line1").text("The system is shutting down.");
+        $("#shutdown-txt-line2").text("");
+        $.post("", $("#shutdown-form").serialize());
+    });
+
+    function check()
+    {
+        $.get("/multiplug/status/", function (data) {
+            if( data.startuptime != null && data.startuptime != oldStartupTime)
+            {
+                location.reload();
+            }
+            else
+            {
+                setTimeout(check, 1000);
+            }
+        })
+          .fail(function () {
+              setTimeout(check, 1000);
+          });
+    }
+
+</script>
+

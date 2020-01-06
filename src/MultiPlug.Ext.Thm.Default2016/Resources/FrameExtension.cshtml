@@ -1,0 +1,12 @@
+﻿@model MultiPlug.Extension.Models.SettingsModel
+@{
+    Layout = "layout";
+}
+@Include( @Model.ExtensionTemplateId, @Model.ExtensionModel, @Model.ExtensionModelType)
+
+<footer id="main-footer">
+    Extension: @Model.ExtensionName. <a href="http://multiplug.uk" target="_blank">MultiPlug .Net Fog Computing Platform</a> Copyright © 2019 British Systems, all rights reserved.
+    <a href="#" class="pull-right" id="on-top-link">
+        On Top&nbsp;<i class=" icon-chevron-up"></i>
+    </a>
+</footer>

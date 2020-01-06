@@ -1,0 +1,150 @@
+﻿@model MultiPlug.Core.Models.Views.Extensions.ExtensionsHomeModel
+@{
+    Layout = "layout";
+}
+
+<style>
+    .extensions-heading img,
+    .extensions-heading h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .extensions-heading img {
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+
+    .extensions-heading h2 {
+        margin-left: 0.1em;
+    }
+</style>
+
+<div class="extensions-heading">
+    <img height="35" width="35" alt="MultiPlug Icon" src="images/MultiPlug-Icon.png">
+    <h2>Extensions</h2>
+</div>
+
+<div class="box">
+
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#events-subs">Extensions</a></li>
+        <li><a href="#mappings">Mappings</a></li>
+        <li><a href="#trace-log">Trace Log</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content" style="margin-bottom: 10px">
+        <div class="tab-pane fade in active" id="events-subs">
+            <p>Events, Subscriptions and Web Apps of the Extensions</p>
+            <div id="jstree">
+                <ul>
+                    @foreach (var Extension in @Model.Extensions)
+                    {
+                        <li>
+                            @Extension.Name
+                            <ul>
+                                <li>
+                                    Events (@Extension.Events.Count())
+                                    <ul>
+                                        @foreach (var Event in Extension.Events)
+                                        {
+                                            <li>
+                                                ID: @Event.Id
+                                                <ul>
+                                                    <li>Guid: @Event.Guid</li>
+                                                    <li>Description: @Event.Description</li>
+                                                </ul>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    Subscriptions (@Extension.Subscriptions.Count())
+                                    <ul>
+                                        @foreach (var Subscription in Extension.Subscriptions)
+                                        {
+                                            <li>
+                                                ID: @Subscription.Id
+                                                <ul>
+                                                    <li>Guid: @Subscription.Guid</li>
+                                                </ul>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    Apps (@Extension.Apps.Count())
+                                    <ul>
+                                        @foreach (var App in Extension.Apps)
+                                        {
+                                            <li>
+                                                @App.Name (@App.ViewType)
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="mappings">
+            <div class="row-fluid">
+                <p>Mappings of Events to Subscriptions</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Producer</th>
+                            <th>Consumer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var e in @Model.EventMappings)
+                        {
+                            <tr>
+                                <td>@e.Id</td>
+                                <td>@e.EventSourceExtension</td>
+                                <td>@e.EventHandlerExtension</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="trace-log">
+
+            <p>The Trace Log of the MultiPlug only</p>
+            <div class="row-fluid">
+                <ul style="list-style: none;">
+                    <li>
+                        <div class="control-group">
+                            <label class="control-label">Trace Log</label>
+                            <div class="controls">
+                                <textarea id="" rows="3" style="margin: 0px;width: 550px;height: 225px;">@Model.TraceLog</textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    $('#myTab a').click(function (e)
+    {
+        e.preventDefault();
+            $(this).tab('show');
+    })
+</script>
+

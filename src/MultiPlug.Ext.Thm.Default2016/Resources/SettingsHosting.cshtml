@@ -1,0 +1,134 @@
+﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.HostingModel
+@{
+    Layout = "layout";
+}
+
+<style>
+    .setting-heading img,
+    .setting-heading h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .setting-heading img {
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+
+    .setting-heading h2 {
+        margin-left: 0.1em;
+    }
+</style>
+
+<div class="setting-heading">
+    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
+    <h2>Hosting</h2>
+</div>
+<form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+    <h3 class="box-header">
+        Server URLs
+    </h3>
+
+    <div class="box">
+
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="row-fluid"><div class="span12">Host by IP</div></div>
+                <div class="row-fluid">
+                    <input type="checkbox" name="HostByIP" value="true" @Model.HostByIP />
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid"><div class="span12">Host Port</div></div>
+                <div class="row-fluid">
+                    <input name="HostByIPPort" class="input-small" type="text" @*id="Param_LocalHostPort"*@ placeholder="80" value="@Model.HostByIPPort">
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid"><div class="span12">Secure</div></div>
+                <div class="row-fluid">
+                    <input type="checkbox" name="HostByIPSecure" value="true" @Model.HostByIPSecure />
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                Host by Names
+            </div>
+        </div>
+
+        <div class="row-fluid">
+
+            <table class="table table-condensed" id="bindings-table">
+                @*<thead>
+                    <tr>
+                        <th>Host by Names</th>
+                        <th></th>
+                    </tr>
+                </thead>*@
+                <tbody>
+                    @foreach (var Binding in @Model.HostBindings)
+                    {
+                        <tr>
+                            <td><input name="HostBindings" class="input-span12" type="text" value="@Binding"></td>
+                            <td><a class="delete-binding">Delete</a></td>
+                        </tr>
+                    }
+
+                    <tr>
+                        <td></td>
+                        <td><a class="add-binding">Add</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span4"></div>
+        <div class="span2">
+            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
+        </div>
+        <div class="span2">
+            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
+        </div>
+        <div class="span4">
+        </div>
+    </div>
+</form>
+
+<script>
+    $('#cancel-btn').click(function () {
+        location.reload();
+    });
+
+    function NewBinding() {
+        return '<tr>\
+    <td><input name="HostBindings" class="input-span12" type="text" value="http://"></td>\
+    <td><a class="delete-binding">Delete</a></td>\
+</tr>';
+
+    }
+
+    function ApplyDelete(deletelink) {
+        $(deletelink).click(function (e) {
+            e.preventDefault();
+            $(this).closest('tr').remove();
+        });
+    }
+
+    $(".add-binding").click(function (e) {
+        e.preventDefault();
+
+        $('#bindings-table tr:last').prev().after(NewBinding());
+        ApplyDelete($('#bindings-table tr:last').prev().find(".delete-binding"));
+
+    });
+
+
+    ApplyDelete($(".delete-binding"));
+</script>
