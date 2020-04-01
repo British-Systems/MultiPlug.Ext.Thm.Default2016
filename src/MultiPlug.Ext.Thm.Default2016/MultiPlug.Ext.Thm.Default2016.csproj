@@ -62,8 +62,8 @@
     <Compile Include="Default2016.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -137,13 +137,13 @@
     <None Include="Resources\InternalServerError.cshtml" />
     <None Include="Resources\SettingsAdd.cshtml" />
     <None Include="Resources\SettingsApps.cshtml" />
+    <None Include="Resources\SettingsEnvironment.cshtml" />
     <None Include="Resources\SettingsExtensions.cshtml" />
     <None Include="Resources\SettingsHosting.cshtml" />
     <None Include="Resources\SettingsHousekeeping.cshtml" />
     <None Include="Resources\SettingsPerformance.cshtml" />
     <None Include="Resources\SettingsRecipes.cshtml" />
     <None Include="Resources\SettingsSecurity.cshtml" />
-    <None Include="Resources\SettingsSystem.cshtml" />
     <None Include="Resources\SettingsUpdate.cshtml" />
     <None Include="Resources\HomeSettings.cshtml" />
     <None Include="Resources\Layout.cshtml" />
@@ -154,6 +154,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

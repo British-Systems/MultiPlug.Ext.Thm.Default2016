@@ -183,7 +183,7 @@ namespace MultiPlug.Theme.Default2016
         {
             get
             {
-                return new StringContainer { Value = Resources.SettingsSystem };
+                return new StringContainer { Value = Resources.SettingsEnvironment };
             }
         }
 

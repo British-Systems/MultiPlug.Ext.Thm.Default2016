@@ -368,14 +368,13 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Models.WebAppModel&lt;object&gt;
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///@Include(@Model.ExtensionTemplateId, Convert.ChangeType(Model.ExtensionModel, Model.ExtensionModelType)), @Model.ExtensionModelType)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Fog Computing Platform&lt;/a&gt; Copyright © 2019 British Systems, all rights reserved.
-        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
-        ///        On Top&amp;nbsp;&lt;i class [rest of string was truncated]&quot;;.
+        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
+        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string FrameApp {
             get {
@@ -386,16 +385,14 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Models.SettingsModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///@Include( @Model.ExtensionTemplateId, @Model.ExtensionModel, @Model.ExtensionModelType)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Fog Computing Platform&lt;/a&gt; Copyright © 2019 British Systems, all rights reserved.
+        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
         ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
-        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
-        ///    &lt;/a&gt;
-        ///&lt;/footer&gt;.
+        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string FrameExtension {
             get {
@@ -406,7 +403,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Core.Models.Views.Extensions.ExtensionsHomeModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -427,7 +424,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeApps {
             get {
@@ -438,7 +435,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Extensions.ExtensionsHomeModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -459,7 +456,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug [rest of string was truncated]&quot;;.
+        ///    &lt;img height= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeExtensions {
             get {
@@ -470,7 +467,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.OverviewModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -489,7 +486,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-I [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeSettings {
             get {
@@ -1178,7 +1175,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.AddModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1197,7 +1194,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Icon.p [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/defau [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsAdd {
             get {
@@ -1208,7 +1205,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.AppsModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1229,7 +1226,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2 [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiP [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsApps {
             get {
@@ -1240,7 +1237,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.ExtensionsModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1261,7 +1258,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/de [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsExtensions {
             get {
@@ -1272,7 +1269,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.HostingModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1293,7 +1290,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/defau [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;Mul [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHosting {
             get {
@@ -1304,7 +1301,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.HousekeepingModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1325,7 +1322,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/ [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeeping {
             get {
@@ -1336,7 +1333,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.PerformanceModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1357,7 +1354,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/d [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsPerformance {
             get {
@@ -1368,7 +1365,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.RecipesModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1389,7 +1386,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/defau [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;Mul [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsRecipes {
             get {
@@ -1400,7 +1397,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.SecurityModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}.
         /// </summary>
         internal static string SettingsSecurity {
@@ -1410,9 +1407,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.SystemModel
+        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.EnvironmentModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1433,9 +1430,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/defaul [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt= [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string SettingsSystem {
+        internal static string SettingsEnvironment {
             get {
                 return ResourceManager.GetString("SettingsSystem", resourceCulture);
             }
@@ -1444,7 +1441,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.UpdateModel
         ///@{
-        ///    Layout = &quot;layout&quot;;
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
         ///&lt;style&gt;
@@ -1463,7 +1460,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Ico [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/de [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsUpdate {
             get {

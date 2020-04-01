@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.SystemModel
+﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.EnvironmentModel
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
@@ -22,7 +22,7 @@
 
 <div class="setting-heading">
     <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
-    <h2>System</h2>
+    <h2>Environment</h2>
 </div>
 <form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
 
@@ -42,6 +42,10 @@
             </div>
 
             <div class="span4">
+                    <div class="row-fluid"><div class="span12">Location</div></div>
+                    <div class="row-fluid">
+                        <input name="Location" class="input-block-level" type="text" value="@Model.Location">
+                    </div>
             </div>
 
             <div class="span4">

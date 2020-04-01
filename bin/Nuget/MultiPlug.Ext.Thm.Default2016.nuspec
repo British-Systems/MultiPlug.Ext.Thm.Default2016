@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.12</version>
+    <version>1.0.13</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <iconUrl>https://raw.githubusercontent.com/british-systems/MultiPlug.Ext.Thm.Default2016/master/media/multiplug.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.12 Typo
+    <releaseNotes>1.0.13 Added Location in Environment
+	1.0.12 Typo
 	1.0.11 Rename of Name to Assembly
 1.0.10 Update to 'Layout' value
 1.0.9 Added Razor templates to RazorTemplates property call.
@@ -18,7 +19,7 @@
     <copyright>Great British Systems Ltd 2020</copyright>
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
-      <dependency id="MultiPlug.Core" version="2.2.60" />
+      <dependency id="MultiPlug.Core" version="2.2.67" />
     </dependencies>
   </metadata>
 </package>
