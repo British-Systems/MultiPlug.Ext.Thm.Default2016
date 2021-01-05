@@ -1,12 +1,12 @@
-﻿using MultiPlug.Base.Attribute;
+﻿using System.Text;
+using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
 using MultiPlug.Theme.Default2016.Properties;
-using System.Text;
 
 namespace MultiPlug.Theme.Default2016.Controllers
 {
     [Route("scripts/*")]
-    public class ScriptsController : Controller
+    public class ScriptsController : AssetsEndpoint
     {
         public Response Get(string id)
         {
@@ -48,6 +48,11 @@ namespace MultiPlug.Theme.Default2016.Controllers
             {
                 result = Resources.multiplug_selectize;
             }
+            else if (id == "deploy.js")
+            {
+                result = Resources.deploy_js;
+            }
+
 
             if (result != "")
             {

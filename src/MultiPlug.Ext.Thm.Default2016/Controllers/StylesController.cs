@@ -1,12 +1,12 @@
-﻿using MultiPlug.Base.Attribute;
+﻿using System.Text;
+using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
 using MultiPlug.Theme.Default2016.Properties;
-using System.Text;
 
 namespace MultiPlug.Theme.Default2016.Controllers
 {
     [Route("styles/*")]
-    public class StylesController : Controller
+    public class StylesController : AssetsEndpoint
     {
         public Response Get(string FileName)
         {

@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.UpdateModel
+﻿@model MultiPlug.Base.Http.EdgeApp
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
@@ -19,7 +19,6 @@
 </style>
 
 <div class="setting-heading">
-    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
     <h2>Update MultiPlug</h2>
 </div>
 <form class="" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
@@ -39,16 +38,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>@Model.MultiPlugCore.VersionCurrent</td>
+                        <td>@Model.Extension.Model.MultiPlugCore.VersionCurrent</td>
                         <td>
-                            @if (@Model.MultiPlugCore.VersionLatest == string.Empty)
+                            @if (@Model.Extension.Model.MultiPlugCore.VersionLatest == string.Empty)
                             {<text>Unknown</text>}
                             else
-                            {<text>@Model.MultiPlugCore.VersionLatest</text>}
+                            {<text>@Model.Extension.Model.MultiPlugCore.VersionLatest</text>}
                         </td>
                         <td>
-                            @if (@Model.MultiPlugCore.VersionLatest != string.Empty)
-                            {<input type="checkbox" name="update" value="@Model.MultiPlugCore.AssemblyName" @if (@Model.MultiPlugCore.Update) { <text> checked</text>} />}
+                            @if (@Model.Extension.Model.MultiPlugCore.VersionLatest != string.Empty)
+                            {<input type="checkbox" name="update" value="@Model.Extension.Model.MultiPlugCore.AssemblyName" @if (@Model.Extension.Model.MultiPlugCore.Update) { <text> checked</text>} />}
                         </td>
                     </tr>
                 </tbody>
@@ -73,7 +72,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var Extension in @Model.Extensions)
+                    @foreach (var Extension in @Model.Extension.Model.Extensions)
                     {
                         <tr>
                             <td>@Extension.AssemblyName</td>
@@ -98,7 +97,7 @@
 
         <div class="row-fluid">
             <div class="span10">
-                <p>Version data last updated at @Model.LastUpdate <a id="update-refresh" href="#">Refresh</a></p>
+                <p>Version data last updated at @Model.Extension.Model.LastUpdate <a id="update-refresh" href="#">Refresh</a></p>
             </div>
             <div class="span2">
                 <button type="submit" value="submit" class="btn btn-green btn-block">Update</button>

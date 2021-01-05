@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.OverviewModel
+﻿@model MultiPlug.Base.Http.EdgeApp
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
@@ -19,8 +19,7 @@
 </style>
 
 <div class="setting-heading">
-    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
-    <h2>Multiplug Settings</h2>
+    <h2>Settings Overview</h2>
 </div>
 <form class="" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
     @*<h3 class="box-header">
@@ -33,7 +32,7 @@
                 <div class="row-fluid"><div class="span12">Default App</div></div>
                 <div class="row-fluid">
                     <select name="DefaultDashboard">
-                        @foreach (var x in @Model.Dashboards)
+                        @foreach (var x in @Model.Extension.Model.Dashboards)
                         {
                             <option value="@x.Key" @if (x.Value) { <text> selected </text>     }>@x.Key</option>
                         }
@@ -44,7 +43,7 @@
                 <div class="row-fluid"><div class="span12">Logging</div></div>
                 <div class="row-fluid">
                     <select name="LoggingLevel">
-                        @foreach (var x in @Model.LoggingLevel)
+                        @foreach (var x in @Model.Extension.Model.LoggingLevel)
                         {
                             <option value="@x.Key" @if (x.Value) { <text> selected </text>      }>@x.Key</option>
                         }
@@ -54,20 +53,20 @@
             <div class="control-group">
                 <label class="control-label" for="inputEmail">Local Host Name</label>
                 <div class="controls">
-                    <input name="LocalHostName" class="input-xxlarge" type="text" id="Param_LocalHostName" placeholder="localhost" value="@Model.LocalHostName">
+                    <input name="LocalHostName" class="input-xxlarge" type="text" id="Param_LocalHostName" placeholder="localhost" value="@Model.Extension.Model.LocalHostName">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputEmail">Local Host Port</label>
                 <div class="controls">
-                    <input name="LocalHostPort" class="input-small" type="text" id="Param_LocalHostPort" placeholder="80" value="@Model.LocalHostPort">
+                    <input name="LocalHostPort" class="input-small" type="text" id="Param_LocalHostPort" placeholder="80" value="@Model.Extension.Model.LocalHostPort">
                 </div>
             </div>
             <div class="control-group form-horizontal">
                 <label class="control-label" for="inputPassword">Default App</label>
                 <div class="controls">
                     <select name="DefaultDashboard">
-                        @foreach (var x in @Model.Dashboards)
+                        @foreach (var x in @Model.Extension.Model.Dashboards)
                         {
                             <option value="@x.Key" @if (x.Value) { <text> selected </text>    }>@x.Key</option>
                         }
@@ -92,7 +91,7 @@
 
                     <tr>
                         <td>Version</td>
-                        <td>@Model.Version</td>
+                        <td>@Model.Extension.Model.Version</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -101,7 +100,7 @@
 
                     <tr>
                         <td>Licensee</td>
-                        <td>@Model.Licensee</td>
+                        <td>@Model.Extension.Model.Licensee</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -109,9 +108,18 @@
                     </tr>
 
                     <tr>
-                        <td><a href="/settings/system/">Logging</a></td>
+                        <th><a href="/settings/environment/">Environment</a></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/settings/environment/">Logging</a></td>
                         <td>
-                            @foreach (var x in @Model.LoggingLevel)
+                            @foreach (var x in @Model.Extension.Model.LoggingLevel)
                             {
                                 if (x.Value)
                                 { @x.Key }
@@ -135,7 +143,7 @@
                     <tr>
                         <td><a href="/settings/apps/">Default App</a></td>
                         <td>
-                            @foreach (var x in @Model.Dashboards)
+                            @foreach (var x in @Model.Extension.Model.Dashboards)
                             {
                                 if (x.Value){ @x.Key }
                             }
@@ -160,7 +168,7 @@
                     <tr>
                         <td><a href="/settings/hosting/">Host by IP</a></td>
                         <td>
-                            @if (Model.HostByIP)
+                            @if (Model.Extension.Model.HostByIP)
                         { <text> <i class="icon-ok"></i> </text> }
                         else
                         { <text> <i class="icon-remove"></i> </text> }</td>
@@ -172,7 +180,7 @@
 
                     <tr>
                         <td><a href="/settings/hosting/">Host Port</a></td>
-                        <td>@Model.HostByIPPort</td>
+                        <td>@Model.Extension.Model.HostByIPPort</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -182,7 +190,7 @@
                     <tr>
                         <td><a href="/settings/hosting/">Secure</a></td>
                         <td>
-                            @if (Model.HostByIPSecure)
+                            @if (Model.Extension.Model.HostByIPSecure)
                         { <text> <i class="icon-ok"></i> </text> }
                         else
                         { <text> <i class="icon-remove"></i> </text> }</td>
@@ -202,7 +210,7 @@
 
                     </tr>
 
-                @foreach (var Binding in @Model.HostBindings)
+                @foreach (var Binding in @Model.Extension.Model.HostBindings)
                 {
                     <tr>
                         <td></td>
@@ -223,7 +231,7 @@
                         <th></th>
                     </tr>
 
-                @foreach (var x in @Model.ExtensionStatuses)
+                @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
                 {
                     <tr>
                         <td></td>
@@ -248,7 +256,7 @@
                         <th>Wait to start</th>
                     </tr>
 
-                @foreach (var x in @Model.Configurators)
+                @foreach (var x in @Model.Extension.Model.Configurators)
                 {
                     <tr>
                         <td></td>

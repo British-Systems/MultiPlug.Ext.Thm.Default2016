@@ -5,7 +5,7 @@ using MultiPlug.Theme.Default2016.Properties;
 namespace MultiPlug.Theme.Default2016.Controllers
 {
     [Route("fonts/*")]
-    public class FontsController : Controller
+    public class FontsController : AssetsEndpoint
     {
         public Response Get(string FileName)
         {

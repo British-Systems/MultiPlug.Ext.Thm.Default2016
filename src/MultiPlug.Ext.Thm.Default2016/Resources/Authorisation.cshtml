@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Login.LoginModel
+﻿@model MultiPlug.Base.Http.EdgeApp
 
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <base href="@Model.BaseUrl">
+    <base href="@Model.Context.Paths.Base">
 
     <link href="assets/mplib/styles/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" id="bootstrap-css">
     <link href="assets/default2016/styles/font.awesome.min.css" media="all" rel="stylesheet" type="text/css">
@@ -71,7 +71,7 @@
                     <input type="password" name="Password" placeholder="Password" id="id_password" tabindex="2">
 
                     <select name="Domain" id="id_domain" tabindex="3">
-                        @foreach (var Domain in Model.Domains)
+                        @foreach (var Domain in Model.Extension.Model.Domains)
                         {
                             <option value="@Domain">@Domain</option>
                         }
@@ -81,7 +81,7 @@
                 <button type="submit" class="btn btn-primary btn-block" tabindex="4">Sign In</button>
             </fieldset>
         </form>
-        @Raw(Model.EvaluationHint)
+        @Raw(Model.Extension.Model.EvaluationHint)
     </section>
 </body>
 </html>

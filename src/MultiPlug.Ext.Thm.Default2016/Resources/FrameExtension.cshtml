@@ -1,11 +1,11 @@
-﻿@model MultiPlug.Extension.Models.SettingsModel
+﻿@model MultiPlug.Base.Http.EdgeApp
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
-@Include( @Model.ExtensionTemplateId, @Model.ExtensionModel, @Model.ExtensionModelType)
+@Include(@Model.Extension.RazorTemplate)
 
 <footer id="main-footer">
-    Extension: @Model.ExtensionName. <a href="http://multiplug.uk" target="_blank">MultiPlug .Net Edge Computing Platform</a> Copyright © 2020 British Systems, all rights reserved.
+    Extension: @Model.Extension.Name. <a href="https://multiplug.app" target="_blank">MultiPlug .Net Edge Computing Platform</a> Copyright © 2020 British Systems, all rights reserved.
     <a href="#" class="pull-right" id="on-top-link">
         On Top&nbsp;<i class=" icon-chevron-up"></i>
     </a>

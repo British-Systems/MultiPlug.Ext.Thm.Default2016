@@ -1,7 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Views.Extensions.ExtensionsHomeModel
-@{
-    Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
-}
+﻿@model MultiPlug.Base.Http.EdgeApp
 
 <style>
     .extensions-heading img,
@@ -37,13 +34,13 @@
             <p>Events, Subscriptions and Web Apps of the Extensions</p>
             <div id="jstree">
                 <ul>
-                    @foreach (var Extension in @Model.Extensions)
+                    @foreach (var Extension in @Model.Extension.Model.Extensions)
                     {
                         <li>
                             @Extension.Name
                             <ul>
                                 <li>
-                                    Events (@Extension.Events.Count())
+                                    Events (@Extension.Events.Count)
                                     <ul>
                                         @foreach (var Event in Extension.Events)
                                         {
@@ -59,7 +56,7 @@
                                 </li>
 
                                 <li>
-                                    Subscriptions (@Extension.Subscriptions.Count())
+                                    Subscriptions (@Extension.Subscriptions.Count)
                                     <ul>
                                         @foreach (var Subscription in Extension.Subscriptions)
                                         {
@@ -74,7 +71,7 @@
                                 </li>
 
                                 <li>
-                                    Apps (@Extension.Apps.Count())
+                                    Apps (@Extension.Apps.Count)
                                     <ul>
                                         @foreach (var App in Extension.Apps)
                                         {
@@ -104,7 +101,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var e in @Model.EventMappings)
+                        @foreach (var e in @Model.Extension.Model.EventMappings)
                         {
                             <tr>
                                 <td>@e.Id</td>
@@ -122,16 +119,9 @@
 
             <p>The Trace Log of the MultiPlug only</p>
             <div class="row-fluid">
-                <ul style="list-style: none;">
-                    <li>
-                        <div class="control-group">
-                            <label class="control-label">Trace Log</label>
-                            <div class="controls">
-                                <textarea id="" rows="3" style="margin: 0px;width: 550px;height: 225px;">@Model.TraceLog</textarea>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+
+            <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 600px;">@Model.Extension.Model.TraceLog</textarea>
+  
             </div>
 
         </div>
@@ -145,13 +135,27 @@
 
 <script>
 
-    $('#jstree').jstree(); 
+    $('#jstree').jstree();
 
     $('#myTab a').click(function (e)
     {
         e.preventDefault();
             $(this).tab('show');
     })
+
+    function scrollLogToBottom(loggingTextArea) {
+        var textarea = document.getElementById(loggingTextArea);
+        textarea.scrollTop = textarea.scrollHeight;
+    }
+
+    $.connection.wS.on("Send", function (id, Group) {
+        if (id == '@Model.Extension.Model.TraceLogId')
+        {
+            var loggingTextArea = $('#Logging');
+            loggingTextArea.text(loggingTextArea.text() + Group.Subjects[1].Value + '\n');
+            scrollLogToBottom('Logging');
+        }
+    });
 </script>
 
 

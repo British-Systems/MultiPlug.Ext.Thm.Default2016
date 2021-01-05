@@ -1,4 +1,4 @@
-﻿@model MultiPlug.Extension.Domain.Models.Views.Settings.AddModel
+﻿@model MultiPlug.Base.Http.EdgeApp
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
@@ -19,7 +19,6 @@
 </style>
 
 <div class="setting-heading">
-    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
     <h2>Add Extensions</h2>
 </div>
 <form class="" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
@@ -39,7 +38,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var Extension in @Model.Extensions)
+                    @foreach (var Extension in @Model.Extension.Model.Extensions)
                     {
                         <tr>
                             <td>@Extension.AssemblyName</td>
@@ -53,7 +52,7 @@
 
         <div class="row-fluid">
             <div class="span10">
-                <p>Version data last updated at @Model.LastUpdate <a id="update-refresh" href="#">Refresh</a></p>
+                <p>Version data last updated at @Model.Extension.Model.LastUpdate <a id="update-refresh" href="#">Refresh</a></p>
             </div>
             <div class="span2">
                 <button type="submit" value="submit" class="btn btn-green btn-block">Update</button>
@@ -71,7 +70,7 @@
             <div class="span12">
                 <div class="row-fluid">
                     <div class="span10">
-                        <input type="file" name="NupkgFile" accept=".nupkg">
+                        <input type="file" name="NupkgFile" accept=".nupkg,.dll">
                     </div>
                     <div class="span2">
                         <button type="submit" value="submit" class="btn btn-green btn-block">Sideload</button>

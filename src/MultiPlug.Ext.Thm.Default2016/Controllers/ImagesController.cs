@@ -1,12 +1,12 @@
-﻿using MultiPlug.Base.Attribute;
+﻿using System.Drawing;
+using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
 using MultiPlug.Theme.Default2016.Properties;
-using System.Drawing;
 
 namespace MultiPlug.Theme.Default2016.Controllers
 {
     [Route("images/*")]
-    public class ImagesController : Controller
+    public class ImagesController : AssetsEndpoint
     {
         public Response Get(string image)
         {

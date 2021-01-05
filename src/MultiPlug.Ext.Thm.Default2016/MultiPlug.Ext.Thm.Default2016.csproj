@@ -54,11 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AssetsEndpoint.cs" />
     <Compile Include="Controllers\FontsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ScriptsController.cs" />
     <Compile Include="Controllers\StylesController.cs" />
-    <Compile Include="Core.cs" />
     <Compile Include="Default2016.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -141,6 +141,7 @@
     <None Include="Resources\SettingsExtensions.cshtml" />
     <None Include="Resources\SettingsHosting.cshtml" />
     <None Include="Resources\SettingsHousekeeping.cshtml" />
+    <None Include="Resources\SettingsHousekeepingStorage.cshtml" />
     <None Include="Resources\SettingsPerformance.cshtml" />
     <None Include="Resources\SettingsRecipes.cshtml" />
     <None Include="Resources\SettingsSecurity.cshtml" />
@@ -245,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\Scripts\deploy.js" />
     <Content Include="Resources\Scripts\modernizr-2.6.2.js" />
     <Content Include="Resources\Styles\font.awesome.css" />
     <Content Include="Resources\Styles\fonts.css" />

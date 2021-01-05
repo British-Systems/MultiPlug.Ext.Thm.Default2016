@@ -112,7 +112,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Login.LoginModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
         ///&lt;!DOCTYPE html&gt;
         ///&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;
@@ -127,7 +127,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    &lt;title&gt;
         ///        MultiPlug - Sign In
         ///    &lt;/title&gt;
-        ///    &lt;meta name=&quot;descr [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Authorisation {
             get {
@@ -191,6 +192,31 @@ namespace MultiPlug.Theme.Default2016.Properties {
             get {
                 object obj = ResourceManager.GetObject("cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $(&quot;.btn-deploy&quot;).click(function (event) {
+        ///    event.preventDefault();
+        ///
+        ///    var theRow = $(this).closest(&quot;tr&quot;);
+        ///
+        ///    $.post($(this).attr(&apos;href&apos;), function (data) {
+        ///
+        ///    })
+        ///    .done(function () {
+        ///        $(&apos;.top-right&apos;).notify({
+        ///            message: {
+        ///                text: &apos;Recipes have been deployed and saved.&apos;
+        ///            },
+        ///            type: &apos;adminflare&apos;
+        ///        }).show()
+        ///    });
+        ///});.
+        /// </summary>
+        internal static string deploy_js {
+            get {
+                return ResourceManager.GetString("deploy_js", resourceCulture);
             }
         }
         
@@ -366,15 +392,19 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Models.WebAppModel&lt;object&gt;
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
-        ///@Include(@Model.ExtensionTemplateId, Convert.ChangeType(Model.ExtensionModel, Model.ExtensionModelType)), @Model.ExtensionModelType)
+        ///@Include(@Model.Extension.RazorTemplate)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
-        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot; [rest of string was truncated]&quot;;.
+        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
+        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
+        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
+        ///    &lt;/a&gt;
+        ///&lt;/footer&gt;
+        ///.
         /// </summary>
         internal static string FrameApp {
             get {
@@ -383,16 +413,18 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Models.SettingsModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
-        ///@Include( @Model.ExtensionTemplateId, @Model.ExtensionModel, @Model.ExtensionModelType)
+        ///@Include(@Model.Extension.RazorTemplate)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.ExtensionName. &lt;a href=&quot;http://multiplug.uk&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
+        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
         ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
-        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt; [rest of string was truncated]&quot;;.
+        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
+        ///    &lt;/a&gt;
+        ///&lt;/footer&gt;.
         /// </summary>
         internal static string FrameExtension {
             get {
@@ -401,30 +433,24 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Core.Models.Views.Extensions.ExtensionsHomeModel
-        ///@{
-        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
-        ///}
-        ///
-        ///&lt;style&gt;
-        ///    .extensions-heading img,
-        ///    .extensions-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .extensions-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .extensions-heading h2 {
-        ///        margin-left: 0.1em;
-        ///    }
-        ///&lt;/style&gt;
+        ///   Looks up a localized string similar to @using MultiPlug.Base.Http
+        ///@model MultiPlug.Base.Http.EdgeApp
         ///
         ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Apps&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot; style=&quot;margin-bottom: 20px&quot;&gt;
+        ///
+        ///        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+        ///        {
+        ///            foreach (var HttpEndpoint in Extension.HttpEndpoints)
+        ///            {
+        ///                if (HttpEndpoint.isHidden || (HttpEndpoint.Type != HttpEndpointType.App))
+        ///                {
+        ///                    continue;
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeApps {
             get {
@@ -433,10 +459,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Extensions.ExtensionsHomeModel
-        ///@{
-        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
-        ///}
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
         ///&lt;style&gt;
         ///    .extensions-heading img,
@@ -456,7 +479,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;img height= [rest of string was truncated]&quot;;.
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Icon.png&quot;&gt;
+        ///    &lt;h2&gt;Extens [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeExtensions {
             get {
@@ -465,7 +489,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.OverviewModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -486,7 +510,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/ [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Settings Overview&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeSettings {
             get {
@@ -633,19 +659,20 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 8]&gt;&lt;html class=&quot;no-js lt-ie9&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if gt IE 8]&gt;&lt;!--&gt;
-        ///&lt;html class=&quot;no-js&quot;&gt;
-        ///&lt;!--&lt;![endif]--&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;@Model.LayoutModel.Title&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-wid [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///
+        ///@using MultiPlug.Base.Http
+        ///@{
+        ///    string AppsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Apps) ? &quot;active&quot; : &quot;&quot;; ;
+        ///    string ExtensionsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Extensions) ? &quot;active&quot; : &quot;&quot;;
+        ///    string SettingsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Settings) ? &quot;active&quot; : &quot;&quot;;
+        ///
+        ///    string Title = string.Empty;
+        ///
+        ///
+        ///
+        ///    switch (Model.Context.Paths.Location)
+        ///    { [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Layout {
             get {
@@ -1173,7 +1200,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.AddModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1194,7 +1221,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/defau [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Add Extensions&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsAdd {
             get {
@@ -1203,7 +1232,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.AppsModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1226,7 +1255,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiP [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Apps&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enct [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsApps {
             get {
@@ -1235,7 +1266,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.ExtensionsModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1258,7 +1289,43 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Environment&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SettingsEnvironment {
+            get {
+                return ResourceManager.GetString("SettingsEnvironment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///@{
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
+        ///}
+        ///
+        ///&lt;style&gt;
+        ///    .setting-heading img,
+        ///    .setting-heading h2 {
+        ///        display: inline-block;
+        ///        vertical-align: middle;
+        ///    }
+        ///
+        ///    .setting-heading img {
+        ///        opacity: 0.7;
+        ///        filter: alpha(opacity=70);
+        ///    }
+        ///
+        ///    .setting-heading h2 {
+        ///        margin-left: 0.1em;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;div class=&quot;setting-heading&quot;&gt;
+        ///    &lt;h2&gt;Extensions&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsExtensions {
             get {
@@ -1267,7 +1334,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.HostingModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1290,7 +1357,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;Mul [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Hosting&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHosting {
             get {
@@ -1299,7 +1368,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.HousekeepingModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1322,7 +1391,11 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///    &lt;div class=&quot;ro [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeeping {
             get {
@@ -1331,7 +1404,21 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.PerformanceModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///@{
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
+        ///}
+        ///
+        ///&lt;p&gt;Hello World&lt;/p&gt;.
+        /// </summary>
+        internal static string SettingsHousekeepingStorage {
+            get {
+                return ResourceManager.GetString("SettingsHousekeepingStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1354,7 +1441,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt= [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Performance&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsPerformance {
             get {
@@ -1363,7 +1452,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.RecipesModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1386,7 +1475,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;Mul [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Recipes&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsRecipes {
             get {
@@ -1395,7 +1486,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.SecurityModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}.
@@ -1407,7 +1498,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.EnvironmentModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1430,16 +1521,18 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt= [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Environment&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string SettingsEnvironment {
+        internal static string SettingsSystem {
             get {
                 return ResourceManager.GetString("SettingsSystem", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Extension.Domain.Models.Views.Settings.UpdateModel
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1460,7 +1553,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/de [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;Update MultiPlug&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsUpdate {
             get {
