@@ -209,23 +209,16 @@
                 <li class="@AppsActive lp-dropdown">
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown"><span class="icon-dashboard"></span>Apps</a>
                     <ul class="lp-dropdown-menu simple" data-dropdown-owner="pages-dropdown">
-                        <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Apps)"><i class="icon-dashboard"></i>&nbsp;&nbsp;Overview</a>
-                        </li>
-
-                        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+                        @foreach (var HttpEndpoint in @Model.MultiPlugAPI.HttpEndpoints.App)
                         {
-                            foreach (var HttpEndpoint in Extension.HttpEndpoints)
+                            if( HttpEndpoint.isHidden )
                             {
-                                if( HttpEndpoint.isHidden || ( HttpEndpoint.Type != HttpEndpointType.App ) )
-                                {
-                                    continue;
-                                }
-
-                                <li>
-                                    <a tabindex="@GetTabIndex()" href="@HttpEndpoint.Href"><i class="icon-dashboard"></i>&nbsp;&nbsp;@HttpEndpoint.Name</a>
-                                </li>
+                                continue;
                             }
+
+                            <li>
+                                <a tabindex="@GetTabIndex()" href="@HttpEndpoint.Href"><i class="icon-dashboard"></i>&nbsp;&nbsp;@HttpEndpoint.Name</a>
+                            </li>
                         }
                     </ul>
                 </li>
@@ -248,26 +241,17 @@
                 <li class="@ExtensionsActive lp-dropdown">
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-cogs"></span>Extensions</a>
                     <ul class="lp-dropdown-menu simple" data-dropdown-owner="pages-dropdown2">
-
-                        <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Extensions)"><i class="icon-dashboard"></i>&nbsp;&nbsp;Overview</a>
-                        </li>
-
-                        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+                        @foreach (var HttpEndpoint in @Model.MultiPlugAPI.HttpEndpoints.Settings)
                         {
-                            foreach (var HttpEndpoint in Extension.HttpEndpoints)
+                            if (HttpEndpoint.isHidden)
                             {
-                                if (HttpEndpoint.isHidden || (HttpEndpoint.Type != HttpEndpointType.Settings))
-                                {
-                                    continue;
-                                }
-
-                                <li>
-                                    <a tabindex="@GetTabIndex()" href="@HttpEndpoint.Href"><i class="icon-dashboard"></i>&nbsp;&nbsp;@Extension.Meta.Name</a>
-                                </li>
+                                continue;
                             }
-                        }
 
+                            <li>
+                                <a tabindex="@GetTabIndex()" href="@HttpEndpoint.Href"><i class="icon-dashboard"></i>&nbsp;&nbsp;@HttpEndpoint.Name</a>
+                            </li>
+                        }
                     </ul>
                 </li>
 

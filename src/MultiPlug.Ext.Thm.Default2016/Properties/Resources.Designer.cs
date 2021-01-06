@@ -711,15 +711,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to window.Modernizr=(function(A,c,g){var I=&quot;2.6.2&quot;,w={},y=true,L=c.documentElement,a=&quot;modernizr&quot;,H=c.createElement(a),E=H.style,K=c.createElement(&quot;input&quot;),C=&quot;:)&quot;,b={}.toString,j=&quot; -webkit- -moz- -o- -ms- &quot;.split(&quot; &quot;),h=&quot;Webkit Moz O ms&quot;,F=h.split(&quot; &quot;),J=h.toLowerCase().split(&quot; &quot;),G={svg:&quot;http://www.w3.org/2000/svg&quot;},l={},p={},f={},e=[],k=e.slice,s,n=function(U,W,O,V){var N,T,Q,R,M=c.createElement(&quot;div&quot;),S=c.body,P=S||c.createElement(&quot;body&quot;);if(parseInt(O,10)){while(O--){Q=c.createElement(&quot;div&quot;);Q.id=V?V[O]:a+( [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string modernizr_jquery_min {
-            get {
-                return ResourceManager.GetString("modernizr_jquery_min", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo_zkhivY {
@@ -1394,8 +1385,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
-        ///&lt;div class=&quot;box&quot;&gt;
-        ///    &lt;div class=&quot;ro [rest of string was truncated]&quot;;.
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    Storage        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeeping {
             get {
@@ -1409,7 +1400,21 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;p&gt;Hello World&lt;/p&gt;.
+        ///&lt;div&gt;
+        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Icon.png&quot;&gt;
+        ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///
+        ///&lt;div id=&quot;jstree&quot;&gt;
+        ///    &lt;ul&gt;
+        ///        @foreach (var FileDomain in @Model.Extension.Model.FileStatues)
+        ///        {
+        ///            &lt;li&gt;
+        ///                Domain A @*@Extension.Name*@
+        ///                &lt;ul&gt;
+        ///                    @foreach (var FileListing in FileDomain)
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeepingStorage {
             get {

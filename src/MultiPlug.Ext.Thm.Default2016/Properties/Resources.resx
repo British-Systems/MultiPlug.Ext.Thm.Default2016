@@ -199,9 +199,6 @@
   <data name="jstree_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scripts\jstree.min.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="modernizr_jquery_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scripts\modernizr-jquery.min.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="multiplug_selectize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scripts\multiplug.selectize.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
