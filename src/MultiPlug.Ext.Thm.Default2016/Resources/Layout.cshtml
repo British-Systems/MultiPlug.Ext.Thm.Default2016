@@ -2,9 +2,10 @@
 
 @using MultiPlug.Base.Http
 @{
-    string AppsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Apps) ? "active" : ""; ;
-    string ExtensionsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Extensions) ? "active" : "";
-    string SettingsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Settings) ? "active" : "";
+    string AppsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.App) ? "active" : ""; ;
+    string ExtensionsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.Settings) ? "active" : "";
+    string SettingsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.System) ? "active" : "";
+    string AnalyticsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.Analytics) ? "active" : "";
 
     string Title = string.Empty;
 
@@ -12,23 +13,23 @@
 
     switch (Model.Context.Paths.Location)
     {
-        case Location.Apps:
+        case HttpEndpointType.App:
             Title = Model.Extension.Name + " - Apps - MultiPlug";
             break;
 
-        case Location.Settings:
-            Title = Model.Extension.Name + " - Settings - MultiPlug";
+        case HttpEndpointType.System:
+            Title = Model.Extension.Name + " - MultiPlug Settings";
             break;
 
-        case Location.Extensions:
-            Title = Model.Extension.Name + " - Extensions - MultiPlug";
+        case HttpEndpointType.Settings:
+            Title = Model.Extension.Name + " - Extension Settings - MultiPlug";
             break;
 
-        case Location.APIs:
+        case HttpEndpointType.Api:
             Title = Model.Extension.Name + " - API - MultiPlug";
             break;
 
-        case Location.Docs:
+        case HttpEndpointType.Doc:
             Title = Model.Extension.Name + " - Docs - MultiPlug";
             break;
 
@@ -172,7 +173,7 @@
                                     <a href="@Raw(Model.Context.Paths.Roots.Settings)"><i class="icon-desktop"></i> @Model.MultiPlugAPI.Environment.MachineName<span class=" responsive-text">Machine Name</span></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon-warning-sign"></i> 0<span class="responsive-text">Notifications</span></a>
+                                    <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-warning-sign"></i> 0<span class="responsive-text">Notifications</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -223,20 +224,9 @@
                     </ul>
                 </li>
 
-                @*@if (@Model.LayoutModel.DashboardSettings.Any())
-                {
-                <li class="@Model.LayoutModel.ExtensionsActive lp-dropdown">
-                    <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-cogs"></span>Extensions</a>
-                    <ul class="lp-dropdown-menu simple" data-dropdown-owner="pages-dropdown2">
-                        @foreach (var x in @Model.LayoutModel.DashboardSettings)
-                        {
-                            <li>
-                                <a tabindex="-1" href="extensions/@x.Key"><i class="icon-cog"></i>&nbsp;&nbsp;@x.Value</a>
-                            </li>
-                        }
-                    </ul>
+                <li class="@AnalyticsActive">
+                    <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><span class="icon-bar-chart"></span>Analytics</a>
                 </li>
-                }*@
 
                 <li class="@ExtensionsActive lp-dropdown">
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-cogs"></span>Extensions</a>
@@ -259,31 +249,31 @@
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown3"><span class="icon-wrench"></span>Settings</a>
                     <ul class="lp-dropdown-menu simple" data-dropdown-owner="pages-dropdown3">
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)"><i class="icon-wrench"></i>&nbsp;&nbsp;Overview</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/"><i class="icon-wrench"></i>&nbsp;&nbsp;Overview</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)environment/"><i class="icon-info-sign"></i>&nbsp;&nbsp;Environment</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/environment/"><i class="icon-info-sign"></i>&nbsp;&nbsp;Environment</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)hosting/"><i class="icon-cloud"></i>&nbsp;&nbsp;Hosting</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/hosting/"><i class="icon-cloud"></i>&nbsp;&nbsp;Hosting</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)extensions/"><i class="icon-puzzle-piece"></i>&nbsp;&nbsp;Extensions</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/extensions/"><i class="icon-puzzle-piece"></i>&nbsp;&nbsp;Extensions</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)apps/"><i class="icon-dashboard"></i>&nbsp;&nbsp;Apps</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/apps/"><i class="icon-dashboard"></i>&nbsp;&nbsp;Apps</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)recipes/"><i class="icon-sort-by-attributes-alt"></i>&nbsp;&nbsp;Recipes</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/recipes/"><i class="icon-sort-by-attributes-alt"></i>&nbsp;&nbsp;Recipes</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)security/"><i class="icon-lock"></i>&nbsp;&nbsp;Security</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/security/"><i class="icon-lock"></i>&nbsp;&nbsp;Security</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)performance/"><i class="icon-signal"></i>&nbsp;&nbsp;Performance</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/performance/"><i class="icon-signal"></i>&nbsp;&nbsp;Performance</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.Settings)housekeeping/"><i class="icon-trash"></i>&nbsp;&nbsp;Housekeeping</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/housekeeping/"><i class="icon-trash"></i>&nbsp;&nbsp;Housekeeping</a>
                         </li>
                     </ul>
                     @*<ul class="lp-dropdown-menu" data-dropdown-owner="extras-dropdown">

@@ -25,6 +25,7 @@ namespace MultiPlug.Theme.Default2016
                     new RazorTemplate("FrameApp", Resources.FrameApp, false),
                     new RazorTemplate("FrameExtension", Resources.FrameExtension, false),
                     new RazorTemplate("HomeApps", Resources.HomeApps, false),
+                    new RazorTemplate("HomeAnalytics", Resources.HomeAnalytics, false),
                     new RazorTemplate("InternalServerError", Resources.InternalServerError, false),
                     new RazorTemplate("SettingsHosting", Resources.SettingsHosting, false),
                     new RazorTemplate("SettingsHousekeeping", Resources.SettingsHousekeeping, false),

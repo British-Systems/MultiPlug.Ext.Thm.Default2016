@@ -433,6 +433,22 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///@{
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
+        ///}
+        ///
+        ///&lt;div class=&quot;setting-heading&quot;&gt;
+        ///    &lt;h2&gt;Analytics&lt;/h2&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        internal static string HomeAnalytics {
+            get {
+                return ResourceManager.GetString("HomeAnalytics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @using MultiPlug.Base.Http
         ///@model MultiPlug.Base.Http.EdgeApp
         ///
