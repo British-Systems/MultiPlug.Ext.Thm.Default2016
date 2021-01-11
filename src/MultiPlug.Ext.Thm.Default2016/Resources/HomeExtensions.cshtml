@@ -1,33 +1,10 @@
 ﻿@model MultiPlug.Base.Http.EdgeApp
 
-<style>
-    .extensions-heading img,
-    .extensions-heading h2 {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .extensions-heading img {
-        opacity: 0.7;
-        filter: alpha(opacity=70);
-    }
-
-    .extensions-heading h2 {
-        margin-left: 0.1em;
-    }
-</style>
-
-<div class="extensions-heading">
-    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
-    <h2>Extensions</h2>
-</div>
-
 <div class="box">
 
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#events-subs">Extensions</a></li>
         <li><a href="#mappings">Mappings</a></li>
-        <li><a href="#trace-log">Trace Log</a></li>
     </ul>
     <div id="myTabContent" class="tab-content" style="margin-bottom: 10px">
         <div class="tab-pane fade in active" id="events-subs">
@@ -114,18 +91,6 @@
             </div>
 
         </div>
-
-        <div class="tab-pane fade" id="trace-log">
-
-            <p>The Trace Log of the MultiPlug only</p>
-            <div class="row-fluid">
-
-            <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 600px;">@Model.Extension.Model.TraceLog</textarea>
-  
-            </div>
-
-        </div>
-
     </div>
 </div>
 
@@ -143,19 +108,6 @@
             $(this).tab('show');
     })
 
-    function scrollLogToBottom(loggingTextArea) {
-        var textarea = document.getElementById(loggingTextArea);
-        textarea.scrollTop = textarea.scrollHeight;
-    }
-
-    $.connection.wS.on("Send", function (id, Group) {
-        if (id == '@Model.Extension.Model.TraceLogId')
-        {
-            var loggingTextArea = $('#Logging');
-            loggingTextArea.text(loggingTextArea.text() + Group.Subjects[1].Value + '\n');
-            scrollLogToBottom('Logging');
-        }
-    });
 </script>
 
 
