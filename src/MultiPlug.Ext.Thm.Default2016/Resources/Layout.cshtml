@@ -170,10 +170,10 @@
                         <li>
                             <ul class="messages">
                                 <li>
-                                    <a href="@Raw(Model.Context.Paths.Roots.Settings)"><i class="icon-desktop"></i> @Model.MultiPlugAPI.Environment.MachineName<span class=" responsive-text">Machine Name</span></a>
+                                    <a href="@Raw(Model.Context.Paths.Roots.Settings)"><i class="icon-desktop"></i><span class="responsive-text">Machine Name:</span> @Model.MultiPlugAPI.Environment.MachineName</a>
                                 </li>
                                 <li>
-                                    <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-warning-sign"></i> 0<span class="responsive-text">Notifications</span></a>
+                                    <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-warning-sign"></i><span class="responsive-text">Notifications:</span> 0</a>
                                 </li>
                             </ul>
                         </li>
@@ -465,7 +465,7 @@
     </script>
 
     <!-- Websocket Reconnect Modal -->
-    <div id="websocket-reconnect-modal" class="modal fade" role="dialog">
+    <div id="websocket-reconnect-modal" class="modal hide fade" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
 
             <!-- Modal content-->
