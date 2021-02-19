@@ -13,6 +13,7 @@ namespace MultiPlug.Theme.Default2016
             {
                 return new RazorTemplate[]
                 {
+                    new RazorTemplate("Authentication", Resources.Authentication, false),
                     new RazorTemplate("Authorisation", Resources.Authorisation, false),
                     new RazorTemplate("HomeExtensions", Resources.HomeExtensions, false),
                     new RazorTemplate("Layout", Resources.Layout, false),

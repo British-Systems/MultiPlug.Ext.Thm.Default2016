@@ -460,4 +460,7 @@
   <data name="HomeAnalytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomeAnalytics.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Authentication" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Authentication.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

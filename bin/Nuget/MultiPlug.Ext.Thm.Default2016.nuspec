@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.18</version>
+    <version>1.0.19</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.18 Copyright date change, Modal Bugs, minor fixes
+    <releaseNotes>1.0.19 changed for MultiPlug.Core 2.2.70
+1.0.18 Copyright date change, Modal Bugs, minor fixes
 1.0.17 Moved System log to the Analytics page
 1.0.16 Add Analytics Stub
 1.0.15 Uses new MultiPlugAPI.HttpEndpoints API found in MultiPlug.Base 1.0.51
@@ -25,9 +26,9 @@
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-        <dependency id="MultiPlug.Base" version="1.0.52" />
+        <dependency id="MultiPlug.Base" version="1.0.53" />
         <dependency id="MultiPlug.Extension.Core" version="1.0.59" />
-        <dependency id="MultiPlug.Core" version="2.2.68" />
+        <dependency id="MultiPlug.Core" version="2.2.70" />
       </group>
     </dependencies>
   </metadata>

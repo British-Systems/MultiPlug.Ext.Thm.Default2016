@@ -1,0 +1,1 @@
+"..\..\nuget.exe" pack Nuget/MultiPlug.Ext.Thm.Default2016.nuspec

@@ -2,3 +2,26 @@
 @{
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
+
+<form style="display:contents" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+    <div class="row-fluid">
+        <div class="span6">
+            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
+        </div>
+        <div class="span6">
+            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
+        </div>
+    </div>
+    <h3 class="box-header">@Model.Extension.Model.FileName</h3>
+    <div class="box" style="height:75%">
+        <div class="row-fluid full-height">
+            <textarea name="FileContent" spellcheck="false" rows="3" class="input-block-level full-height" wrap="off" style="resize: none;">@Model.Extension.Model.FileContent</textarea>
+        </div>
+    </div>
+</form>
+
+<script>
+    $('#cancel-btn').click(function () {
+        location.reload();
+    });
+</script>

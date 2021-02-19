@@ -124,11 +124,32 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;
-        ///        MultiPlug - Sign In
-        ///    &lt;/title&gt;
+        ///    &lt;title&gt;Permission Denied - MultiPlug&lt;/title&gt;
         ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///    &lt;met [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Authentication {
+            get {
+                return ResourceManager.GetString("Authentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;
+        ///&lt;!--[if IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt;&lt;![endif]--&gt;
+        ///&lt;!--[if IE 8]&gt;&lt;html class=&quot;no-js lt-ie9&quot;&gt;&lt;![endif]--&gt;
+        ///&lt;!--[if gt IE 8]&gt;&lt;!--&gt;
+        ///&lt;html class=&quot;no-js&quot;&gt;
+        ///&lt;!--&lt;![endif]--&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+        ///    &lt;title&gt;Log In - MultiPlug&lt;/title&gt;
+        ///    &lt;meta name=&quot;description&quot; content=&quot;Log into MultiPlug&quot;&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Authorisation {
             get {
@@ -399,7 +420,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///@Include(@Model.Extension.RazorTemplate)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
+        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2021 British Systems, all rights reserved.
         ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
         ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
         ///    &lt;/a&gt;
@@ -420,7 +441,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///@Include(@Model.Extension.RazorTemplate)
         ///
         ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2020 British Systems, all rights reserved.
+        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2021 British Systems, all rights reserved.
         ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
         ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
         ///    &lt;/a&gt;
@@ -438,9 +459,18 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Analytics&lt;/h2&gt;
-        ///&lt;/div&gt;.
+        ///
+        ///&lt;section class=&quot;row-fluid&quot;&gt;
+        ///    &lt;div class=&quot;span3&quot;&gt;
+        ///        &lt;div class=&quot;box&quot;&gt;
+        ///            &lt;ul class=&quot;nav nav-list&quot;&gt;
+        ///                &lt;li class=&quot;nav-header&quot;&gt;Analytics&lt;/li&gt;
+        ///                &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;System Log&lt;/a&gt;&lt;/li&gt;
+        ///                &lt;li class=&quot;nav-header&quot;&gt;Extensions&lt;/li&gt;
+        ///
+        ///                @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+        ///                {
+        ///                [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeAnalytics {
             get {
@@ -477,26 +507,18 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
-        ///&lt;style&gt;
-        ///    .extensions-heading img,
-        ///    .extensions-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
+        ///&lt;div class=&quot;box&quot;&gt;
         ///
-        ///    .extensions-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .extensions-heading h2 {
-        ///        margin-left: 0.1em;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Icon.png&quot;&gt;
-        ///    &lt;h2&gt;Extens [rest of string was truncated]&quot;;.
+        ///    &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab&quot;&gt;
+        ///        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#events-subs&quot;&gt;Extensions&lt;/a&gt;&lt;/li&gt;
+        ///        &lt;li&gt;&lt;a href=&quot;#mappings&quot;&gt;Mappings&lt;/a&gt;&lt;/li&gt;
+        ///    &lt;/ul&gt;
+        ///    &lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot; style=&quot;margin-bottom: 10px&quot;&gt;
+        ///        &lt;div class=&quot;tab-pane fade in active&quot; id=&quot;events-subs&quot;&gt;
+        ///            &lt;p&gt;Events, Subscriptions and Web Apps of the Extensions&lt;/p&gt;
+        ///            &lt;div id=&quot;jstree&quot;&gt;
+        ///                &lt;ul&gt;
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeExtensions {
             get {
@@ -510,25 +532,17 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///      display:inline-block;
-        ///      vertical-align:middle;
-        ///    }
-        ///    .setting-heading img {
-        ///    opacity: 0.7; filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .setting-heading h2 {
-        ///    margin-left:0.1em;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Settings Overview&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8 [rest of string was truncated]&quot;;.
+        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
+        /// 
+        ///    &lt;div class=&quot;box&quot;&gt;
+        ///        &lt;div class=&quot;row-fluid&quot;&gt;
+        ///            &lt;table class=&quot;table table-condensed&quot; id=&quot;bindings-table&quot;&gt;
+        ///                &lt;tbody&gt;
+        ///                    &lt;tr&gt;
+        ///                        &lt;th&gt;System&lt;/th&gt;
+        ///                        &lt;td&gt;&lt;/td&gt;
+        ///                        &lt;td&gt;&lt;/td&gt;
+        ///              [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeSettings {
             get {
@@ -679,16 +693,10 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///
         ///@using MultiPlug.Base.Http
         ///@{
-        ///    string AppsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Apps) ? &quot;active&quot; : &quot;&quot;; ;
-        ///    string ExtensionsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Extensions) ? &quot;active&quot; : &quot;&quot;;
-        ///    string SettingsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.Location.Settings) ? &quot;active&quot; : &quot;&quot;;
-        ///
-        ///    string Title = string.Empty;
-        ///
-        ///
-        ///
-        ///    switch (Model.Context.Paths.Location)
-        ///    { [rest of string was truncated]&quot;;.
+        ///    string AppsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.App) ? &quot;active&quot; : &quot;&quot;; ;
+        ///    string ExtensionsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.Settings) ? &quot;active&quot; : &quot;&quot;;
+        ///    string SettingsActive = (Model.Context.Paths.Location == MultiPlug.Base.Http.HttpEndpointType.System) ? &quot;active&quot; : &quot;&quot;;
+        ///    string AnalyticsActive = (Model.Context.Paths.Location == MultiPlug [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Layout {
             get {
