@@ -53,7 +53,7 @@
             <span>
             </span>
         </a>
-        <form action="multiplug/authentication/" method="post" accept-charset="utf-8">
+        <form action="multiplug/authentication/@{if (!string.IsNullOrEmpty(Model.Extension.Model.Referrer)) { @Raw( "?referrer=" + Model.Extension.Model.Referrer) } }" method="post" accept-charset="utf-8">
             <fieldset>
                 <div class="fields">
                     <input type="text" name="Username" placeholder="Username" id="id_username" tabindex="1">

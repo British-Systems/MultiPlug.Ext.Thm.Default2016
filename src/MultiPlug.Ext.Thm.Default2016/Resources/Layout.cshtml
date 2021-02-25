@@ -192,7 +192,14 @@
                                 </li>
                                 <li class="divider"></li>*@
                                 <li>
-                                    <a href="multiplug/authentication/logout">Log Out</a>
+                                    @if (string.IsNullOrEmpty(Model.Context.User.Identity.Name))
+                                    {
+                                        <a href="/login/?referrer=@Raw(Model.Context.Paths.Current)">Log In</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="multiplug/authentication/logout">Log Out</a>
+                                    }
                                 </li>
                             </ul>
                         </li>
@@ -276,17 +283,6 @@
                             <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/housekeeping/"><i class="icon-trash"></i>&nbsp;&nbsp;Housekeeping</a>
                         </li>
                     </ul>
-                    @*<ul class="lp-dropdown-menu" data-dropdown-owner="extras-dropdown">
-                        <li>
-                            <a tabindex="-1" href="extras-icons.html"><span class="icon-coffee"></span>Icons</a>
-                        </li>
-                        <li>
-                            <a tabindex="-1" href="extras-charts.html"><span class="icon-bar-chart"></span>Charts</a>
-                        </li>
-                        <li>
-                            <a tabindex="-1" href="extras-widgets.html"><span class="icon-star"></span>Widgets</a>
-                        </li>
-                    </ul>*@
                 </li>
             </ul>
         </div>
@@ -299,118 +295,6 @@
 
     <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/websocket.min.js" type="text/javascript"></script>
     <script src="stream/hubs"></script>
-
-    @*<script type="text/javascript">
-		$(document).ready(function () {
-			$('a[rel=tooltip]').tooltip();
-
-			// Easy Pie Charts
-			var easyPieChartDefaults = {
-				animate: 2000,
-				scaleColor: false,
-				lineWidth: 12,
-				lineCap: 'square',
-				size: 100,
-				trackColor: '#e5e5e5'
-			}
-			$('#easy-pie-chart-1').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#3da0ea'
-			}));
-			$('#easy-pie-chart-2').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#e7912a'
-			}));
-			$('#easy-pie-chart-3').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#bacf0b'
-			}));
-			$('#easy-pie-chart-4').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#4ec9ce'
-			}));
-			$('#easy-pie-chart-5').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#ec7337'
-			}));
-			$('#easy-pie-chart-6').easyPieChart($.extend({}, easyPieChartDefaults, {
-				barColor: '#f377ab'
-			}));
-			// Visits Chart
-			var visitsChartData = [{
-				// Visits
-				label: 'Visits',
-				data: [
-					[6, 1300],
-					[7, 1600],
-					[8, 1900],
-					[9, 2100],
-					[10, 2500],
-					[11, 2200],
-					[12, 2000],
-					[13, 1950],
-					[14, 1900],
-					[15, 2000]
-				]
-			}, {
-				// Returning Visits
-				label: 'Returning Visits',
-				data: [
-					[6, 500],
-					[7, 600],
-					[8, 550],
-					[9, 600],
-					[10, 800],
-					[11, 900],
-					[12, 800],
-					[13, 850],
-					[14, 830],
-					[15, 1000]
-				],
-				filledPoints: true
-			}];
-			$('#visits-chart').simplePlot(visitsChartData, {
-				series: {
-					points: {
-						show: true,
-						radius: 5
-					},
-					lines: {
-						show: true
-					}
-				},
-				xaxis: {
-					tickDecimals: 2
-				},
-				yaxis: {
-					tickSize: 1000
-				}
-			}, {
-				height: 205,
-				tooltipText: "y + ' visitors at ' + x + '.00h'"
-			});
-			// Comments Tab
-			$('.comment-remove').click(function () {
-				bootbox.confirm("Are you sure?", function (result) {
-					alert("Confirm result: " + result);
-				});
-				return false;
-			});
-			// New Users Tab
-			$('#tab-users a').tooltip();
-		});
-    </script>*@
-    @*<script type="text/javascript">
-        $(function () {
-            $.connection.hub.url = "stream";
-            var hub = $.connection.wS;
-
-            $.connection.hub.error(function (error) {
-                console.log('Web Socket Error: ' + error);
-            });
-
-            $.connection.hub.logging = true;
-
-            $.connection.hub.start().done(function () {
-                hub.server.subscribe('@Model.LayoutModel.ViewId');
-            });
-        });
-    </script>*@
     <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/multiplug.js?id=@Model.Context.WebSocketId" type="text/javascript"></script>
 
     <!-- / Left navigation panel -->
@@ -489,10 +373,5 @@
 
         </div>
     </div>
-
-    @*<script src="Scripts/jquery-1.6.4.min.js"></script>*@
-
-
-
 </body>
 </html>
