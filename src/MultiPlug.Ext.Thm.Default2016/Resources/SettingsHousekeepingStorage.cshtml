@@ -4,28 +4,33 @@
 }
 
 <div>
-    <img height="35" width="35" alt="MultiPlug Icon" src="assets/default2016/images/MultiPlug-Icon.png">
     <h2>Housekeeping</h2>
 </div>
 
-
-<div id="jstree">
-    <ul>
-        @foreach (var FileDomain in @Model.Extension.Model.FileStatues)
-        {
-            <li>
-                Domain A @*@Extension.Name*@
-                <ul>
-                    @foreach (var FileListing in FileDomain)
-                    {
-                    <li data-jstree='{"icon":"jstree-file"}'>
-                        <a href="#" >@Raw((! FileListing.Orphan) ? "(In use) " : "")@FileListing.FullName</a>
+<h3 class="box-header">
+    Log Files
+</h3>
+<div class="box">
+    <div class="row-fluid">
+        <div id="jstree">
+            <ul>
+                @foreach (var FileStorage in @Model.Extension.Model.FileStorage)
+                {
+                    <li>
+                        @FileStorage.Extension
+                        <ul>
+                            @foreach (var FileListing in FileStorage.FileStatues)
+                            {
+                                <li data-jstree='{"icon":"jstree-file"}'>
+                                    <a href="#">@Raw((!FileListing.Orphan) ? "(In use) " : "")@FileListing.FullName</a>
+                                </li>
+                            }
+                        </ul>
                     </li>
-                    }
-                </ul>
-            </li>
-        }
-    </ul>
+                }
+            </ul>
+        </div>
+    </div>
 </div>
 
 <link rel="stylesheet" href="assets/multiplug.ext.mplib/styles/jstree.style.min.css" />
