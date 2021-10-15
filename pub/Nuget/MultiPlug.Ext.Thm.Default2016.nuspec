@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.21</version>
+    <version>1.0.22</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,13 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.21 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/2
+    <releaseNotes>1.0.22 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/3
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/4
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/5
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/6
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/7
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/8
+1.0.21 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/2
 1.0.20 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/1
 1.0.19 changed for MultiPlug.Core 2.2.70
 1.0.18 Copyright date change, Modal Bugs, minor fixes
@@ -28,9 +34,9 @@
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-        <dependency id="MultiPlug.Base" version="1.0.53" />
-        <dependency id="MultiPlug.Extension.Core" version="1.0.59" />
-        <dependency id="MultiPlug.Core" version="2.2.74" />
+        <dependency id="MultiPlug.Base" version="1.0.64" />
+        <dependency id="MultiPlug.Extension.Core" version="1.0.63" />
+        <dependency id="MultiPlug.Core" version="2.2.76" />
       </group>
     </dependencies>
   </metadata>

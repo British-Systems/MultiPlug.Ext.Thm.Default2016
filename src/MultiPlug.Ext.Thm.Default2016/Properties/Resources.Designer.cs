@@ -124,9 +124,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Permission Denied - MultiPlug&lt;/title&gt;
+        ///    &lt;title&gt;Log In - MultiPlug&lt;/title&gt;
         ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-        ///    &lt;met [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;vie [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Authentication {
             get {
@@ -147,9 +147,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Log In - MultiPlug&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Log into MultiPlug&quot;&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///    &lt;title&gt;Permission Denied - MultiPlug&lt;/title&gt;
+        ///    &lt;meta name=&quot;description&quot; content=&quot;Log into Mul [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Authorisation {
             get {
@@ -533,16 +532,15 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
-        /// 
-        ///    &lt;div class=&quot;box&quot;&gt;
-        ///        &lt;div class=&quot;row-fluid&quot;&gt;
-        ///            &lt;table class=&quot;table table-condensed&quot; id=&quot;bindings-table&quot;&gt;
-        ///                &lt;tbody&gt;
-        ///                    &lt;tr&gt;
-        ///                        &lt;th&gt;System&lt;/th&gt;
-        ///                        &lt;td&gt;&lt;/td&gt;
-        ///                        &lt;td&gt;&lt;/td&gt;
-        ///              [rest of string was truncated]&quot;;.
+        ///    @if (Model.Extension.Model.UpdatePending)
+        ///    {
+        ///        &lt;div class=&quot;alert&quot;&gt;
+        ///            &lt;a href=&quot;#&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;×&lt;/a&gt;
+        ///            &lt;strong&gt;Updates Pending&lt;/strong&gt; Restart the system to apply pending updates.
+        ///        &lt;/div&gt;
+        ///    }
+        ///    &lt;h3 class=&quot;box-header&quot;&gt;Actions&lt;/h3&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeSettings {
             get {
@@ -1340,7 +1338,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;div class=&quot;setting-heading&quot;&gt;
         ///    &lt;h2&gt;Extensions&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8 [rest of string was truncated]&quot;;.
+        ///@if (Model.Extension.Model.UpdatePending) [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsExtensions {
             get {
@@ -1374,7 +1372,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;div class=&quot;setting-heading&quot;&gt;
         ///    &lt;h2&gt;Hosting&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
+        ///&lt;form style=&quot;display:contents&quot; method=&quot;post&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHosting {
             get {
@@ -1425,20 +1423,22 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;div&gt;
-        ///    &lt;img height=&quot;35&quot; width=&quot;35&quot; alt=&quot;MultiPlug Icon&quot; src=&quot;assets/default2016/images/MultiPlug-Icon.png&quot;&gt;
         ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
-        ///
-        ///&lt;div id=&quot;jstree&quot;&gt;
-        ///    &lt;ul&gt;
-        ///        @foreach (var FileDomain in @Model.Extension.Model.FileStatues)
-        ///        {
-        ///            &lt;li&gt;
-        ///                Domain A @*@Extension.Name*@
-        ///                &lt;ul&gt;
-        ///                    @foreach (var FileListing in FileDomain)
-        /// [rest of string was truncated]&quot;;.
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    Log Files
+        ///&lt;/h3&gt;
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot;&gt;
+        ///        &lt;div id=&quot;jstree&quot;&gt;
+        ///            &lt;ul&gt;
+        ///                @foreach (var FileStorage in @Model.Extension.Model.FileStorage)
+        ///                {
+        ///                    &lt;li&gt;
+        ///                        @FileStorage.Extension
+        ///                        &lt;ul&gt;
+        ///                         [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeepingStorage {
             get {
@@ -1481,6 +1481,25 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///
+        ///&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///    &lt;title&gt;&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///
+        ///&lt;/body&gt;
+        ///&lt;/html&gt;.
+        /// </summary>
+        internal static string SettingsPermissions {
+            get {
+                return ResourceManager.GetString("SettingsPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
@@ -1518,7 +1537,16 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
-        ///}.
+        ///}
+        ///
+        ///&lt;form style=&quot;display:contents&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot;&gt;
+        ///        &lt;div class=&quot;span6&quot;&gt;
+        ///            &lt;button type=&quot;submit&quot; value=&quot;submit&quot; class=&quot;btn btn-green btn-block&quot;&gt;Save&lt;/button&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;span6&quot;&gt;
+        ///            &lt;button id=&quot;cancel-btn&quot; type=&quot;button&quot; class=&quot;btn  btn-block&quot;&gt;Cancel&lt;/button&gt;
+        ///        &lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsSecurity {
             get {

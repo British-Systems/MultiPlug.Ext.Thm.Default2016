@@ -36,7 +36,8 @@ namespace MultiPlug.Theme.Default2016
                     new RazorTemplate("SettingsRecipes", Resources.SettingsRecipes, false),
                     new RazorTemplate("SettingsSecurity", Resources.SettingsSecurity, false),
                     new RazorTemplate("SettingsEnvironment", Resources.SettingsEnvironment, false),
-                    new RazorTemplate("SettingsApps", Resources.SettingsApps, false)
+                    new RazorTemplate("SettingsApps", Resources.SettingsApps, false),
+                    new RazorTemplate("SettingsPermissions", Resources.SettingsPermissions, false)
                 };
             }
         }
