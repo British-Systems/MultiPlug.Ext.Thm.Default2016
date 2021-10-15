@@ -3,94 +3,176 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
+@functions
+{
+    string DrawActionButton(string theAssemblyName, bool isEnabled, bool isLoaded)
+    {
+        if (isLoaded)
+        {
+            return "<a class=\"btn btn-red btn-loadextension\" id=" + theAssemblyName + "-btnStartStop\" href=\"multiplug/extensions/unload/?extension=" + theAssemblyName + "\"><i class=\"icon-stop\"></i></a>";
+        }
+        else if (!isLoaded && isEnabled)
+        {
+            return "<a class=\"btn btn-orange btn-loadextension\" id=" + theAssemblyName + "-btnStartStop\" href=\"multiplug/extensions/load/?extension=" + theAssemblyName + "\"><i class=\"icon-play\"></i></a>";
+        }
+        else if (!isLoaded && !isEnabled)
+        {
+            return "<a class=\"btn btn-green btn-loadextension\" id=" + theAssemblyName + "-btnStartStop\" href=\"multiplug/extensions/load/?extension=" + theAssemblyName + "\"><i class=\"icon-play\"></i></a>";
+        }
+        else
+        {
+            return string.Empty;
+        }
+    }
+}
+
 <style>
     .setting-heading img,
     .setting-heading h2 {
-        display: inline-block;
-        vertical-align: middle;
-    }
+            display: inline-block;
+            vertical-align: middle;
+        }
 
     .setting-heading img {
-        opacity: 0.7;
-        filter: alpha(opacity=70);
-    }
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+        }
 
     .setting-heading h2 {
-        margin-left: 0.1em;
-    }
+            margin-left: 0.1em;
+        }
 </style>
 
 <div class="setting-heading">
     <h2>Extensions</h2>
 </div>
 @if (Model.Extension.Model.UpdatePending)
-{
+        {
     <div class="alert">
         <a href="#" class="close" data-dismiss="alert">×</a>
         <strong>Updates Pending</strong> Restart the system to apply pending updates.
     </div>
 }
-<form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
-    <h3 class="box-header">Actions</h3>
-    <div class="box">
-        <div class="row-fluid">
-            <a href="settings/add/" class="btn btn-blue">Add</a>
-            <a href="settings/update/" class="btn btn-blue">Update</a>
-        </div>
-    </div>
-    <h3 class="box-header">Status</h3>
-    <div class="box">
-        <div class="row-fluid">
 
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>Assembly Name</th>
-                        <th>Friendly Name</th>
-                        <th>Enabled</th>
-                        <th>Loaded</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
-                    {
-                        <tr>
-                            <td>@x.AssemblyName</td>
-                            <td>@x.FriendlyName</td>
-                            <td><input type="checkbox" name="ExtensionsToLoad" value="@x.AssemblyName" @(x.Enabled ? "checked" : "") /></td>
-                            <td>@if (x.Loaded)
-                            { <text> <i class="icon-ok"></i> </text> }@if (!x.Loaded && x.Enabled)
-                            { <text> <i class="icon-exclamation-sign"></i> </text> }@if (!x.Loaded && !x.Enabled)
-                            { <text> <i class="icon-pause"></i> </text> }</td>
-                            <td>
-                                @if (!string.IsNullOrEmpty(x.Status))
-                                {
-                                    <textarea>@x.Status</textarea>
-                                }
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+<h3 class="box-header">Actions</h3>
+<div class="box">
     <div class="row-fluid">
-        <div class="span4"></div>
-        <div class="span2">
-            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
-        </div>
-        <div class="span2">
-            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
-        </div>
-        <div class="span4">
-        </div>
+        <a href="settings/add/" class="btn btn-blue">Add</a>
+        <a href="settings/update/" class="btn btn-blue">Update</a>
     </div>
-</form>
+</div>
+<h3 class="box-header">Status</h3>
+<div class="box">
+    <div class="row-fluid">
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Assembly Name</th>
+                    <th>Friendly Name</th>
+                    <th>Enabled</th>
+                    <th>Start/Stop</th>
+                    <th>Status</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
+    {
+                    <tr id="@x.AssemblyName-Row">
+                        <td>@x.AssemblyName</td>
+                        <td id="@x.AssemblyName-FriendlyName">@x.FriendlyName</td>
+                        <td><input id="@x.AssemblyName-Enabled" class="check-enableextension" type="checkbox" value="@x.AssemblyName" @(x.Enabled ? "checked" : "") /></td>
+                        <td id="@x.AssemblyName-StartStop">@Raw(DrawActionButton(x.AssemblyName, x.Enabled, x.Loaded))</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(x.Status))
+                            {
+                                <textarea id="@x.AssemblyName-Status">@x.Status</textarea>
+                            }
+                        </td>
+                        <td><a class="btn btn-red btn-deleteextension" href="multiplug/extensions/remove/?extension=@x.AssemblyName"><i class="icon-trash"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 <script>
-    $('#cancel-btn').click(function () {
-        location.reload();
+    function jq(myid) {
+
+        return "#" + myid.replace(/(:|\.|\[|\]|,|=|@@)/g, "\\$1");
+
+    }
+
+    function DrawActionButton(theAssemblyName, isEnabled, isLoaded) {
+        if (isLoaded) {
+            return '<a class="btn btn-red btn-loadextension" id="' + theAssemblyName + '-btnStartStop" href="multiplug/extensions/unload/?extension=' + theAssemblyName + '"><i class="icon-stop"></i></a>';
+        }
+        else if (!isLoaded && isEnabled) {
+            return '<a class="btn btn-orange btn-loadextension" id="' + theAssemblyName + '-btnStartStop" href="multiplug/extensions/load/?extension=' + theAssemblyName + '"><i class="icon-play"></i></a>';
+        }
+        else if (!isLoaded && !isEnabled) {
+            return '<a class="btn btn-green btn-loadextension" id="' + theAssemblyName + '-btnStartStop" href="multiplug/extensions/load/?extension=' + theAssemblyName + '"><i class="icon-play"></i></a>';
+        }
+        else {
+            return "";
+        }
+    }
+
+    function ApplyLoadClick(StartStopButtons) {
+        StartStopButtons.click(function (event) {
+            event.preventDefault();
+
+            $.post($(this).attr('href'), function (data) {
+
+            })
+            .done(function (data) {
+                $(jq(data.AssemblyName) + '-FriendlyName').html(data.FriendlyName);
+                $(jq(data.AssemblyName) + "-Status").val(data.Status);
+                $(jq(data.AssemblyName) + "-StartStop").html(DrawActionButton(data.AssemblyName, data.Enabled, data.Loaded));
+                if (data.Enabled) {
+                    $(jq(data.AssemblyName) + "-Enabled").prop('checked', true);
+                }
+                else {
+                    $(jq(data.AssemblyName) + "-Enabled").prop('checked', false);
+                }
+
+                ApplyLoadClick($(jq(data.AssemblyName) + "-btnStartStop"));
+            });
+        });
+    }
+
+    $(document).ready(function () {
+        $('.check-enableextension').change(function () {
+            if (this.checked)
+            {
+                $.post('multiplug/extensions/enable/?extension=' + this.value, function (data) {
+                    })
+                .done(function (data) {
+                    });
+                }
+            else
+            {
+                $.post('multiplug/extensions/disable/?extension=' + this.value, function (data) {
+                    })
+                .done(function (data) {
+                    });
+            }
+        });
+
+        $(".btn-deleteextension").click(function (event) {
+            event.preventDefault();
+
+            $.post($(this).attr('href'), function (data) {
+
+            })
+            .done(function (data) {
+                $(jq(data.AssemblyName) + '-Row').remove();
+            });
+        });
+
+        ApplyLoadClick($('.btn-loadextension'));
     });
 </script>
