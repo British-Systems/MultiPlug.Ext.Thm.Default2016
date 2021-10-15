@@ -41,15 +41,6 @@
             </div>
 
             <div class="span4">
-                <div class="row-fluid"><div class="span12">Theme</div></div>
-                <div class="row-fluid">
-                    <select class="span12" name="Theme">
-                        @foreach (var x in @Model.Extension.Model.Themes)
-                        {
-                            <option value="@x" @if (x == Model.Extension.Model.CurrentTheme ) { <text> selected </text> }>@x</option>
-                        }
-                    </select>
-                </div>
             </div>
 
             <div class="span4">
