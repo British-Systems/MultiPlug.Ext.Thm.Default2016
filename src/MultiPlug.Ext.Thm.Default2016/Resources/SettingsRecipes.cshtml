@@ -3,6 +3,20 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
+@functions
+{
+    string isEnabled(bool theValue)
+    {
+        return (theValue) ? "<i class=\"icon-ok\"></i>" : "<i class=\"icon-remove\"></i>";
+    }
+
+    string isChecked(bool theValue)
+    {
+        return (theValue) ? "checked" : string.Empty;
+    }
+
+}
+
 <style>
     .setting-heading img,
     .setting-heading h2 {
@@ -38,19 +52,18 @@
                         <th>Order</th>
                         <th>Load</th>
                         <th>Save</th>
-                        <th>Wait to start</th>
+                        <th>Wait on Startup</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var x in @Model.Extension.Model.Configurators)
                     {
-                        <tr>
-                            <input type="hidden" name="Configurator" value="@x.Name">
-                            <td>@x.Name</td>
+                        <tr>         
+                            <td><input type="hidden" name="Configurator" value="@x.Name">@x.Name</td>
                             <td><input type="text" name="LoadOrder" placeholder="?" value="@x.Order" class="input-mini"></td>
-                            <td><input type="checkbox" name="EnabledLoad" value="@x.Name" @x.HtmlEnabledLoad /></td>
-                            <td><input type="checkbox" name="EnabledSave" value="@x.Name" @x.HtmlEnabledSave /></td>
-                            <td><input type="checkbox" name="WaitForStart" value="@x.Name" @x.HtmlWaitForStart /></td>
+                            <td>@Raw(isEnabled(x.Load))</td>
+                            <td>@Raw(isEnabled(x.Save))</td>
+                            <td><input type="checkbox" name="WaitForStart" value="@x.Name" @Raw(isChecked(x.Wait)) /></td>
                         </tr>
                     }
                 </tbody>
