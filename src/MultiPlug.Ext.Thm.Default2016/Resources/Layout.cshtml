@@ -218,7 +218,7 @@
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown"><span class="icon-dashboard"></span>Apps</a>
                     <ul class="lp-dropdown-menu simple" id="pages-dropdown-ul" data-dropdown-owner="pages-dropdown">
                         <li>
-                            <a tabindex="" href="#"><i class="icon-dashboard"></i>&nbsp;&nbsp;XXXXXXXXXXXXXXXXXXXXXXX</a>
+                            <a tabindex="" href="#"><i class="icon-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         </li>
                     </ul>
                 </li>
@@ -231,7 +231,7 @@
                     <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-cogs"></span>Extensions</a>
                     <ul class="lp-dropdown-menu simple" id="pages-dropdown2-ul" data-dropdown-owner="pages-dropdown2">
                         <li>
-                            <a tabindex="" href="#"><i class="icon-dashboard"></i>&nbsp;&nbsp;XXXXXXXXXXXXXXXXXXXXXXX</a>
+                            <a tabindex="" href="#"><i class="icon-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         </li>
                     </ul>
                 </li>
@@ -312,71 +312,131 @@
             $(".btn-deploy").text("Deploy");
         }
 
-@{
-    if ( Model.MultiPlugAPI.Runtime.Deploy.Pending)
-    {
-        <text>StartToggleActiveClass();</text>
-    }
-}
         function NewMenuItem(theHref, theName) {
             return '<li style="display: block; width: 100%;"><a style="display: block; width: 100%;" href="' + theHref + '"><i class="icon-dashboard"></i>&nbsp;&nbsp;' + theName + '</a></li>'
+        }
+
+        function NewMobileMenuItem(theHref, theName, theSection) {
+            return '<li><a tabindex="" href="' + theHref + '">' + theSection + ' / &nbsp;&nbsp;' + theName + '</a></li>'
+        }
+
+        function UpdateAppListing(isMobile) {
+            var Count = 0;
+            $.ajax({
+                url: "@Raw(Model.Context.Paths.Roots.MultiPlug)httpendpoints/apps",
+                type: "get",
+                async: false,
+                success: function (data) {
+                    var AppsUL = $("#pages-dropdown-ul");
+                    var builder = [];
+                    for (let i in data) {
+                        if (!data[i].isHidden) {
+                            if (isMobile) {
+                                builder.push(NewMobileMenuItem(data[i].Href, data[i].Name, "Apps"));
+                            }
+                            else {
+                                builder.push(NewMenuItem(data[i].Href, data[i].Name));
+                            }
+                        }
+                    }
+                    AppsUL.empty();
+                    AppsUL.append(builder.join(''));
+                    Count =  data.length;
+                },
+                error: function () {
+                }
+            });
+
+            return Count;
+        }
+
+        function UpdateExtensionListing(isMobile) {
+            var Count = 0;
+
+            $.ajax({
+                url: "@Raw(Model.Context.Paths.Roots.MultiPlug)httpendpoints/settings",
+                type: "get",
+                async: false,
+                success: function (data) {
+                    var SettingsUL = $("#pages-dropdown2-ul");
+                    var builder = [];
+                    for (let i in data) {
+                        if (!data[i].isHidden) {
+                            if (isMobile) {
+                                builder.push(NewMobileMenuItem(data[i].Href, data[i].Name, "Extenions"));
+                            }
+                            else {
+                                builder.push(NewMenuItem(data[i].Href, data[i].Name));
+                            }
+
+                        }
+                    }
+                    SettingsUL.empty();
+                    SettingsUL.append(builder.join(''));
+
+                    Count = data.length;
+                },
+                error: function () {
+                }
+            });
+
+            return Count;
         }
 
         $(document).ready(function () {
             $.connection.wS.on("Send", function (id, Group) {
                 if (id == "@Raw(Model.MultiPlugAPI.Runtime.Deploy.EventId)") {
 
-                    if (Group.Pairs[0].Value == 'true')
-                    {
+                    if (Group.Pairs[0].Value == 'true') {
                         StartToggleActiveClass();
                     }
-                    else
-                    {
+                    else {
                         StopToggleActiveClass();
                     }
                 }
             });
 
+            $('#lp-active').on('click', function (e) {
+                if ($("#left-panel").hasClass("open"))
+                {
+                    e.preventDefault();
+                    var itemscount = UpdateAppListing(true);    // Apps
+                    itemscount = itemscount + UpdateExtensionListing(true); // Extensions
+                    itemscount = itemscount + 1; // Heading
+                    itemscount = itemscount + 1; // Analytics
+                    itemscount = itemscount + 10; // Settings
+                    var menuheight = itemscount * 36.03; // 36 Px for each Menu item
+                    console.log(menuheight);
+                    $('#left-panel').height(menuheight)
+                }
+            });
+
             $('#pages-dropdown').on('click', function (e) {
                 e.preventDefault();
-                $.ajax({
-                    url: "@Raw(Model.Context.Paths.Roots.MultiPlug)httpendpoints/apps",
-                    type: "get",
-                    async: false,
-                    success: function (data) {
-                        var AppsUL = $("#pages-dropdown-ul");
-                        AppsUL.empty();
-                        for (let i in data) {
-                            if (!data[i].isHidden) {
-                                AppsUL.append(NewMenuItem(data[i].Href, data[i].Name));
-                            }
-                        }
-                    },
-                    error: function () {
-                    }
-                });
+                UpdateAppListing(false);
             });
 
             $('#pages-dropdown2').on('click', function (e) {
                 e.preventDefault();
-                $.ajax({
-                    url: "@Raw(Model.Context.Paths.Roots.MultiPlug)httpendpoints/settings",
-                    type: "get",
-                    async: false,
-                    success: function (data) {
-                        var SettingsUL = $("#pages-dropdown2-ul");
-                        SettingsUL.empty();
-                        for (let i in data) {
-                            if( ! data[i].isHidden )
-                            {
-                                SettingsUL.append(NewMenuItem(data[i].Href, data[i].Name));
-                            }
-                        }
-                    },
-                    error: function () {
-                    }
-                });
+                UpdateExtensionListing(false);
             });
+
+            @if(Model.Context.Paths.Breadcrumb.Length > 0)
+            {
+                <text>$('#lp-active').text("</text>@Model.Context.Paths.Breadcrumb[Model.Context.Paths.Breadcrumb.Length - 1].Text<text>");</text>
+            }
+            else
+            {
+                <text>$('#lp-active').text("</text>@Model.Extension.Name<text>");</text>
+            }
+
+
+@{
+        if ( Model.MultiPlugAPI.Runtime.Deploy.Pending)
+        {
+            <text>StartToggleActiveClass();</text>
+        }
+}
         });
     </script>
 
