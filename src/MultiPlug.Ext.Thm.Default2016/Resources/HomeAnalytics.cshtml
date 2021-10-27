@@ -9,12 +9,12 @@
         <div class="box">
             <ul class="nav nav-list">
                 <li class="nav-header">Analytics</li>
-                <li class="active"><a href="#">System Log</a></li>
+                <li @*class="active"*@><a class="btn-loadlog" data-logtype="core" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view" href="@Raw(Model.Context.Paths.Home)">System Log</a></li>
                 <li class="nav-header">Extensions</li>
 
                 @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
                 {
-                    <li><a href="@Raw(Model.Context.Paths.Home)">@Extension.Meta.Assembly</a></li>
+                    <li><a class="btn-loadlog" data-logtype="extension" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/extensions/@Extension.Meta.Assembly/view" href="@Raw(Model.Context.Paths.Home)@Extension.Meta.Assembly">@Extension.Meta.Assembly</a></li>
                 }
 
                 <li class="divider"></li>
@@ -28,19 +28,16 @@
                 <li class="active">
                     <a href="@Raw(Model.Context.Paths.Home)">All</a>
                 </li>
-                <li><a href="@Raw(Model.Context.Paths.Home)?filter=errors">Errors</a></li>
-                <li><a href="@Raw(Model.Context.Paths.Home)?filter=warnings">Warnings</a></li>
+                @*<li><a href="@Raw(Model.Context.Paths.Home)?filter=errors">Errors</a></li>
+                <li><a href="@Raw(Model.Context.Paths.Home)?filter=warnings">Warnings</a></li>*@
             </ul>
 
             <div id="trace-log">
-
-                <p>The Trace Log of the core MultiPlug system</p>
+                <p>Trace Log of MultiPlug System Components</p>
                 <div class="row-fluid">
-
-                    <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px;">@Model.Extension.Model.TraceLog</textarea>
-
+                    <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px;">@Model.Extension.Model.TraceLog
+</textarea>
                 </div>
-
             </div>
         </div>
     </div>
@@ -48,17 +45,44 @@
 </section>
 
 <script>
+
+    var CoreLogDisplayed = true;
+
     function scrollLogToBottom(loggingTextArea) {
         var textarea = document.getElementById(loggingTextArea);
         textarea.scrollTop = textarea.scrollHeight;
     }
 
     $.connection.wS.on("Send", function (id, Group) {
-        if (id == '@Model.Extension.Model.TraceLogId') {
+        if (id == '@Model.Extension.Model.TraceLogId' && CoreLogDisplayed) {
             var loggingTextArea = $('#Logging');
-            loggingTextArea.text(loggingTextArea.text() + Group.Subjects[1].Value + '\n');
+            loggingTextArea.val(loggingTextArea.val() + Group.Subjects[1].Value + '\n');
             scrollLogToBottom('Logging');
         }
+    });
+
+    $(".btn-loadlog").click(function (event) {
+        event.preventDefault();
+
+        CoreLogDisplayed = ($(this).attr("data-logtype") == "core");
+
+        var APIUrl = $(this).attr("data-multiplugapi");
+        $('#Logging').val('Loading File');
+
+        $.get(APIUrl, function (data) {
+
+        })
+        .done(function (data) {
+            var LoggingBox = $('#Logging');
+            var builder = [];
+            data.forEach(function (line) {
+                builder.push(line);
+                builder.push("\n");
+            });
+            LoggingBox.val('');
+            LoggingBox.val(builder.join(''));
+            scrollLogToBottom('Logging');
+        });
     });
 
     scrollLogToBottom('Logging');
