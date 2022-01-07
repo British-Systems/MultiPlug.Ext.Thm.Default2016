@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.24</version>
+    <version>1.0.25</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.24 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/10
+    <releaseNotes>1.0.25 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/13
+1.0.24 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/10
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/11
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/12
 1.0.23 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/9
@@ -34,13 +35,13 @@ https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/8
 1.0.10 Update to 'Layout' value
 1.0.9 Added Razor templates to RazorTemplates property call.
 1.0.8 Published</releaseNotes>
-    <copyright>Great British Systems Ltd 2021</copyright>
+    <copyright>Great British Systems Ltd 2022</copyright>
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-        <dependency id="MultiPlug.Base" version="1.0.64" />
+        <dependency id="MultiPlug.Base" version="1.0.65" />
         <dependency id="MultiPlug.Extension.Core" version="1.0.63" />
-        <dependency id="MultiPlug.Core" version="2.2.76" />
+        <dependency id="MultiPlug.Core" version="2.2.77" />
       </group>
     </dependencies>
   </metadata>
