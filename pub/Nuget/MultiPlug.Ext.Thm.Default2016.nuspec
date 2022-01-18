@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.25</version>
+    <version>1.0.26</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
@@ -10,7 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
-    <releaseNotes>1.0.25 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/13
+    <releaseNotes>1.0.26 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/14
+1.0.25 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/13
 1.0.24 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/10
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/11
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/12
