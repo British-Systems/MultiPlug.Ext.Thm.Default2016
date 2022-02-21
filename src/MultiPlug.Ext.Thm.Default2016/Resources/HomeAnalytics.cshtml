@@ -9,7 +9,7 @@
         <div class="box">
             <ul class="nav nav-list">
                 <li class="nav-header">Analytics</li>
-                <li @*class="active"*@><a class="btn-loadlog" data-logtype="core" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view" href="@Raw(Model.Context.Paths.Home)">System Log</a></li>
+                <li @*class="active"*@><a class="btn-loadlog" data-logtype="core" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view" href="@Raw(Model.Context.Paths.Home)">MultiPlug.Core</a></li>
                 <li class="nav-header">Extensions</li>
 
                 @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
