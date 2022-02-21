@@ -26,6 +26,16 @@
                                                 <ul>
                                                     <li>Guid: @Event.Guid</li>
                                                     <li>Description: @Event.Description</li>
+
+                                                    <li>
+                                                        Subjects (@Event.Subjects.Length)
+                                                        <ul>
+                                                        @foreach (var Subject in Event.Subjects)
+                                                        {
+                                                            <li>@Subject</li>
+                                                        }
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         }
