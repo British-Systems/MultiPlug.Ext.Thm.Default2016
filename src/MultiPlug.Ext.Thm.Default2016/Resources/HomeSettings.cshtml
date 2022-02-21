@@ -38,13 +38,11 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
 
                     <tr>
                         <td>Version</td>
                         <td>@Model.Extension.Model.Version <a href="/settings/update/">Update</a></td>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -56,12 +54,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
 
                     <tr>
                         <th><a href="/settings/environment/">Environment</a></th>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -80,12 +76,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
 
                     <tr>
                         <th><a href="/settings/apps/">Apps</a></th>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -103,8 +97,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-
                     </tr>
 
                     <tr>
@@ -113,8 +105,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-
                     </tr>
 
                     <tr>
@@ -127,13 +117,11 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
 
                     <tr>
                         <td><a href="/settings/hosting/">Host Port</a></td>
                         <td>@Model.Extension.Model.HostByIPPort</td>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -149,7 +137,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
 
                     <tr>
@@ -158,8 +145,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-
                     </tr>
 
                 @foreach (var Binding in @Model.Extension.Model.HostBindings)
@@ -170,24 +155,30 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                     </tr>
                 }
 
                     <tr>
                         <th><a href="/settings/extensions/">Extensions</a></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr>
                         <th>Assembly Name</th>
+                        <th>Version</th>
                         <th>Friendly Name</th>
                         <th>Enabled</th>
                         <th>Loaded</th>
-                        <th></th>
                     </tr>
 
                 @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
                 {
                     <tr>
-                        <td></td>
                         <td>@x.AssemblyName</td>
+                        <td>@x.AssemblyVersion</td>
                         <td>@x.FriendlyName</td>
                         <td>@if (x.Enabled)
                         { <text> <i class="icon-ok"></i> </text> }</td>
@@ -195,12 +186,18 @@
                             @if (x.Loaded){ <text> <i class="icon-ok"></i> </text> }
                             @if (!x.Loaded && x.Enabled){ <text> <i class="icon-exclamation-sign"></i> </text> }
                             @if (!x.Loaded && !x.Enabled){ <text> <i class="icon-pause"></i> </text> }</td>
-                        <td></td>
                     </tr>
                 }
 
                     <tr>
                         <th><a href="/settings/recipes/">Recipe Configurators</a></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr>
                         <th>Assembly</th>
                         <th>Order</th>
                         <th>Load</th>
@@ -211,7 +208,6 @@
                 @foreach (var x in @Model.Extension.Model.Configurators)
                 {
                     <tr>
-                        <td></td>
                         <td>@x.Assembly</td>
                         <td>@x.Order</td>
                         <td>@if (x.EnabledLoad){ <text> <i class="icon-ok"></i> </text> }</td>
@@ -226,12 +222,10 @@
                         <th></th>
                         <th></th>
                         <th></th>
-                        <th></th>
                     </tr>
 
                     <tr>
                         <th><a href="/settings/Performance/">Performance</a></th>
-                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -244,11 +238,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
-                        <th></th>
                     </tr>
-
-
-
                 </tbody>
             </table>
         </div>
