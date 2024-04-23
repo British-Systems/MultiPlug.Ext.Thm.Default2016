@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("British Systems")]
 [assembly: AssemblyProduct("Default2016")]
-[assembly: AssemblyCopyright("Great British Systems Ltd 2022")]
+[assembly: AssemblyCopyright("Great British Systems Ltd 2024")]
 [assembly: AssemblyTrademark("MultiPlug")]
 [assembly: AssemblyCulture("")]
 
