@@ -23,96 +23,938 @@
 <div class="permissions-heading">
     <h2>Permissions</h2>
 </div>
+
 <div class="box">
-    @foreach (var PermissionGroup in @Model.Extension.Model.Permissions)
-    {
-        <h4>@PermissionGroup.Permission</h4>
-        <div class="row-fluid">
-            <div class="well">
-                <div id="@PermissionGroup.Permission">
-                    @foreach (var Extension in @PermissionGroup.Extensions)
-                    {
-                        <div class="row-fluid">
 
-                            <div class="span10">
-                                @Extension.Assembly
-                            </div>
-                            <div class="span2">
-                                <a class="btn btn-red btn-deletepermission" href="multiplug/permissions/remove/?id=@PermissionGroup.Permission&extension=@Extension.Assembly"><i class="icon-trash"></i></a>
-                            </div>
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#ExtensionsPermissions">Extensions</a></li>
+        <li><a href="#UsersPermissions">Users</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content" style="margin-bottom: 10px">
+        <div class="tab-pane fade in active" id="ExtensionsPermissions">
+            <div class="row-fluid">
+                <div class="well" id="permissions-extensions">
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <p><b>Permission</b></p>
                         </div>
-                    }
-                </div>
-
-                <div class="row-fluid">
-                    <div class="span10">
-                        <select id="@PermissionGroup.Permission-new" name="cars">
-                            @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
-                            {
-                                <option value="@Extension.Meta.Assembly">@Extension.Meta.Assembly</option>
-                            }
-                        </select>
+                        <div class="span4">
+                            <select id="txt-newextension" class="input-block-level">
+                                @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+                                {
+                                    <option value="@Extension.Meta.Assembly">@Extension.Meta.Assembly</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="span2">
+                            <a class="btn btn-green" id="btn-newextension"><i class="icon-plus"></i></a>
+                        </div>
                     </div>
-                    <div class="span2">
-                        <a class="btn btn-green btn-addpermission" data-selectid="@PermissionGroup.Permission-new" href="multiplug/permissions/add/?id=@PermissionGroup.Permission&extension="><i class="icon-plus"></i></a>
+                    <div class="row-fluid">
+                        <div class="span2">
+                        </div>
+                        <div class="span4">
+                        </div>
+                        <div class="span2">
+                            <a class="btn btn-red" id="btn-deleteextension"><i class="icon-trash"></i></a>
+                        </div>
+                    </div>
+                    <div class="row-fluid mt-2">
+                        <div id="jstreeextensions">
+                            <ul id="extensionpermissions"></ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    }
+
+        <div class="tab-pane fade" id="UsersPermissions">
+            <ul class="nav nav-tabs" id="usersPermissionsTab">
+                <li class="active"><a href="#UsersPermissionsGroups">User Groups</a></li>
+                <li><a href="#UsersPermissionsUrls">Page URLs</a></li>
+                <li><a href="#UsersPermissionsRest">MultiPlug API</a></li>
+            </ul>
+            <div id="usersPermissionsTabContent" class="tab-content" style="margin-bottom: 10px">
+                <div class="tab-pane fade in active" id="UsersPermissionsGroups">
+                    <div class="row-fluid">
+                        <div class="well" id="user-groups">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>Group</b></p>
+                                </div>
+                                <div class="span4">
+                                    <input type="text" id="txt-newgroup" class="input-block-level" autocomplete="off" />
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-green" id="btn-newgroup"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>User</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newgroupuser" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu groupuserlist"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-green" id="btn-newgroupuser"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                </div>
+                                <div class="span4">
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-red" id="btn-deletegroup"><i class="icon-trash"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid mt-2">
+                                <div id="jstreegroups">
+                                    <ul id="groups"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="UsersPermissionsUrls">
+                    <div class="row-fluid">
+                        <div class="well" id="pageurls">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>Page</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newroute" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="*" href="#">Wildcard</a>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/apps/*" href="#">/apps/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/extensions/*" href="#">/extensions/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/settings/*" href="#">/settings/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/api/*" href="#">/api/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/assets/*" href="#">/assets/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/docs/*" href="#">/docs/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/multiplug/*" href="#">/multiplug/*</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-green" id="btn-newroute"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>Group</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newroutegroup" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu grouplist"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-green" id="btn-newroutegroup"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>User</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newrouteuser" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu groupuserlist"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-green" id="btn-newrouteuser"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                </div>
+                                <div class="span4">
+                                </div>
+                                <div class="span2">
+                                    <a class="btn btn-red" id="btn-deleteroute"><i class="icon-trash"></i></a>
+                                </div>
+                            </div>
+                            <div class="row-fluid mt-2">
+                                <div id="jstreeroutes">
+                                    <ul>
+                                        <li class="jstree-open">
+                                            @Raw(Model.Context.Paths.Base.TrimEnd(new[] { '/' }))
+                                            <ul id="routes"></ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="UsersPermissionsRest">
+                    <div class="row-fluid">
+                        <div class="well" id="rest-api">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>Permission</b></p>
+                                </div>
+                                <div class="span4">
+                                    <select id="txt-newapi" class="input-block-level"></select>
+                                </div>
+                                <div class="span1">
+                                    <a class="btn btn-green" id="btn-newapi"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>Group</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newapigroup" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu grouplist"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span1">
+                                    <a class="btn btn-green" id="btn-newapigroup"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <p><b>User</b></p>
+                                </div>
+                                <div class="span4">
+                                    <div class="input-append">
+                                        <input id="txt-newapiuser" type="text" class="input-block-level" autocomplete="off" />
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu groupuserlist"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span1">
+                                    <a class="btn btn-green" id="btn-newapiuser"><i class="icon-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <div class="span2">
+                                </div>
+                                <div class="span4">
+                                </div>
+                                <div class="span1">
+                                    <a class="btn btn-red" id="btn-deleteapi"><i class="icon-trash"></i></a>
+                                </div>
+                            </div>
+                            <div class="row-fluid mt-2">
+                                <div id="jstreeapis">
+                                    <ul id="apis"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script>
+<link rel="stylesheet" href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/styles/jstree.style.min.css" />
+<script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/jstree.min.js"></script>
 
-    function NewRow(theAssembly, thePermission)
-    {
-        return '<div class="row-fluid" >\
-                    <div class="span10">' + theAssembly + '</div>\
-                        <div class="span2">\
-                            <a class="btn btn-red btn-deletepermission" href="multiplug/permissions/remove/?id=' + thePermission + '&extension=' + theAssembly + '"><i class="icon-trash"></i></a>\
-                        </div>\
-                    </div>'
+<script>
+    function myFunction2(title, items, parent, child) {
+        var html = [];
+        if (title != null) {
+            html.push('<li data-' + parent + ' data-' + child + '="home">' + title);
+            html.push('<ul>');
+        }
+
+        for (let i in items) {
+            html.push('<li data-' + parent + ' data-' + child + '="' + items[i].assembly + '">' + items[i].assembly + '</li>');
+        }
+
+        if (title != null) {
+            html.push('</ul>');
+            html.push('</li>');
+        }
+
+        return html.join("");
     }
 
+    function myFunction(title, items, parent, child) {
+        var html = [];
+        if (title != null)
+        {
+            html.push('<li data-' + parent + ' data-' + child + '="home">' + title);
+            html.push('<ul>');
+        }
 
-    function ApplyDeleteClick(deleteButtons) {
-        deleteButtons.click(function (event) {
+        for (let i in items) {
+            html.push('<li data-' + parent + ' data-' + child + '="' + items[i] + '">' + items[i] + '</li>');
+        }
+
+        if (title != null)
+        {
+            html.push('</ul>');
+            html.push('</li>');
+        }
+
+        return html.join("");
+    }
+
+    function updateExtensionsTree(data)
+    {
+        $('#jstreeextensions').jstree('destroy');
+        $("#jstreeextensions").empty();
+        $("#jstreeextensions").append('<ul id="extensionpermissions"></ul>')
+        for (let i in data) {
+            $("#extensionpermissions").append('<li data-permission="' + data[i].permission + '">' + data[i].permission + '<ul>' + myFunction2('Extensions', data[i].extensions, 'permission=' + data[i].permission, 'extension') + '</ul></li>');
+        }
+        $("#jstreeextensions").bind("loaded.jstree", function (event, data) {
+            data.instance.open_all();
+        });
+        $('#jstreeextensions').jstree({
+            "core": {
+                "multiple": false,
+                "animation": 0,
+                "check_callback": true,
+            }
+        });
+    }
+
+    function updateGroupSelectionList(data)
+    {
+        if (data != null) {
+            $(".grouplist").empty();
+            for (let i in data) {
+                $(".grouplist").append('<li><a class="GroupSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+            }
+        }
+        else {
+            $(".grouplist").empty();
+            $(".grouplist").append('<li><a class="GroupSuggestion" data-suggestion="" href="#">Insufficient user rights to populate the groups list</a></li>');
+        }
+
+        $('.GroupSuggestion').click(function (event) {
             event.preventDefault();
 
-            $.post($(this).attr('href'), function (data) {
+            var User = $(this).attr("data-suggestion");
+
+            if (User != '') {
+                $(this).closest(".input-append").find("input").val(User);
+            }
+        });
+    }
+
+    function updateGroupTree(data) {
+        $('#jstreegroups').jstree('destroy');
+        $("#jstreegroups").empty();
+        $("#jstreegroups").append('<ul id="groups"></ul>')
+        for (let i in data) {
+            $("#groups").append('<li data-group="' + data[i].name + '">' + data[i].name + '<ul>' + myFunction('Users', data[i].users, 'group=' + data[i].name, 'user') + '</ul></li>');
+        }
+        $("#jstreegroups").bind("loaded.jstree", function (event, data) {
+            data.instance.open_all();
+        });
+        $('#jstreegroups').jstree({
+            "core": {
+                "multiple": false,
+                "animation": 0,
+                "check_callback": true,
+            }
+        });
+    }
+
+    function updateRouteTree(data) {
+        $('#jstreeroutes').jstree('destroy');
+        $("#jstreeroutes").empty();
+        $("#jstreeroutes").append('<ul><li class="jstree-open">@Raw(Model.Context.Paths.Base.TrimEnd(new[] { '/' })) <ul id="routes"></ul></li></ul>')
+        for (let i in data) {
+            $("#routes").append('<li data-route="' + data[i].route + '">' + data[i].route + '<ul>' + myFunction('Users', data[i].users, 'route=' + data[i].route, 'user') + myFunction('Groups', data[i].groups, 'route=' + data[i].route, 'group') + '</ul></li>');
+        }
+        $("#jstreeroutes").bind("loaded.jstree", function (event, data) {
+            data.instance.open_all();
+        });
+        $('#jstreeroutes').jstree({
+            "core": {
+                "multiple": false,
+                "animation": 0,
+                "check_callback": true,
+            }
+        });
+    }
+
+    function updateAPITree(data) {
+        $('#jstreeapis').jstree('destroy');
+        $("#jstreeapis").empty();
+        $("#jstreeapis").append('<ul id="apis"></ul>')
+        for (let i in data) {
+            $("#apis").append('<li data-permission="' + data[i].permission + '">' + data[i].friendlyName + '<ul>' + myFunction('Users', data[i].users, 'permission=' + data[i].permission, 'user') + myFunction('Groups', data[i].groups, 'permission=' + data[i].permission, 'group') + '</ul></li>');
+        }
+        $("#jstreeapis").bind("loaded.jstree", function (event, data) {
+            data.instance.open_all();
+        });
+        $('#jstreeapis').jstree({
+            "core": {
+                "multiple": false,
+                "animation": 0,
+                "check_callback": true,
+            }
+        });
+    }
+
+    function updateUserSelectionList(data)
+    {
+        if (data != null)
+        {
+            $(".groupuserlist").empty();
+            for (let i in data) {
+                $(".groupuserlist").append('<li><a class="GroupUserSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+            }
+        }
+        else
+        {
+            $(".groupuserlist").empty();
+            $(".groupuserlist").append('<li><a class="GroupUserSuggestion" data-suggestion="" href="#">Insufficient user rights to populate the users list</a></li>');
+        }
+
+        $('.GroupUserSuggestion').click(function (event) {
+            event.preventDefault();
+
+            var User = $(this).attr("data-suggestion");
+
+            if (User != '')
+            {
+                $(this).closest(".input-append").find("input").val(User);
+            }
+        });
+    }
+
+    function updatePermissionSelectionList(data)
+    {
+        $("#txt-newapi").empty();
+        for (let i in data) {
+            $("#txt-newapi").append('<option value="' + data[i].permission + '">' + data[i].frendlyName + '</option>');
+        }
+    }
+
+    function OnError(xhr)
+    {
+        if (xhr.status == 401) {
+            alert('Action requires User Log On');
+        }
+        if (xhr.status == 403) {
+            alert('Insufficient user rights');
+        }
+    }
+
+    function OnLoadError(xhr, theSelection) {
+        if (xhr.status == 401) {
+            $(theSelection).empty();
+            $(theSelection).append('<span class="label label-red">REQUIRES USER LOG ON</span>');
+        }
+        else if (xhr.status == 403) {
+            $(theSelection).empty();
+            $(theSelection).append('<span class="label label-red">INSUFFICIENT USER RIGHTS</span>');
+        }
+    }
+
+    function PopulateUserGroups()
+    {
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups/list",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateGroupSelectionList(data);
+            },
+            error: function (data) {
+                updateGroupSelectionList(null);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+        $('#usersPermissionsTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+        $('.RouteSuggestion').click(function (event) {
+            event.preventDefault();
+            $("#txt-newroute").val($(this).attr("data-suggestion"));
+        });
+
+        $("#btn-newextension").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreeextensions').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var permissionId = $("#" + selected[0].id).attr('data-permission');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)permissions/add/?id=" + permissionId + "&extension=" + $('#txt-newextension').val(), function (data) {
+
+                })
+                .done(function (data) {
+                    updateExtensionsTree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+            else
+            {
+                alert("Select a Permission group to add the Extension to");
+            }
+        });
+
+        $("#btn-deleteextension").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreeextensions').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var permissionId = $("#" + selected[0].id).attr('data-permission');
+                var extensionId = $("#" + selected[0].id).attr('data-extension');
+
+                if (typeof extensionId !== "undefined" && extensionId != "home") {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)permissions/remove/?id=" + permissionId + "&extension=" + extensionId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateExtensionsTree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                    return;
+                }
+            }
+
+            alert("Select an Extension to delete from a Permission group");
+        });
+
+        $("#btn-newgroup").click(function (event) {
+            event.preventDefault();
+            $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups/add/?group=" + $('#txt-newgroup').val(), function (data) {
+            })
+            .done(function (data) {
+                $('#txt-newgroup').val('');
+                updateGroupTree(data);
+                PopulateUserGroups();
+            })
+            .fail(function (xhr, status, error) {
+                OnError(xhr);
+            });
+        });
+
+        $("#btn-newgroupuser").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreegroups').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var groupId = $("#" + selected[0].id).attr('data-group');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups/add/?group=" + groupId + "&user=" + $('#txt-newgroupuser').val(), function (data) {
+
+                })
+                .done(function (data) {
+                    updateGroupTree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+            else {
+                alert("Select a User Group to add the User to");
+            }
+        });
+
+        $("#btn-deletegroup").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreegroups').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1)
+            {
+                var groupId = $("#" + selected[0].id).attr('data-group');
+                var userId = $("#" + selected[0].id).attr('data-user'); // Is a User
+
+                if (typeof userId !== "undefined") {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups/remove?group=" + groupId + "&user=" + userId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateGroupTree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+                else
+                {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups/remove?group=" + groupId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateGroupTree(data);
+                        PopulateUserGroups();
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+            }
+            else {
+                alert("Select a User Group or User to delete");
+            }
+        });
+
+        $("#btn-newroute").click(function (event) {
+            event.preventDefault();
+            $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/add?route=" + $('#txt-newroute').val(), function (data) {
 
             })
             .done(function (data) {
-                var PermissionDiv = $("#" + data.Permission);
-                PermissionDiv.empty();
-
-                for (let i in data.Extensions) {
-                    PermissionDiv.append(NewRow(data.Extensions[i].Assembly, data.Permission));
-                    ApplyDeleteClick(PermissionDiv.children().last().find(".btn-deletepermission"));
-                }
+                $('#txt-newroute').val('/');
+                updateRouteTree(data);
             });
         });
-    }
 
-    $(".btn-addpermission").click(function (event) {
-        event.preventDefault();
+        $("#btn-newroutegroup").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeroutes').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
 
-        var SelectId = $(this).attr("data-selectid");
-        var Extension = $("#" + SelectId).val();
+            if (selected.length == 1) {
+                var routeId = $("#" + selected[0].id).attr('data-route');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/add/?route=" + routeId + "&group=" + $('#txt-newroutegroup').val(), function (data) {
+                })
+                .done(function (data) {
+                    updateRouteTree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+            else {
+                alert("Select a Page Route to add the User Group to");
+            }
+        });
 
-        $.post($(this).attr('href') + Extension, function (data) {
+        $("#btn-newrouteuser").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeroutes').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
 
-        })
-        .done(function (data) {
-            var PermissionDiv = $("#" + data.Permission);
-            PermissionDiv.empty();
+            if (selected.length == 1) {
+                var routeId = $("#" + selected[0].id).attr('data-route');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/add/?route=" + routeId + "&user=" + $('#txt-newrouteuser').val(), function (data) {
+                })
+                .done(function (data) {
+                    updateRouteTree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+            else {
+                alert("Select a Page Route to add the User to");
+            }
+        });
 
-            for (let i in data.Extensions) {
-                PermissionDiv.append(NewRow(data.Extensions[i].Assembly, data.Permission));
-                ApplyDeleteClick(PermissionDiv.children().last().find(".btn-deletepermission"));
+        $("#btn-deleteroute").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeroutes').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var routeId = $("#" + selected[0].id).attr('data-route');
+                var groupId = $("#" + selected[0].id).attr('data-group'); // Is a group
+                var userId = $("#" + selected[0].id).attr('data-user'); // Is a User
+
+                if (typeof groupId !== "undefined")
+                {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/remove?route=" + routeId + "&group=" + groupId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateRouteTree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+                else if (typeof userId !== "undefined")
+                {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/remove?route=" + routeId + "&user=" + userId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateRouteTree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+                else
+                {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes/remove?route=" + routeId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateRouteTree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+            }
+            else {
+                alert("Select a User Group, User or Page Route to delete");
+            }
+        });
+
+        $("#btn-newapi").click(function (event) {
+            event.preventDefault();
+            $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/add?permission=" + $('#txt-newapi').val(), function (data) {
+
+            })
+            .done(function (data) {
+                updateAPITree(data);
+            })
+            .fail(function (xhr, status, error) {
+                OnError(xhr);
+            });
+        });
+
+        $("#btn-newapigroup").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeapis').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var permissionId = $("#" + selected[0].id).attr('data-permission');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/add?permission=" + permissionId + "&group=" + $('#txt-newapigroup').val(), function (data) {
+                })
+                .done(function (data) {
+                    updateAPITree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+
+        });
+
+        $("#btn-newapiuser").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeapis').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var permissionId = $("#" + selected[0].id).attr('data-permission');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/add?permission=" + permissionId + "&user=" + $('#txt-newapiuser').val(), function (data) {
+                })
+                .done(function (data) {
+                    updateAPITree(data);
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
+        });
+
+        $("#btn-deleteapi").click(function (event) {
+            event.preventDefault();
+            var jsTreeRef = $('#jstreeapis').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var routeId = $("#" + selected[0].id).attr('data-permission');
+                var groupId = $("#" + selected[0].id).attr('data-group'); // Is a group
+                var userId = $("#" + selected[0].id).attr('data-user'); // Is a User
+
+                if (typeof groupId !== "undefined") {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/remove?permission=" + routeId + "&group=" + groupId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateAPITree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+                else if (typeof userId !== "undefined") {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/remove?permission=" + routeId + "&user=" + userId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateAPITree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+                else {
+                    $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/remove?permission=" + routeId, function (data) {
+
+                    })
+                    .done(function (data) {
+                        updateAPITree(data);
+                    })
+                    .fail(function (xhr, status, error) {
+                        OnError(xhr);
+                    });
+                }
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/list",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateUserSelectionList(data);
+            },
+            error: function (data) {
+                updateUserSelectionList(null);
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)permissions",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateExtensionsTree(data);
+            },
+            error: function (data) {
+                OnLoadError(data, $('#permissions-extensions'));
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/groups",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateGroupTree(data);
+            },
+            error: function (data) {
+                OnLoadError(data, $('#user-groups'));
+            }
+        });
+
+        PopulateUserGroups();
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/routes",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateRouteTree(data);
+            },
+            error: function (data) {
+                OnLoadError(data, $('#pageurls'));
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateAPITree(data);
+            },
+            error: function (data) {
+                OnLoadError(data, $('#rest-api'));
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/acl/api/list",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updatePermissionSelectionList(data)
+            },
+            error: function (data) {
             }
         });
     });
-
-    ApplyDeleteClick($(".btn-deletepermission"));
 </script>
