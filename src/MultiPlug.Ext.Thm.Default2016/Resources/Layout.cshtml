@@ -67,11 +67,10 @@
 
     <base href="@Model.Context.Paths.Base">
 
-    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/fonts.css" rel="stylesheet" type="text/css">
-
-    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/styles/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" id="bootstrap-css">
+    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/fonts.css" media="all" rel="stylesheet" type="text/css">
+    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
     <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/font.awesome.min.css" media="all" rel="stylesheet" type="text/css">
-    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/adminflare.min.css" media="all" rel="stylesheet" type="text/css" id="adminflare-css">
+    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/adminflare.min.css" media="all" rel="stylesheet" type="text/css">
 
     <style type="text/css">
 		/* ======================================================================= */
@@ -145,37 +144,25 @@
                                 <li class="active"><a href = "@x.Href" > @x.Text</a></li>
                             }
                         }
-                        @*<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help &amp Info <i class=" icon-caret-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li class="nav-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>*@
-
-
                     </ul>
-                    @*<form class="navbar-search pull-left" action="" _lpchecked="1">
-                        <input type="text" class="search-query" placeholder="Search" style="width: 120px">
-                    </form>*@
                     <ul class="nav pull-right">
                         <li class="divider-vertical"></li>
-                        <li id="li-btn-deploy" class="@((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"active":"")"><a class="btn-deploy" href="/multiplug/actions/deploy/">Deploy @((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"Pending":"")</a></li>
+                        <li id="li-btn-deploy" class="@((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"active":"")"><a class="btn-deploy" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/deploy/"><i class="icon-save"></i>&nbsp;&nbsp;Deploy @((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"Pending":"")</a></li>
                         <li class="divider-vertical"></li>
-                        <li>
-                            <ul class="messages">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle usermenu" data-toggle="dropdown">
+                                <i class="icon-desktop"></i>&nbsp;&nbsp;
+                                <span class="responsive-text">Machine Name: </span>@Model.MultiPlugAPI.Environment.MachineName
+                            </a>
+                            <ul class="dropdown-menu">
                                 <li>
-                                    <a href="@Raw(Model.Context.Paths.Roots.Settings)"><i class="icon-desktop"></i><span class="responsive-text">Machine Name:</span> @Model.MultiPlugAPI.Environment.MachineName</a>
-                                </li>
-                                <li>
-                                    <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-warning-sign"></i><span class="responsive-text">Notifications:</span> 0</a>
+                                    <a href="@Raw(Model.Context.Paths.Current)"><i class="icon-desktop"></i><span>&nbsp;&nbsp;@Model.MultiPlugAPI.Environment.MachineName</span></a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="separator"></li>
+                        <li>
+                            <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-comment-alt"></i>&nbsp;&nbsp;<span class="responsive-text">Notifications:</span> 0</a>
                         </li>
                         <li class="separator"></li>
                         <li class="dropdown">
@@ -184,13 +171,6 @@
                                 <span>&nbsp;&nbsp;@Model.Context.User.Identity.Name</span>
                             </a>
                             <ul class="dropdown-menu">
-                                @*<li>
-                                    <a href="#">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#">Settings</a>
-                                </li>
-                                <li class="divider"></li>*@
                                 <li>
                                     @if (string.IsNullOrEmpty(Model.Context.User.Identity.Name))
                                     {
@@ -198,8 +178,26 @@
                                     }
                                     else
                                     {
-                                        <a href="multiplug/authentication/logout">Log Out</a>
+                                        <a href="@Raw(Model.Context.Paths.Roots.MultiPlug)authentication/logout">Log Out</a>
                                     }
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="separator"></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle usermenu" data-toggle="dropdown">
+                                <i class="icon-off" style="font-size:large;line-height:24px;"></i>
+                                <span class="responsive-text">&nbsp;&nbsp;System Power</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/power/restart"><i class="icon-undo"></i><span>&nbsp;&nbsp;Restart Device</span></a>
+                                </li>
+                                <li>
+                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/service/restart"><i class="icon-undo"></i><span>&nbsp;&nbsp;Restart Host</span></a>
+                                </li>
+                                <li>
+                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/power/shutdown"><i class="icon-off"></i><span>&nbsp;&nbsp;Shutdown Device</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -299,7 +297,7 @@
 
         function ToggleActiveClass() {
             $("#li-btn-deploy").toggleClass("active");
-            $(".btn-deploy").text("Deploy Pending");
+            $(".btn-deploy").html('<i class="icon-save"></i>&nbsp;&nbsp;Deploy Pending');
         }
 
         function StartToggleActiveClass() {
@@ -309,7 +307,7 @@
         function StopToggleActiveClass() {
             clearInterval(alertTimerId);
             $("#li-btn-deploy").removeClass("active");
-            $(".btn-deploy").text("Deploy");
+            $(".btn-deploy").html('<i class="icon-save"></i>&nbsp;&nbsp;Deploy');
         }
 
         function NewMenuItem(theHref, theName) {
@@ -332,10 +330,10 @@
                     for (let i in data) {
                         if (!data[i].isHidden) {
                             if (isMobile) {
-                                builder.push(NewMobileMenuItem(data[i].Href, data[i].Name, "Apps"));
+                                builder.push(NewMobileMenuItem(data[i].href, data[i].name, "Apps"));
                             }
                             else {
-                                builder.push(NewMenuItem(data[i].Href, data[i].Name));
+                                builder.push(NewMenuItem(data[i].href, data[i].name));
                             }
                         }
                     }
@@ -344,6 +342,17 @@
                     Count =  data.length;
                 },
                 error: function () {
+                    var AppsUL = $("#pages-dropdown-ul");
+                    var builder = [];
+                    if (isMobile) {
+                        builder.push(NewMobileMenuItem('@Raw(Model.Context.Paths.Roots.Apps)', 'Overview', "Apps"));
+                    }
+                    else {
+                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Apps)', 'Overview'));
+                    }
+                    AppsUL.empty();
+                    AppsUL.append(builder.join(''));
+                    Count = 1;
                 }
             });
 
@@ -363,20 +372,30 @@
                     for (let i in data) {
                         if (!data[i].isHidden) {
                             if (isMobile) {
-                                builder.push(NewMobileMenuItem(data[i].Href, data[i].Name, "Extenions"));
+                                builder.push(NewMobileMenuItem(data[i].href, data[i].name, "Extenions"));
                             }
                             else {
-                                builder.push(NewMenuItem(data[i].Href, data[i].Name));
+                                builder.push(NewMenuItem(data[i].href, data[i].name));
                             }
 
                         }
                     }
                     SettingsUL.empty();
                     SettingsUL.append(builder.join(''));
-
                     Count = data.length;
                 },
                 error: function () {
+                    var SettingsUL = $("#pages-dropdown2-ul");
+                    var builder = [];
+                    if (isMobile) {
+                        builder.push(NewMobileMenuItem('@Raw(Model.Context.Paths.Roots.Settings)', 'Overview', "Extenions"));
+                    }
+                    else {
+                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Settings)', 'Overview'));
+                    }
+                    SettingsUL.empty();
+                    SettingsUL.append(builder.join(''));
+                    Count = 1;
                 }
             });
 
@@ -421,6 +440,76 @@
                 UpdateExtensionListing(false);
             });
 
+            $(".btn-apicall").click(function (event) {
+                event.preventDefault();
+                var actionUrl = $(this).attr('href');
+                if (actionUrl.includes("service"))
+                {
+                    $("#power-title").text("System Host Restart");
+                    $("#power-txt-line1").text("While the system restarts the user interface will become unresponsive. The page will be refreshed automatically once the system has been restarted.");
+                    $("#power-txt-line2").text("Confirm your required action now and then wait for the system host to be restarted.");
+                }
+                else if (actionUrl.includes("restart"))
+                {
+                    $("#power-title").text("System Device Restart");
+                    $("#power-txt-line1").text("While the system restarts the user interface will become unresponsive. The page will be refreshed automatically once the system has been restarted.");
+                    $("#power-txt-line2").text("Confirm your required action now and then wait for the system device to be restarted.");
+                }
+                else
+                {
+                    $("#power-title").text("System Shutdown");
+                    $("#power-txt-line1").text("After this point the user interface will become unresponsive as the system will shut down.");
+                    $("#power-txt-line2").text("Confirm your required action now.");
+                }
+                $('#power-form').attr('action', $(this).attr('href'));
+                $('#power-modal').modal('show');
+            });
+
+            $("#power-form").submit(function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var actionUrl = form.attr('action');
+                $(".btns-power").hide();
+
+                if (actionUrl.includes("service")) {
+                    $("#power-title").text("System Host is Restarting...");
+                    $("#power-txt-line2").text($("#power-txt-line1").text());
+                    $("#power-txt-line1").text("The system host is restarting, please wait.");
+                }
+                else if (actionUrl.includes("restart")) {
+                    $("#power-title").text("System Device is Restarting...");
+                    $("#power-txt-line2").text($("#power-txt-line1").text());
+                    $("#power-txt-line1").text("The system device is restarting, please wait.");
+                }
+                else {
+                    $("#power-title").text("System Device Shutdown...");
+                    $("#power-txt-line1").text("The system is shutting down.");
+                    $("#power-txt-line2").text("");
+                }
+
+                $.get("/multiplug/status/", function (data) {
+                    oldStartupTime = data.startuptime;
+
+                    $.ajax({
+                        type: "POST",
+                        url: actionUrl,
+                        data: form.serialize(),
+                        success: function (data) {
+                            checkStartupTime();
+                        },
+                        error: function (data) {
+                            $('#power-modal').modal('hide');
+                            if (data.status == 401) {
+                                alert('Action requires User Log On');
+                            }
+                            if (data.status == 403) {
+                                alert('Insufficient user rights');
+                            }
+                        }
+                    });
+                });
+            });
+
             @if(Model.Context.Paths.Breadcrumb.Length > 0)
             {
                 <text>$('#lp-active').text("</text>@Model.Context.Paths.Breadcrumb[Model.Context.Paths.Breadcrumb.Length - 1].Text<text>");</text>
@@ -438,6 +527,22 @@
         }
 }
         });
+
+        var oldStartupTime = "";
+
+        function checkStartupTime() {
+            $.get("/multiplug/status/", function (data) {
+                if (data.startuptime != null && data.startuptime != oldStartupTime) {
+                    location.reload();
+                }
+                else {
+                    setTimeout(check, 1500);
+                }
+            })
+              .fail(function () {
+                  setTimeout(check, 1500);
+              });
+        }
     </script>
 
     <!-- Websocket Reconnect Modal -->
@@ -447,10 +552,10 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="websocket-title" class="modal-title">Connection lost.</h4>
+                    <h4 id="websocket-title" class="modal-title">Connection disconnected with MultiPlug</h4>
                 </div>
                 <div class="modal-body">
-                    <p id="websocket-txt-line1">The connection to the MultiPlug Server has been lost. Attempts are being made to restore the connection.</p>
+                    <p id="websocket-txt-line1">The connection to the MultiPlug Host has been lost. Attempts are being made to restore the connection.</p>
                     <p id="websocket-txt-line2">Please wait.</p>
                 </div>
                 <div class="modal-footer">
@@ -459,5 +564,29 @@
 
         </div>
     </div>
+
+    <!-- Power Modal -->
+    <form id="power-form" >
+        <div id="power-modal" class="modal hide fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btns-power" data-dismiss="modal">&times;</button>
+                        <h4 id="power-title" class="modal-title">System Restart</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="power-txt-line1">While the system restarts the user interface will become unresponsive. The page will be refreshed automatically once the system has been restarted.</p>
+                        <p id="power-txt-line2">Confirm your required action now and then wait for the system to be restarted.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btns-power" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-red btns-power">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

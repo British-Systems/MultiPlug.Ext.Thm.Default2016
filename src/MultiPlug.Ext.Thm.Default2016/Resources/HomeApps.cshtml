@@ -1,6 +1,14 @@
 ﻿@using MultiPlug.Base.Http
 @model MultiPlug.Base.Http.EdgeApp
 
+<style>
+    .extensions-heading h2 {
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+</style>
+
 <div class="extensions-heading">
     <h2>Apps</h2>
 </div>
@@ -8,20 +16,17 @@
 <div class="box">
     <div class="row-fluid" style="margin-bottom: 20px">
 
-        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+        @foreach (var HttpEndpoint in @Model.MultiPlugAPI.HttpEndpoints.App)
         {
-            foreach (var HttpEndpoint in Extension.HttpEndpoints)
+            if (HttpEndpoint.isHidden)
             {
-                if (HttpEndpoint.isHidden || (HttpEndpoint.Type != HttpEndpointType.App))
-                {
-                    continue;
-                }
-
-                <a href="@HttpEndpoint.Href" class="btn quick-btn span2">
-                    <i class="icon-dashboard"></i>
-                    <span class="quick-btn-title">@HttpEndpoint.Name</span>
-                </a>
+                continue;
             }
+
+            <a href="@HttpEndpoint.Href" class="btn quick-btn span2">
+                <i class="icon-dashboard"></i>
+                <span class="quick-btn-title">@HttpEndpoint.Name</span>
+            </a>
         }
 
     </div>

@@ -60,13 +60,13 @@
                     <p>Use the shift key to select multiple files</p>
                 </div>
                 <div class="span2">
-                    <a class="btn btn-block btn-blue" id="btn-viewfile"><i class="icon-search"> View</i></a>
+                    <a class="btn btn-block btn-blue" id="btn-viewfile"><i class="icon-search"></i> View</a>
                 </div>
                 <div class="span2">
-                    <a class="btn btn-block btn-blue" id="btn-downloadfile"><i class="icon-download-alt"> Download</i></a>
+                    <a class="btn btn-block btn-blue" id="btn-downloadfile"><i class="icon-download-alt"></i> Download</a>
                 </div>
                 <div class="span2">
-                    <a class="btn btn-block btn-red" id="btn-deletefile"><i class="icon-trash"> Delete</i></a>
+                    <a class="btn btn-block btn-red" id="btn-deletefile"><i class="icon-trash"></i> Delete</a>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
             $('#FileNameHeading').text("File: " + SelectedFile.attr("data-filename"));
             $("#btn-downloadfile").removeAttr('href');
             $('#btn-downloadfile').attr('download', SelectedFile.attr("data-filename"));
-            $('#Logging').val('');
+            $('#Logging').val('File Selected. Select View below.');
         }
     });
 
@@ -149,6 +149,14 @@
             LoggingBox.val(LogContents);
             $('#btn-downloadfile').attr('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(LogContents));
             scrollLogToBottom('Logging');
+        })
+        .fail(function (xhr, status, error) {
+            if (xhr.status == 401) {
+                $('#Logging').val('Action requires User Log On');
+            }
+            if (xhr.status == 403) {
+                $('#Logging').val('Insufficient user rights');
+            }
         });
     });
 
@@ -161,20 +169,32 @@
 
         var NodesSelectedSnapshot = NodesSelected; // Will change on Delete
 
+        var completed = false;
+
         for (let i = 0; i < NodesSelectedSnapshot.length; i++) {
             $.ajax({
                 type: 'POST',
                 url: GetUrl(NodesSelectedSnapshot[i]),
-                async: false
+                async: false,
+                success: function (data) {
+                    $("#jstree").jstree(true).delete_node(NodesSelectedSnapshot[i]);
+                    completed = true;
+                },
+                error: function (data) {
+                    $('#Logging').val('Insufficient user rights');
+                }
             });
-            $("#jstree").jstree(true).delete_node(NodesSelectedSnapshot[i]);
+
         }
 
-        NodesSelected = null;
+        if (completed)
+        {
+            NodesSelected = null;
 
-        $("#btn-downloadfile").removeAttr('href');
-        $("#btn-downloadfile").removeAttr('download');
-        $('#FileNameHeading').text("File:");
-        $('#Logging').val('');
+            $("#btn-downloadfile").removeAttr('href');
+            $("#btn-downloadfile").removeAttr('download');
+            $('#FileNameHeading').text("File:");
+            $('#Logging').val('');
+        }
     });
 </script>

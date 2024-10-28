@@ -82,6 +82,14 @@
             LoggingBox.val('');
             LoggingBox.val(builder.join(''));
             scrollLogToBottom('Logging');
+        })
+        .fail(function (xhr, status, error) {
+            if (xhr.status == 401) {
+                $('#Logging').val('Action requires User Log On');
+            }
+            if (xhr.status == 403) {
+                $('#Logging').val('Insufficient user rights');
+            }
         });
     });
 

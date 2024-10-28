@@ -3,299 +3,244 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
-<form class="" action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
-    @if (Model.Extension.Model.UpdatePending)
-    {
-        <div class="alert">
-            <a href="#" class="close" data-dismiss="alert">×</a>
-            <strong>Updates Pending</strong> Restart the system to apply pending updates.
-        </div>
+<style>
+    .setting-heading h2 {
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
     }
-    <h3 class="box-header">Actions</h3>
-    <div class="box">
-        <div class="row-fluid">
-            <div class="span2">
-                <div class="btn-group">
-                    <button class="btn btn-red" data-toggle="modal" data-target="#reboot-modal">System Restart</button>
-                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" data-toggle="modal" data-target="#shutdown-modal">Shutdown host device</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="span10"></div>
-        </div>
+</style>
+
+<div class="setting-heading">
+    <h2>System Overview</h2>
+</div>
+
+@if (Model.Extension.Model.UpdatePending)
+{
+    <div class="alert">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        <strong>Updates Pending</strong> Restart the system to apply pending updates.
     </div>
+}
 
-    <h3 class="box-header">Overview</h3>
-    <div class="box">
-        <div class="row-fluid">
-            <table class="table table-condensed" id="bindings-table">
-                <tbody>
-                    <tr>
-                        <th>System</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+<div class="box">
+    <div class="row-fluid">
+        <table class="table table-condensed" id="bindings-table">
+            <tbody>
+                <tr>
+                    <th>System</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td>Version</td>
-                        <td>@Model.Extension.Model.Version <a href="/settings/update/">Update</a></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>@Model.Extension.Model.Version <a href="/settings/update/">Update</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td>Licensee</td>
-                        <td>@Model.Extension.Model.Licensee <a href="/multiplug/setup/">Change</a></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td>Licensee</td>
+                    <td>@Model.Extension.Model.Licensee <a href="/multiplug/setup/">Change</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <th><a href="/settings/environment/">Environment</a></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/environment/">Environment</a></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/environment/">Logging</a></td>
-                        <td>
-                            @foreach (var x in @Model.Extension.Model.LoggingLevel)
-                            {
-                                if (x.Value)
-                                { @x.Key }
-                            }
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/environment/">Logging</a></td>
+                    <td>
+                        @foreach (var x in @Model.Extension.Model.LoggingLevel)
+                        {
+                            if (x.Value)
+                            { @x.Key }
+                        }
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <th><a href="/settings/apps/">Apps</a></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/apps/">Apps</a></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/apps/">Default App</a></td>
-                        <td>
-                            @foreach (var x in @Model.Extension.Model.Dashboards)
-                            {
-                                if (x.Value){ @x.Key }
-                            }
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/apps/">Default App</a></td>
+                    <td>
+                        @foreach (var x in @Model.Extension.Model.Dashboards)
+                        {
+                            if (x.Value){ @x.Key }
+                        }
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <th><a href="/settings/hosting/">Hosting</a></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/hosting/">Hosting</a></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/hosting/">Host by IP</a></td>
-                        <td>
-                            @if (Model.Extension.Model.HostByIP)
-                        { <text> <i class="icon-ok"></i> </text> }
-                        else
-                        { <text> <i class="icon-remove"></i> </text> }</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/hosting/">Host by IP</a></td>
+                    <td>
+                        @if (Model.Extension.Model.HostByIP)
+                    { <text> <i class="icon-ok"></i> </text> }
+                    else
+                    { <text> <i class="icon-remove"></i> </text> }</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/hosting/">Host Port</a></td>
-                        <td>@Model.Extension.Model.HostByIPPort</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/hosting/">Host Port</a></td>
+                    <td>@Model.Extension.Model.HostByIPPort</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/hosting/">Secure</a></td>
-                        <td>
-                            @if (Model.Extension.Model.HostByIPSecure)
-                        { <text> <i class="icon-ok"></i> </text> }
-                        else
-                        { <text> <i class="icon-remove"></i> </text> }</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/hosting/">Secure</a></td>
+                    <td>
+                        @if (Model.Extension.Model.HostByIPSecure)
+                    { <text> <i class="icon-ok"></i> </text> }
+                    else
+                    { <text> <i class="icon-remove"></i> </text> }</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                    <tr>
-                        <td><a href="/settings/hosting/">Hosting</a></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td><a href="/settings/hosting/">Hosting</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
 
-                @foreach (var Binding in @Model.Extension.Model.HostBindings)
-                {
-                    <tr>
-                        <td></td>
-                        <td>@Binding</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                }
+            @foreach (var Binding in @Model.Extension.Model.HostBindings)
+            {
+                <tr>
+                    <td></td>
+                    <td>@Binding</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
 
-                    <tr>
-                        <th><a href="/settings/extensions/">Extensions</a></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/extensions/">Extensions</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-                    <tr>
-                        <th>Assembly Name</th>
-                        <th>Version</th>
-                        <th>Friendly Name</th>
-                        <th>Enabled</th>
-                        <th>Loaded</th>
-                    </tr>
+                <tr>
+                    <th>Assembly Name</th>
+                    <th>Version</th>
+                    <th>Friendly Name</th>
+                    <th>Enabled</th>
+                    <th>Loaded</th>
+                </tr>
 
-                @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
-                {
-                    <tr>
-                        <td>@x.AssemblyName</td>
-                        <td>@x.AssemblyVersion</td>
-                        <td>@x.FriendlyName</td>
-                        <td>@if (x.Enabled)
-                        { <text> <i class="icon-ok"></i> </text> }</td>
-                        <td>
-                            @if (x.Loaded){ <text> <i class="icon-ok"></i> </text> }
-                            @if (!x.Loaded && x.Enabled){ <text> <i class="icon-exclamation-sign"></i> </text> }
-                            @if (!x.Loaded && !x.Enabled){ <text> <i class="icon-pause"></i> </text> }</td>
-                    </tr>
-                }
+            @foreach (var x in @Model.Extension.Model.ExtensionStatuses)
+            {
+                <tr>
+                    <td>@x.AssemblyName</td>
+                    <td>@x.AssemblyVersion</td>
+                    <td>@x.FriendlyName</td>
+                    <td>@if (x.Enabled)
+                    { <text> <i class="icon-ok"></i> </text> }</td>
+                    <td>
+                        @if (x.Loaded){ <text> <i class="icon-ok"></i> </text> }
+                        @if (!x.Loaded && x.Enabled){ <text> <i class="icon-exclamation-sign"></i> </text> }
+                        @if (!x.Loaded && !x.Enabled){ <text> <i class="icon-pause"></i> </text> }</td>
+                </tr>
+            }
 
-                    <tr>
-                        <th><a href="/settings/recipes/">Recipe Configurators</a></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/recipes/">Recipe Configurators</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-                    <tr>
-                        <th>Assembly</th>
-                        <th>Order</th>
-                        <th>Load</th>
-                        <th>Save</th>
-                        <th>Wait to start</th>
-                    </tr>
+                <tr>
+                    <th>Assembly</th>
+                    <th>Order</th>
+                    <th>Load</th>
+                    <th>Save</th>
+                    <th>Wait to start</th>
+                </tr>
 
-                @foreach (var x in @Model.Extension.Model.Configurators)
-                {
-                    <tr>
-                        <td>@x.Assembly</td>
-                        <td>@x.Order</td>
-                        <td>@if (x.EnabledLoad){ <text> <i class="icon-ok"></i> </text> }</td>
-                        <td>@if (x.EnabledSave){ <text> <i class="icon-ok"></i> </text> }</td>
-                        <td>@if (x.WaitForStart){ <text> <i class="icon-ok"></i> </text> }</td>
-                    </tr>
-                }
+            @foreach (var x in @Model.Extension.Model.Configurators)
+            {
+                <tr>
+                    <td>@x.Assembly</td>
+                    <td>@x.Order</td>
+                    <td>@if (x.EnabledLoad){ <text> <i class="icon-ok"></i> </text> }</td>
+                    <td>@if (x.EnabledSave){ <text> <i class="icon-ok"></i> </text> }</td>
+                    <td>@if (x.WaitForStart){ <text> <i class="icon-ok"></i> </text> }</td>
+                </tr>
+            }
 
-                    <tr>
-                        <th><a href="/settings/security/">Security</a></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/security/">Security</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-                    <tr>
-                        <th><a href="/settings/Performance/">Performance</a></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                <tr>
+                    <th><a href="/settings/Performance/">Performance</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-                    <tr>
-                        <th><a href="/settings/housekeeping/">Housekeeping</a></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</form> 
-
-<!-- Reboot Modal -->
-<div id="reboot-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button id="x-restart-btn" type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 id="restart-title" class="modal-title">System Restart</h4>
-            </div>
-            <div class="modal-body">
-                <p id="restart-txt-line1">While the system restarts the user interface will become unresponsive. The page will be refreshed automatically once the system has been restarted.</p>
-                <p id="restart-txt-line2">Confirm your required action now and then wait for the system to be restarted.</p>
-            </div>
-            <div class="modal-footer">
-                <button id="cancel-restart-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button id="restart-btn" class="btn btn-red">Restart</button>
-            </div>
-            <form id="restart-form">
-                <input type="hidden" name="Command" value="restart"/>
-            </form>
-        </div>
-
+                <tr>
+                    <th><a href="/settings/housekeeping/">Housekeeping</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
-<!-- Shutdown Modal -->
-<div id="shutdown-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button id="x-shutdown-btn" type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 id="shutdown-title" class="modal-title">System Shutdown</h4>
-            </div>
-            <div class="modal-body">
-                <p id="shutdown-txt-line1">After this point the user interface will become unresponsive.</p>
-                <p id="shutdown-txt-line2">Confirm your required action now.</p>
-            </div>
-            <div class="modal-footer">
-                <button id="cancel-shutdown-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button id="shutdown-btn" class="btn btn-red">Shutdown</button>
-            </div>
-            <form id="shutdown-form">
-                <input type="hidden" name="Command" value="shutdown" />
-            </form>
-        </div>
 
-    </div>
-</div>
 
 <script>
     $('#cancel-btn').click(function () {

@@ -16,10 +16,10 @@ namespace MultiPlug.Theme.Default2016.Controllers
             {
                 result = Resources.adminflare_min1;
             }
-            //else if (FileName == "bootstrap.min.css")
-            //{
-            //    result = Resources.bootstrap_min1;
-            //}
+            else if (FileName == "bootstrap.min.css")
+            {
+                result = Resources.bootstrap_min_css;
+            }
             else if (FileName == "font.awesome.min.css")
             {
                 result = Resources.font_awesome_css;

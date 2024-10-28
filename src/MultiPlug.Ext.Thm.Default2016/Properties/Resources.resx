@@ -181,9 +181,6 @@
   <data name="_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adminflare_demo_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scripts\adminflare-demo.min.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="adminflare_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scripts\adminflare.min.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -214,9 +211,6 @@
   <data name="jstree_style_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\jstree.style.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="pages_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Styles\pages.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="select2_min1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\select2.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -240,174 +234,6 @@
   </data>
   <data name="fonts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\fonts.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTa_j2U0lmluP9RWlSytm3ho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5_oayXSOefg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo_zkhivY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo-zkhivY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTT0LW_43aMEzIO6XUTLjad8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DXI1ORHCpsQm3Vp6mXoaTZX5f_9o1vgP2EXwfjgl7AY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo_zkhivY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo-zkhivY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzD0LW_43aMEzIO6XUTLjad8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzD0LW-43aMEzIO6XUTLjad8.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzJX5f_9o1vgP2EXwfjgl7AY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzJX5f-9o1vgP2EXwfjgl7AY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzK_j2U0lmluP9RWlSytm3ho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzK-j2U0lmluP9RWlSytm3ho.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5_oayXSOefg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo_zkhivY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo-zkhivY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSj0LW_43aMEzIO6XUTLjad8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSpX5f_9o1vgP2EXwfjgl7AY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSpX5f-9o1vgP2EXwfjgl7AY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSq_j2U0lmluP9RWlSytm3ho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSq-j2U0lmluP9RWlSytm3ho.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5_oayXSOefg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxgalQocB___pDVGhF3uS2Ks" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxgalQocB-__pDVGhF3uS2Ks.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxgyhumQnPMBCoGYhRaNxyyY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxgyhumQnPMBCoGYhRaNxyyY.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxhUVAXEdVvYDDqrz3aeR0Yc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxhUVAXEdVvYDDqrz3aeR0Yc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxlf4y_3s5bcYyyLIFUSWYUU" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxlf4y_3s5bcYyyLIFUSWYUU.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxmgpAmOCqD37_tyH_8Ri5MM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxmgpAmOCqD37_tyH_8Ri5MM.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxmhQUTDJGru_0vvUpABgH8I" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxmhQUTDJGru-0vvUpABgH8I.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxnywqdtBbUHn3VPgzuFrCy8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxnywqdtBbUHn3VPgzuFrCy8.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxolIZu_HDpmDIZMigmsroc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxpiMaisvaUVUsYyVzOmndek" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxpiMaisvaUVUsYyVzOmndek.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxqfJul7RR1X4poJgi27uS4w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxqfJul7RR1X4poJgi27uS4w.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxqvyPXdneeGd26m9EmFSSWg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxqvyPXdneeGd26m9EmFSSWg.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxrBAWGjcah5Ky0jbCgIwDB8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxrBAWGjcah5Ky0jbCgIwDB8.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxsPNMTLbnS9uQzHQlYieHUU" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxsPNMTLbnS9uQzHQlYieHUU.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RjgO7rYTmqiVp7vzi_Q5URJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="u_WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBiYE0_AqJ3nfInTTiDXDjU4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBiYE0-AqJ3nfInTTiDXDjU4.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="_59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fonts\59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="font_awesome_css" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\font.awesome.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -465,5 +291,71 @@
   </data>
   <data name="SettingsPermissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SettingsPermissions.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqW106F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqW106F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWt06F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWt06F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtE6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtk6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtk6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtU6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtU6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWu06F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWu06F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuk6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuk6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuU6F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWvU6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWvU6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWxU6F15M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWxU6F15M.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS2mu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS2mu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSCmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSCmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSGmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSGmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSKmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSKmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSOmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSOmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSumu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSumu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSymu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSymu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS_muw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS_muw.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTUGmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTUGmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTVOmu1aB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTVOmu1aB.woff2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bootstrap_min_css" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Styles\bootstrap.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="pages_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Styles\pages.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

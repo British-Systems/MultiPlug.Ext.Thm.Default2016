@@ -129,17 +129,17 @@
 
             })
             .done(function (data) {
-                $(jq(data.AssemblyName) + '-FriendlyName').html(data.FriendlyName);
-                $(jq(data.AssemblyName) + "-Status").val(data.Status);
-                $(jq(data.AssemblyName) + "-StartStop").html(DrawActionButton(data.AssemblyName, data.Enabled, data.Loaded));
-                if (data.Enabled) {
-                    $(jq(data.AssemblyName) + "-Enabled").prop('checked', true);
+                $(jq(data.assemblyName) + '-FriendlyName').html(data.friendlyName);
+                $(jq(data.assemblyName) + "-Status").val(data.status);
+                $(jq(data.assemblyName) + "-StartStop").html(DrawActionButton(data.assemblyName, data.enabled, data.loaded));
+                if (data.enabled) {
+                    $(jq(data.assemblyName) + "-Enabled").prop('checked', true);
                 }
                 else {
-                    $(jq(data.AssemblyName) + "-Enabled").prop('checked', false);
+                    $(jq(data.assemblyName) + "-Enabled").prop('checked', false);
                 }
 
-                ApplyLoadClick($(jq(data.AssemblyName) + "-btnStartStop"));
+                ApplyLoadClick($(jq(data.assemblyName) + "-btnStartStop"));
             });
         });
     }
@@ -169,7 +169,7 @@
 
             })
             .done(function (data) {
-                $(jq(data.AssemblyName) + '-Row').remove();
+                $(jq(data.assemblyName) + '-Row').remove();
             });
         });
 

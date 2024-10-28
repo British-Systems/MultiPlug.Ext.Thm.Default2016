@@ -1,8 +1,6 @@
 ﻿$(".btn-deploy").click(function (event) {
     event.preventDefault();
 
-    var theRow = $(this).closest("tr");
-
     $.post($(this).attr('href'), function (data) {
 
     })

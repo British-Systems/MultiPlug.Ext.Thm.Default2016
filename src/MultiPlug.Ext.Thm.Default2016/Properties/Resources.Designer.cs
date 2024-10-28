@@ -71,25 +71,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] _59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc {
-            get {
-                object obj = ResourceManager.GetObject("_59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (function(){var a=&quot;assets/css/&quot;+DEMO_ADMINFLARE_VERSION+&quot;/&quot;;$(document).ready(function(){var e=function(k){var l=demoGetColor(DEMO_CURRENT_THEME),i=demoGetColor(k);$(&quot;#styleswitcher-buttons .btn-&quot;+l).text(demoCapitaliseFirstLetter(l));var m=$(&quot;#styleswitcher-buttons .btn-code&quot;);m.next(&quot;br&quot;).remove();m.remove();$(&quot;#styleswitcher-buttons .btn-&quot;+i).text(&quot;Primary&quot;).parent().next().prepend(&apos;&lt;code class=&quot;btn-code&quot;&gt;btn btn-primary&lt;/code&gt;&lt;br&gt;&apos;);var j=$(&quot;#styleswitcher-progress-bars .progress-code&quot;);j.prev(&quot;br&quot;).rem [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string adminflare_demo_min {
-            get {
-                return ResourceManager.GetString("adminflare_demo_min", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to /*!
         /// * iScroll Lite base on iScroll v4.1.6 ~ Copyright (c) 2011 Matteo Spinelli, http://cubiq.org
         /// * Released under MIT license, http://cubiq.org/license
@@ -186,6 +167,15 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}a:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}a:hover,a:active{outline:0}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{max-width:10 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string bootstrap_min_css {
+            get {
+                return ResourceManager.GetString("bootstrap_min_css", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap British_Systems_Logo {
@@ -202,16 +192,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
             get {
                 object obj = ResourceManager.GetObject("British_Systems_Logo_Fade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw {
-            get {
-                object obj = ResourceManager.GetObject("cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -237,76 +217,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         internal static string deploy_js {
             get {
                 return ResourceManager.GetString("deploy_js", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTa_j2U0lmluP9RWlSytm3ho {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTa_j2U0lmluP9RWlSytm3ho", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5_oayXSOefg {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5_oayXSOefg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo_zkhivY {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo_zkhivY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTT0LW_43aMEzIO6XUTLjad8 {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTT0LW_43aMEzIO6XUTLjad8", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] DXI1ORHCpsQm3Vp6mXoaTZX5f_9o1vgP2EXwfjgl7AY {
-            get {
-                object obj = ResourceManager.GetObject("DXI1ORHCpsQm3Vp6mXoaTZX5f_9o1vgP2EXwfjgl7AY", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -395,15 +305,17 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///  font-family: &apos;Open Sans&apos;;
         ///  font-style: italic;
         ///  font-weight: 300;
-        ///  src: local(&apos;Open Sans Light Italic&apos;), local(&apos;OpenSans-LightItalic&apos;), url(../fonts/PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE.woff2) format(&apos;woff2&apos;);
-        ///  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+        ///  font-stretch: 100%;
+        ///  src: url(../fonts/memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2) format(&apos;woff2&apos;);
+        ///  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
         ///}
         ////* cyrillic */
         ///@font-face {
         ///  font-family: &apos;Open Sans&apos;;
         ///  font-style: italic;
         ///  font-weight: 300;
-        ///  src: local(&apos;Open Sans Light Italic&apos;), local(&apos;OpenSans-LightItalic&apos;), url(../fon [rest of string was truncated]&quot;;.
+        ///  font-stretch: 100%;
+        ///  src: url(../fonts/memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWvU6F15M.w [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string fonts {
             get {
@@ -417,13 +329,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///@Include(@Model.Extension.RazorTemplate)
-        ///
-        ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2021 British Systems, all rights reserved.
-        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
-        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
-        ///    &lt;/a&gt;
-        ///&lt;/footer&gt;
         ///.
         /// </summary>
         internal static string FrameApp {
@@ -438,13 +343,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///@Include(@Model.Extension.RazorTemplate)
-        ///
-        ///&lt;footer id=&quot;main-footer&quot;&gt;
-        ///    Extension: @Model.Extension.Name. &lt;a href=&quot;https://multiplug.app&quot; target=&quot;_blank&quot;&gt;MultiPlug .Net Edge Computing Platform&lt;/a&gt; Copyright © 2021 British Systems, all rights reserved.
-        ///    &lt;a href=&quot;#&quot; class=&quot;pull-right&quot; id=&quot;on-top-link&quot;&gt;
-        ///        On Top&amp;nbsp;&lt;i class=&quot; icon-chevron-up&quot;&gt;&lt;/i&gt;
-        ///    &lt;/a&gt;
-        ///&lt;/footer&gt;.
+        ///.
         /// </summary>
         internal static string FrameExtension {
             get {
@@ -464,12 +363,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///        &lt;div class=&quot;box&quot;&gt;
         ///            &lt;ul class=&quot;nav nav-list&quot;&gt;
         ///                &lt;li class=&quot;nav-header&quot;&gt;Analytics&lt;/li&gt;
-        ///                &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;System Log&lt;/a&gt;&lt;/li&gt;
-        ///                &lt;li class=&quot;nav-header&quot;&gt;Extensions&lt;/li&gt;
-        ///
-        ///                @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
-        ///                {
-        ///                [rest of string was truncated]&quot;;.
+        ///                &lt;li @*class=&quot;active&quot;*@&gt;&lt;a class=&quot;btn-loadlog&quot; data-logtype=&quot;core&quot; data-multiplugapi=&quot;@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view&quot; href=&quot;@Raw(Model.Context.Paths.Home)&quot;&gt;MultiPlug.Core&lt;/a&gt;&lt;/li&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeAnalytics {
             get {
@@ -607,86 +502,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo_zkhivY {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo_zkhivY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzD0LW_43aMEzIO6XUTLjad8 {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzD0LW_43aMEzIO6XUTLjad8", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzJX5f_9o1vgP2EXwfjgl7AY {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzJX5f_9o1vgP2EXwfjgl7AY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzK_j2U0lmluP9RWlSytm3ho {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzK_j2U0lmluP9RWlSytm3ho", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5_oayXSOefg {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5_oayXSOefg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w {
-            get {
-                object obj = ResourceManager.GetObject("k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc {
-            get {
-                object obj = ResourceManager.GetObject("K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
         ///@using MultiPlug.Base.Http
@@ -715,9 +530,199 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc {
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqW106F15M {
             get {
-                object obj = ResourceManager.GetObject("LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc", resourceCulture);
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqW106F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWt06F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWt06F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtE6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtE6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtk6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtk6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtU6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWtU6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWu06F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWu06F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuk6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuk6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuU6F {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWuU6F", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWvU6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWvU6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWxU6F15M {
+            get {
+                object obj = ResourceManager.GetObject("memtYaGs126MiZpBA_UFUIcVXSCEkx2cmqvXlWqWxU6F15M", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS_muw {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS_muw", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS2mu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS2mu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSCmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSCmu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSGmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSGmu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSKmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSKmu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSOmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSOmu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSumu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSumu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSymu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTSymu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTUGmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTUGmu1aB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTVOmu1aB {
+            get {
+                object obj = ResourceManager.GetObject("memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTVOmu1aB", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -729,76 +734,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         internal static string modernizr_2_6_2_js {
             get {
                 return ResourceManager.GetString("modernizr_2_6_2_js", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo_zkhivY {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo_zkhivY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSj0LW_43aMEzIO6XUTLjad8 {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSj0LW_43aMEzIO6XUTLjad8", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSpX5f_9o1vgP2EXwfjgl7AY {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSpX5f_9o1vgP2EXwfjgl7AY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSq_j2U0lmluP9RWlSytm3ho {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSq_j2U0lmluP9RWlSytm3ho", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5_oayXSOefg {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5_oayXSOefg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w {
-            get {
-                object obj = ResourceManager.GetObject("MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -947,226 +882,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxgalQocB___pDVGhF3uS2Ks {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxgalQocB___pDVGhF3uS2Ks", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxgyhumQnPMBCoGYhRaNxyyY {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxgyhumQnPMBCoGYhRaNxyyY", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxhgVThLs8Y7ETJzDCYFCSLE", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxhUVAXEdVvYDDqrz3aeR0Yc {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxhUVAXEdVvYDDqrz3aeR0Yc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxlf4y_3s5bcYyyLIFUSWYUU {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxlf4y_3s5bcYyyLIFUSWYUU", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxmgpAmOCqD37_tyH_8Ri5MM {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxmgpAmOCqD37_tyH_8Ri5MM", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxmhQUTDJGru_0vvUpABgH8I {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxmhQUTDJGru_0vvUpABgH8I", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxnywqdtBbUHn3VPgzuFrCy8 {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxnywqdtBbUHn3VPgzuFrCy8", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxolIZu_HDpmDIZMigmsroc4 {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxolIZu_HDpmDIZMigmsroc4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxpiMaisvaUVUsYyVzOmndek {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxpiMaisvaUVUsYyVzOmndek", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxqfJul7RR1X4poJgi27uS4w {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxqfJul7RR1X4poJgi27uS4w", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxqvyPXdneeGd26m9EmFSSWg {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxqvyPXdneeGd26m9EmFSSWg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxrBAWGjcah5Ky0jbCgIwDB8 {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxrBAWGjcah5Ky0jbCgIwDB8", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxsPNMTLbnS9uQzHQlYieHUU {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxsPNMTLbnS9uQzHQlYieHUU", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0 {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4 {
-            get {
-                object obj = ResourceManager.GetObject("PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] RjgO7rYTmqiVp7vzi_Q5URJtnKITppOI_IvcXXDNrsc {
-            get {
-                object obj = ResourceManager.GetObject("RjgO7rYTmqiVp7vzi_Q5URJtnKITppOI_IvcXXDNrsc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to /*! Select2 4.0.3 | https://github.com/select2/select2/blob/master/LICENSE.md */!function(a){&quot;function&quot;==typeof define&amp;&amp;define.amd?define([&quot;jquery&quot;],a):a(&quot;object&quot;==typeof exports?require(&quot;jquery&quot;):jQuery)}(function(a){var b=function(){if(a&amp;&amp;a.fn&amp;&amp;a.fn.select2&amp;&amp;a.fn.select2.amd)var b=a.fn.select2.amd;var b;return function(){if(!b||!b.requirejs){b?c=b:b={};var a,c,d;!function(b){function e(a,b){return u.call(a,b)}function f(a,b){var c,d,e,f,g,h,i,j,k,l,m,n=b&amp;&amp;b.split(&quot;/&quot;),o=s.map,p=o&amp;&amp;o[&quot;*&quot;]||{};if(a&amp;&amp;&quot;.&quot;===a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string select2_min {
@@ -1236,7 +951,10 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;div class=&quot;setting-heading&quot;&gt;
         ///    &lt;h2&gt;Add Extensions&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
+        ///
+        ///@if (Model.Extension.Model.UpdatePending)
+        ///{
+        ///    &lt;div class= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsAdd {
             get {
@@ -1304,7 +1022,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;div class=&quot;setting-heading&quot;&gt;
         ///    &lt;h2&gt;Environment&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///    &lt;form method=&quot;p [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsEnvironment {
             get {
@@ -1318,27 +1038,16 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .setting-heading h2 {
-        ///        margin-left: 0.1em;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Extensions&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///@if (Model.Extension.Model.UpdatePending) [rest of string was truncated]&quot;;.
+        ///@functions
+        ///{
+        ///    string DrawActionButton(string theAssemblyName, bool isEnabled, bool isLoaded)
+        ///    {
+        ///        if (isLoaded)
+        ///        {
+        ///            return &quot;&lt;a class=\&quot;btn btn-red btn-loadextension\&quot; id=&quot; + theAssemblyName + &quot;-btnStartStop\&quot; href=\&quot;multiplug/extensions/unload/?extension=&quot; + theAssemblyName + &quot;\&quot;&gt;&lt;i class=\&quot;icon-stop\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&quot;;
+        ///        }
+        ///        else if (!isLoaded &amp;&amp; isEnabled)
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsExtensions {
             get {
@@ -1426,19 +1135,21 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
-        ///&lt;h3 class=&quot;box-header&quot;&gt;
-        ///    Log Files
-        ///&lt;/h3&gt;
         ///&lt;div class=&quot;box&quot;&gt;
         ///    &lt;div class=&quot;row-fluid&quot;&gt;
-        ///        &lt;div id=&quot;jstree&quot;&gt;
-        ///            &lt;ul&gt;
-        ///                @foreach (var FileStorage in @Model.Extension.Model.FileStorage)
-        ///                {
-        ///                    &lt;li&gt;
-        ///                        @FileStorage.Extension
-        ///                        &lt;ul&gt;
-        ///                         [rest of string was truncated]&quot;;.
+        ///        &lt;div class=&quot;span5&quot;&gt;
+        ///            &lt;h4&gt;Log Files&lt;/h4&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;span7&quot;&gt;
+        ///            &lt;h4 id=&quot;FileNameHeading&quot;&gt;File:&lt;/h4&gt;
+        ///        &lt;/div&gt;
+        ///    &lt;/div&gt;
+        ///
+        ///    &lt;div class=&quot;row-fluid&quot;&gt;
+        ///        &lt;div class=&quot;span5&quot;&gt;
+        ///            &lt;div id=&quot;jstree&quot;&gt;
+        ///                &lt;ul&gt;
+        ///                    &lt;li&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeepingStorage {
             get {
@@ -1481,17 +1192,33 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///@{
+        ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
+        ///}
         ///
-        ///&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
-        ///    &lt;title&gt;&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
+        ///&lt;style&gt;
+        ///    .permissions-heading img,
+        ///    .permissions-heading h2 {
+        ///        display: inline-block;
+        ///        vertical-align: middle;
+        ///    }
         ///
-        ///&lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///    .permissions-heading img {
+        ///        opacity: 0.7;
+        ///        filter: alpha(opacity=70);
+        ///    }
+        ///
+        ///    .permissions-heading h2 {
+        ///        margin-left: 0.1em;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;div class=&quot;permissions-heading&quot;&gt;
+        ///    &lt;h2&gt;Permissions&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsPermissions {
             get {
@@ -1505,6 +1232,20 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
+        ///@functions
+        ///{
+        ///    string isEnabled(bool theValue)
+        ///    {
+        ///        return (theValue) ? &quot;&lt;i class=\&quot;icon-ok\&quot;&gt;&lt;/i&gt;&quot; : &quot;&lt;i class=\&quot;icon-remove\&quot;&gt;&lt;/i&gt;&quot;;
+        ///    }
+        ///
+        ///    string isChecked(bool theValue)
+        ///    {
+        ///        return (theValue) ? &quot;checked&quot; : string.Empty;
+        ///    }
+        ///
+        ///}
+        ///
         ///&lt;style&gt;
         ///    .setting-heading img,
         ///    .setting-heading h2 {
@@ -1512,20 +1253,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///        vertical-align: middle;
         ///    }
         ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .setting-heading h2 {
-        ///        margin-left: 0.1em;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Recipes&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; e [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsRecipes {
             get {
@@ -1539,14 +1267,29 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;form style=&quot;display:contents&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
-        ///    &lt;div class=&quot;row-fluid&quot;&gt;
-        ///        &lt;div class=&quot;span6&quot;&gt;
-        ///            &lt;button type=&quot;submit&quot; value=&quot;submit&quot; class=&quot;btn btn-green btn-block&quot;&gt;Save&lt;/button&gt;
-        ///        &lt;/div&gt;
-        ///        &lt;div class=&quot;span6&quot;&gt;
-        ///            &lt;button id=&quot;cancel-btn&quot; type=&quot;button&quot; class=&quot;btn  btn-block&quot;&gt;Cancel&lt;/button&gt;
-        ///        &lt;/ [rest of string was truncated]&quot;;.
+        ///&lt;style&gt;
+        ///    .permissions-heading img,
+        ///    .permissions-heading h2 {
+        ///        display: inline-block;
+        ///        vertical-align: middle;
+        ///    }
+        ///
+        ///    .permissions-heading img {
+        ///        opacity: 0.7;
+        ///        filter: alpha(opacity=70);
+        ///    }
+        ///
+        ///    .permissions-heading h2 {
+        ///        margin-left: 0.1em;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;div class=&quot;permissions-heading&quot;&gt;
+        ///    &lt;h2&gt;Security&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsSecurity {
             get {
@@ -1580,7 +1323,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;div class=&quot;setting-heading&quot;&gt;
         ///    &lt;h2&gt;Environment&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
+        ///    &lt;form method=&quot;p [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsSystem {
             get {
@@ -1617,96 +1362,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         internal static string SettingsUpdate {
             get {
                 return ResourceManager.GetString("SettingsUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] u_WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc {
-            get {
-                object obj = ResourceManager.GetObject("u_WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBiYE0_AqJ3nfInTTiDXDjU4 {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBiYE0_AqJ3nfInTTiDXDjU4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4 {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0 {
-            get {
-                object obj = ResourceManager.GetObject("xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc {
-            get {
-                object obj = ResourceManager.GetObject("xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }
