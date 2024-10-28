@@ -3,25 +3,456 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
-<form style="display:contents" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
-    <div class="row-fluid">
-        <div class="span6">
-            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
+<style>
+    .setting-heading h2 {
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="setting-heading">
+    <h2>Security</h2>
+</div>
+
+<div class="box">
+    <ul class="nav nav-tabs" id="myTopTab">
+        <li class="active"><a href="#UsersEdit">Users</a></li>
+        <li><a href="#ProvidersEdit">Providers</a></li>
+    </ul>
+    <div id="myTopTabContent" class="tab-content" style="margin-bottom: 10px">
+        <div class="tab-pane fade in active" id="UsersEdit">
+            <div class="row-fluid">
+                <div class="well">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#UserEdit">Edit</a></li>
+                        <li><a href="#UserAdd">Add</a></li>
+                        <li><a href="#UserDelete">Delete</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content" style="margin-bottom: 10px">
+                        <div class="tab-pane fade in active" id="UserEdit">
+                            <div class="row-fluid">
+                                <div class="well form-horizontal">
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-edituser">User</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input id="txt-edituser" type="text" class="input-block-level" autocomplete="off" value="@Raw(Model.Context.User.Identity.Name)" />
+                                                <div class="btn-group">
+                                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret">
+                                                        </span>
+                                                    </button>
+                                                    <ul class="dropdown-menu userlist"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-editusercurrentpassword">Current Password</label>
+                                        <div class="controls">
+                                            <input type="password" id="txt-editusercurrentpassword" placeholder="Current Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-editusernewpassword">New Password</label>
+                                        <div class="controls">
+                                            <input type="password" id="txt-editusernewpassword" placeholder="New Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-editusernewpasswordconfirm">Confirm New Password</label>
+                                        <div class="controls">
+                                            <input type="password" id="txt-editusernewpasswordconfirm" placeholder="Confirm New Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <a class="btn btn-blue" id="btn-edituser"><i class="icon-save"></i> Update</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="UserAdd">
+                            <div class="row-fluid">
+                                <div class="well form-horizontal">
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-adduserdomain">Domain</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input id="txt-adduserdomain" type="text" class="input-block-level" autocomplete="off" value="" />
+                                                <div class="btn-group">
+                                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret">
+                                                        </span>
+                                                    </button>
+                                                    <ul class="dropdown-menu domainlist"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-addusername">Username</label>
+                                        <div class="controls">
+                                            <input type="text" id="txt-addusername" placeholder="Username" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-adduserpassword">Password</label>
+                                        <div class="controls">
+                                            <input type="password" id="txt-adduserpassword" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-adduserpasswordconfirm">Confirm Password</label>
+                                        <div class="controls">
+                                            <input type="password" id="txt-adduserpasswordconfirm" placeholder="Confirm Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <a class="btn btn-blue" id="btn-adduser"><i class="icon-plus"></i> Add User</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="UserDelete">
+                            <div class="row-fluid">
+                                <div class="well form-horizontal">
+                                    <div class="control-group">
+                                        <label class="control-label" for="txt-deleteuser">User</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input id="txt-deleteuser" type="text" class="input-block-level" autocomplete="off" value="" />
+                                                <div class="btn-group">
+                                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret">
+                                                        </span>
+                                                    </button>
+                                                    <ul class="dropdown-menu userlist"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <a class="btn btn-red" id="btn-deleteuser"><i class="icon-trash"></i> Delete User</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="span6">
-            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
+        <div class="tab-pane fade" id="ProvidersEdit">
+            <div class="well">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div class="input-append">
+                            <input type="text" id="txt-newprovider" class="input-block-level" autocomplete="off" />
+                            <div class="btn-group">
+                                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret">
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu providerlist">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <a class="btn btn-block btn-green" id="btn-newprovider"><i class="icon-plus"></i> Assembly</a>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span4">
+                    </div>
+                    <div class="span2">
+                        <a class="btn btn-block btn-red" id="btn-deleteprovider"><i class="icon-trash"></i> Delete</a>
+                    </div>
+                </div>
+                <div class="row-fluid mt-2">
+                    <div id="jstreeProviders">
+                        <ul id="providers"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <h3 class="box-header">@Model.Extension.Model.FileName</h3>
-    <div class="box" style="height:75%">
-        <div class="row-fluid full-height">
-            <textarea name="FileContent" spellcheck="false" rows="3" class="input-block-level full-height" wrap="off" style="resize: none;">@Model.Extension.Model.FileContent</textarea>
-        </div>
-    </div>
-</form>
+</div>
+
+<link rel="stylesheet" href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/styles/jstree.style.min.css" />
+<script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/jstree.min.js"></script>
 
 <script>
-    $('#cancel-btn').click(function () {
-        location.reload();
+    function updateUserSelectionList(data) {
+        if (data != null) {
+            $(".userlist").empty();
+            for (let i in data) {
+                $(".userlist").append('<li><a class="UserSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+            }
+        }
+        else {
+            $(".userlist").empty();
+            $(".userlist").append('<li><a class="UserSuggestion" data-suggestion="" href="#">Insufficient user rights to populate the user list</a></li>');
+        }
+
+        $('.UserSuggestion').click(function (event) {
+            event.preventDefault();
+
+            var Suggestion = $(this).attr("data-suggestion");
+
+            if (Suggestion != '') {
+                $(this).closest(".input-append").find("input").val(Suggestion);
+            }
+        });
+    }
+
+    function updateDomainSelectionList(data) {
+        if (data != null) {
+            $(".domainlist").empty();
+            for (let i in data) {
+                $(".domainlist").append('<li><a class="DomainSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+            }
+        }
+        else {
+            $(".domainlist").empty();
+            $(".domainlist").append('<li><a class="DomainSuggestion" data-suggestion="" href="#">Insufficient user rights to populate the domain list</a></li>');
+        }
+
+        $('.DomainSuggestion').click(function (event) {
+            event.preventDefault();
+
+            var Suggestion = $(this).attr("data-suggestion");
+
+            if (Suggestion != '') {
+                $(this).closest(".input-append").find("input").val(Suggestion);
+            }
+        });
+    }
+
+    function updateProviders(data) {
+        $('#jstreeProviders').jstree('destroy');
+        $("#jstreeProviders").empty();
+        $("#jstreeProviders").append('<ul id="providers"></ul>')
+        for (let i in data) {
+            $("#providers").append('<li data-assembly="' + data[i].assembly + '">' + data[i].assembly + '</li>');
+        }
+        $("#jstreeProviders").bind("loaded.jstree", function (event, data) {
+            data.instance.open_all();
+        });
+        $('#jstreeProviders').jstree({
+            "core": {
+                "multiple": false,
+                "animation": 0,
+                "check_callback": true,
+            }
+        });
+    }
+
+    function updateProviderSelectionList(data) {
+        if (data != null) {
+            $(".providerlist").empty();
+            for (let i in data) {
+                $(".providerlist").append('<li><a class="ProviderSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+            }
+        }
+        else {
+            $(".providerlist").empty();
+            $(".providerlist").append('<li><a class="ProviderSuggestion" data-suggestion="" href="#">Insufficient user rights to populate the provider list</a></li>');
+        }
+
+        $('.ProviderSuggestion').click(function (event) {
+            event.preventDefault();
+
+            var Suggestion = $(this).attr("data-suggestion");
+
+            if (Suggestion != '') {
+                $(this).closest(".input-append").find("input").val(Suggestion);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTopTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('.ProviderSuggestion').click(function (event) {
+            event.preventDefault();
+            $("#txt-newprovider").val($(this).attr("data-suggestion"));
+        });
+
+        $("#btn-edituser").click(function (event) {
+            event.preventDefault();
+            if ($('#txt-editusernewpassword').val() == $('#txt-editusernewpasswordconfirm').val())
+            {
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/edit/?username=" + $('#txt-edituser').val() + "&password=" + $('#txt-editusercurrentpassword').val() + "&passwordnew=" + $('#txt-editusernewpassword').val(), function (data) {
+
+                })
+                .done(function (data) {
+                    $('#txt-editusercurrentpassword').val('');
+                    $('#txt-editusernewpassword').val('');
+                    $('#txt-editusernewpasswordconfirm').val('');
+                    alert("User updated");
+                })
+                .fail(function(xhr, status, error) {
+                    alert(xhr.responseJSON.message);
+                });
+            }
+            else
+            {
+                $('#txt-editusernewpassword').val('');
+                $('#txt-editusernewpasswordconfirm').val('');
+                alert('New Passwords do not match');
+            }
+        });
+
+        $("#btn-adduser").click(function (event) {
+            event.preventDefault();
+            if ($('#txt-adduserpassword').val() == $('#txt-adduserpasswordconfirm').val())
+            {
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/add/?username=" + $('#txt-addusername').val() + "&domain=" + $('#txt-adduserdomain').val() + "&password=" + $('#txt-adduserpassword').val(), function (data) {
+
+                })
+                .done(function (data) {
+                    $('#txt-addusername').val('');
+                    $('#txt-adduserpassword').val('');
+                    $('#txt-adduserpasswordconfirm').val('');
+                    updateUserSelectionList(data);
+                    alert("User created");
+                })
+                .fail(function(xhr, status, error) {
+                    alert(xhr.responseJSON.message);
+                });
+            }
+            else
+            {
+                $('#txt-adduserpassword').val('');
+                $('#txt-adduserpasswordconfirm').val('');
+                alert('Passwords do not match');
+            }
+        });
+
+        $("#btn-deleteuser").click(function (event) {
+            event.preventDefault();
+
+            $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)users/delete/?username=" + $('#txt-deleteuser').val(), function (data) {
+
+            })
+            .done(function (data) {
+                updateUserSelectionList(data);
+                alert("User deleted");
+                $('#txt-deleteuser').val('');
+            })
+            .fail(function (xhr, status, error) {
+                alert(xhr.responseJSON.message);
+            });
+        });
+
+        $("#btn-newprovider").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreeProviders').jstree(true);
+
+            $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)authentication/providers/add/?assembly=" + $('#txt-newprovider').val(), function (data) {
+
+            })
+            .done(function (data) {
+                $('#txt-newprovider').val('');
+                updateProviders(data);
+            })
+            .fail(function (xhr, status, error) {
+                alert(xhr.responseJSON.message);
+            });
+
+        });
+
+        $("#btn-deleteprovider").click(function (event) {
+            event.preventDefault();
+
+            var jsTreeRef = $('#jstreeProviders').jstree(true);
+            var selected = jsTreeRef.get_selected(true);
+
+            if (selected.length == 1) {
+                var assemblyId = $("#" + selected[0].id).attr('data-assembly');
+                $.post("@Raw(Model.Context.Paths.Roots.MultiPlug)authentication/providers/delete/?assembly=" + assemblyId, function (data) {
+
+                })
+                .done(function (data) {
+                    updateProviders(data);
+                })
+                .fail(function (xhr, status, error) {
+                    alert(xhr.responseJSON.message);
+                });
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/list",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateUserSelectionList(data);
+            },
+            error: function (xhr, textStatus, error) {
+                updateUserSelectionList(null);
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)users/domains",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateDomainSelectionList(data);
+            },
+            error: function (xhr, textStatus, error) {
+                updateDomainSelectionList(null);
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)authentication/providers",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateProviders(data);
+            },
+            error: function (xhr, textStatus, error) {
+                updateProviders([]);
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)authentication/providers/list",
+            type: "get",
+            async: false,
+            success: function (data) {
+                updateProviderSelectionList(data);
+            },
+            error: function (xhr, textStatus, error) {
+                updateProviderSelectionList(null);
+            }
+        });
     });
 </script>
+
