@@ -10,6 +10,8 @@
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
+    <repository type="git" url="https://github.com/british-systems/MultiPlug.Ext.Thm.Default2016" />
+    <license type="expression">MIT</license>
     <releaseNotes>1.0.28 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/21
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/20
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/19
@@ -43,7 +45,7 @@ https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/8
 1.0.10 Update to 'Layout' value
 1.0.9 Added Razor templates to RazorTemplates property call.
 1.0.8 Published</releaseNotes>
-    <copyright>Great British Systems Ltd 2022</copyright>
+    <copyright>Great British Systems Ltd 2024</copyright>
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
