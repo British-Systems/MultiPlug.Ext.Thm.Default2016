@@ -3,22 +3,23 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
-<div>
-    <h2>Housekeeping</h2>
+<style>
+    .setting-heading h2 {
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="setting-heading">
+    <h2><i class="icon-trash"></i>&nbsp;Housekeeping</h2>
 </div>
 
 <div class="box">
     <div class="row-fluid">
         <div class="span5">
             <h4>Log Files</h4>
-        </div>
-        <div class="span7">
-            <h4 id="FileNameHeading">File:</h4>
-        </div>
-    </div>
-
-    <div class="row-fluid">
-        <div class="span5">
+            <p><i class="icon-info-sign"></i> Use the shift key to select multiple files</p>
             <div id="jstree">
                 <ul>
                     <li>
@@ -50,24 +51,21 @@
                 </ul>
             </div>
         </div>
-
         <div class="span7">
+            <h4 id="FileNameHeading">File:</h4>
             <div class="row-fluid">
-                <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px;"></textarea>
+                <div class="input-append" style="user-select:none">
+                    <span class="add-on">Page:</span>
+                    <input class="span2" type="number" id="page" min="1" value="1">
+                    <a class="btn btn-blue" id="btn-viewup"><i class="icon-chevron-up"></i> Up</a>
+                    <a class="btn btn-blue" id="btn-viewdown"><i class="icon-chevron-down"></i> Down</a>
+                    <a class="btn btn-blue" id="btn-downloadfile"><i class="icon-download-alt"></i> Download</a>
+                    <a class="btn btn-red" id="btn-deletefile"><i class="icon-trash"></i> Delete</a>
+                </div>
             </div>
+            <p><i class="icon-info-sign"></i> Hover over the Logging Window and use the Mouse Wheel</p>
             <div class="row-fluid">
-                <div class="span6">
-                    <p>Use the shift key to select multiple files</p>
-                </div>
-                <div class="span2">
-                    <a class="btn btn-block btn-blue" id="btn-viewfile"><i class="icon-search"></i> View</a>
-                </div>
-                <div class="span2">
-                    <a class="btn btn-block btn-blue" id="btn-downloadfile"><i class="icon-download-alt"></i> Download</a>
-                </div>
-                <div class="span2">
-                    <a class="btn btn-block btn-red" id="btn-deletefile"><i class="icon-trash"></i> Delete</a>
-                </div>
+                <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px; overflow-x: scroll;"></textarea>
             </div>
         </div>
     </div>
@@ -77,36 +75,32 @@
 <script src="assets/multiplug.ext.mplib/scripts/jstree.min.js"></script>
 
 <script>
+    var NodesSelected = null;
+
     function scrollLogToBottom(loggingTextArea) {
         var textarea = document.getElementById(loggingTextArea);
         textarea.scrollTop = textarea.scrollHeight;
     }
 
-    $('#jstree').jstree({
-        "core": {
-            "multiple": true,
-            "animation": 0,
-            "check_callback": true,
-        }
-    });
-
-    var NodesSelected
-
-    $('#jstree').on("changed.jstree", function (e, data) {
-        NodesSelected = data.selected;
-
-        var SelectedFile = $('#' + NodesSelected[0]);
+    function GetUrlForDownload(Selected) {
+        var SelectedFile = $('#' + Selected);
         var APIUrl = SelectedFile.attr("data-multiplugapi");
 
         if (typeof APIUrl !== 'undefined' && APIUrl !== false) {
-            $('#FileNameHeading').text("File: " + SelectedFile.attr("data-filename"));
-            $("#btn-downloadfile").removeAttr('href');
-            $('#btn-downloadfile').attr('download', SelectedFile.attr("data-filename"));
-            $('#Logging').val('File Selected. Select View below.');
+            var FileName = SelectedFile.attr("data-filename");
+            var ExtensionName = SelectedFile.attr("data-extension");
+            if (ExtensionName) {
+                return 'multiplug/housekeeping/files/extensions/' + ExtensionName + '/download/' + FileName;
+            }
+            else {
+                return 'multiplug/housekeeping/files/system/download/' + FileName;
+            }
         }
-    });
 
-    function GetUrl( Selected )
+        return '';
+    }
+
+    function GetUrlForDelete( Selected )
     {
         var SelectedFile = $('#' + Selected);
         var APIUrl = SelectedFile.attr("data-multiplugapi");
@@ -125,39 +119,136 @@
         return '';
     }
 
-    $("#btn-viewfile").click(function (event) {
-        event.preventDefault();
+    function pageUp()
+    {
+        var CurrentPage = Number($('#page').val())
+        CurrentPage++;
+        $('#page').val(CurrentPage);
+        GetFile();
+    }
 
+    function pageDown()
+    {
+        var CurrentPage = Number($('#page').val())
+        if (CurrentPage != 1) {
+            CurrentPage--;
+            $('#page').val(CurrentPage);
+            GetFile();
+        }
+    }
+
+    function GetFile()
+    {
         if (NodesSelected == null || NodesSelected.length == 0) {
             return;
         }
 
-        $('#Logging').val('Loading File...');
+        var SelectedFile = $('#' + NodesSelected[0]);
+        var APIUrl = SelectedFile.attr("data-multiplugapi");
 
-        $.get($('#' + NodesSelected[0]).attr("data-multiplugapi"), function (data) {
+        if (typeof APIUrl !== 'undefined' && APIUrl !== false) {
+            $('#Logging').val('Loading File...');
 
-        })
-        .done(function (data) {
-            var LoggingBox = $('#Logging');
-            var builder = [];
-            data.forEach(function (line) {
-                builder.push(line);
-                builder.push("\n");
+            $.get(APIUrl + '?page=' + $('#page').val() + "&lines=21", function (data) {
+
+            })
+            .done(function (data) {
+                if (data.length == 0) {
+                    $('#Logging').val('End of File or File Empty');
+                    return;
+                }
+
+                var builder = [data.length];
+
+                for (let i = 0; i < data.length; i++) {
+                    if (i == (data.length - 1)) {
+                        builder[i] = data[i];
+                    }
+                    else {
+                        builder[i] = data[i] + "\n";
+                    }
+                }
+
+                var LogContents = builder.join('');
+                var LoggingBox = $('#Logging');
+                LoggingBox.val('');
+                LoggingBox.val(LogContents);
+                scrollLogToBottom('Logging');
+            })
+            .fail(function (xhr, status, error) {
+                if (xhr.status == 401) {
+                    $('#Logging').val('Action requires User Log On');
+                }
+                if (xhr.status == 403) {
+                    $('#Logging').val('Insufficient user rights');
+                }
             });
-            LoggingBox.val('');
-            var LogContents = builder.join('');
-            LoggingBox.val(LogContents);
-            $('#btn-downloadfile').attr('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(LogContents));
-            scrollLogToBottom('Logging');
-        })
-        .fail(function (xhr, status, error) {
-            if (xhr.status == 401) {
-                $('#Logging').val('Action requires User Log On');
-            }
-            if (xhr.status == 403) {
-                $('#Logging').val('Insufficient user rights');
-            }
-        });
+        }
+        else {
+            NodesSelected = null;
+        }
+    }
+
+    function ignoreWindowScroll(e) {
+        e.preventDefault();
+    }
+
+    $('#jstree').jstree({
+        "core": {
+            "multiple": true,
+            "animation": 0,
+            "check_callback": true,
+        }
+    });
+
+    $('#jstree').on("changed.jstree", function (e, data) {
+        NodesSelected = data.selected;
+
+        var SelectedFile = $('#' + NodesSelected[0]);
+        var APIUrl = SelectedFile.attr("data-multiplugapi");
+
+        if (typeof APIUrl !== 'undefined' && APIUrl !== false) {
+            $('#FileNameHeading').text("File: " + SelectedFile.attr("data-filename"));
+            $('#btn-downloadfile').attr('href', GetUrlForDownload(NodesSelected));
+            $('#page').val(1);
+            GetFile();
+        }
+        else
+        {
+            NodesSelected = null;
+        }
+    });
+
+    document.getElementById("Logging").addEventListener("wheel", event => {
+        if (NodesSelected == null || NodesSelected.length == 0) {
+            return;
+        }
+
+        if (event.deltaY > 0) {
+            pageDown();
+        }
+        else {
+            pageUp();
+        }
+    });
+
+    $("#Logging").hover(
+        function () {
+            window.addEventListener("wheel", ignoreWindowScroll, { passive: false });
+        }, function () {
+            window.removeEventListener("wheel", ignoreWindowScroll, { passive: true });
+        }
+    );
+
+    $("#btn-viewup").click(function (event) {
+        event.preventDefault();
+        pageUp();
+    });
+
+
+    $("#btn-viewdown").click(function (event) {
+        event.preventDefault();
+        pageDown();
     });
 
     $("#btn-deletefile").click(function (event) {
@@ -174,7 +265,7 @@
         for (let i = 0; i < NodesSelectedSnapshot.length; i++) {
             $.ajax({
                 type: 'POST',
-                url: GetUrl(NodesSelectedSnapshot[i]),
+                url: GetUrlForDelete(NodesSelectedSnapshot[i]),
                 async: false,
                 success: function (data) {
                     $("#jstree").jstree(true).delete_node(NodesSelectedSnapshot[i]);
@@ -192,7 +283,6 @@
             NodesSelected = null;
 
             $("#btn-downloadfile").removeAttr('href');
-            $("#btn-downloadfile").removeAttr('download');
             $('#FileNameHeading').text("File:");
             $('#Logging').val('');
         }

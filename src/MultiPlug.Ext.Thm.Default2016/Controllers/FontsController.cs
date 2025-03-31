@@ -1,8 +1,8 @@
 ﻿using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
-using MultiPlug.Theme.Default2016.Properties;
+using MultiPlug.Ext.Thm.Default2016.Properties;
 
-namespace MultiPlug.Theme.Default2016.Controllers
+namespace MultiPlug.Ext.Thm.Default2016.Controllers
 {
     [Route("fonts/*")]
     public class FontsController : AssetsEndpoint
@@ -37,6 +37,26 @@ namespace MultiPlug.Theme.Default2016.Controllers
             else if (FileName == "fontawesome-webfont.woff")
             {
                 ResultByte = Resources.fontawesome_webfont_woff;
+                mediatype = "application/font-woff";
+            }
+            else if (FileName == "multiplug.svg")
+            {
+                ResultByte = Resources.multiplug_svg;
+                mediatype = "image/svg+xml";
+            }
+            else if (FileName == "multiplug.eot")
+            {
+                ResultByte = Resources.multiplug_eot;
+                mediatype = "application/font-sfnt";
+            }
+            else if (FileName == "multiplug.ttf")
+            {
+                ResultByte = Resources.multiplug_ttf;
+                mediatype = "application/font-sfnt";
+            }
+            else if (FileName == "multiplug.woff")
+            {
+                ResultByte = Resources.multiplug_ttf;
                 mediatype = "application/font-woff";
             }
             else

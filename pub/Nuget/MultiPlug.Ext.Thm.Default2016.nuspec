@@ -2,17 +2,20 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Thm.Default2016</id>
-    <version>1.0.28</version>
+    <version>1.0.29</version>
     <title>MultiPlug 2016 Theme</title>
     <authors>British Systems</authors>
     <owners>British Systems</owners>
     <projectUrl>https://github.com/british-systems/MultiPlug.Ext.Thm.Default2016</projectUrl>
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>2016 default theme for the MultiPlug .Net Edge Computing Platform</description>
+    <description>The Default Theme for the MultiPlug .Net Edge Computing Platform 2.2.82</description>
     <repository type="git" url="https://github.com/british-systems/MultiPlug.Ext.Thm.Default2016" />
     <license type="expression">MIT</license>
-    <releaseNotes>1.0.28 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/21
+    <releaseNotes>1.0.29 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/24
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/23
+https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/22
+1.0.28 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/21
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/20
 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/19
 1.0.27 https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/18
@@ -45,13 +48,13 @@ https://github.com/British-Systems/MultiPlug.Ext.Thm.Default2016/issues/8
 1.0.10 Update to 'Layout' value
 1.0.9 Added Razor templates to RazorTemplates property call.
 1.0.8 Published</releaseNotes>
-    <copyright>Great British Systems Ltd 2024</copyright>
+    <copyright>Great British Systems Ltd 2025</copyright>
     <tags>MultiPlug Edge_Computing IOT IIOT</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-        <dependency id="MultiPlug.Base" version="1.0.69" />
-        <dependency id="MultiPlug.Extension.Core" version="1.0.63" />
-        <dependency id="MultiPlug.Core" version="2.2.79" />
+        <dependency id="MultiPlug.Base" version="1.0.76" />
+        <dependency id="MultiPlug.Extension.Core" version="1.0.64" />
+        <dependency id="MultiPlug.Core" version="2.2.82" />
       </group>
     </dependencies>
   </metadata>

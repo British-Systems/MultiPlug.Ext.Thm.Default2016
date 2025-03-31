@@ -3,95 +3,88 @@
     Layout = "MultiPlug.Ext.Thm.Default2016.Layout";
 }
 
-
 <section class="row-fluid">
-    <div class="span3">
-        <div class="box">
-            <ul class="nav nav-list">
-                <li class="nav-header">Analytics</li>
-                <li @*class="active"*@><a class="btn-loadlog" data-logtype="core" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view" href="@Raw(Model.Context.Paths.Home)">MultiPlug.Core</a></li>
-                <li class="nav-header">Extensions</li>
-
-                @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
-                {
-                    <li><a class="btn-loadlog" data-logtype="extension" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/extensions/@Extension.Meta.Assembly/view" href="@Raw(Model.Context.Paths.Home)@Extension.Meta.Assembly">@Extension.Meta.Assembly</a></li>
-                }
-
-                <li class="divider"></li>
-
-            </ul>
-        </div>
+    <div class="row-fluid">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a class="tab-focus" href="#notifications">Notifications</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Trace Logging <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a autofocus class="btn-loadlog" id="selectedOnLoad" href="#trace-logging" data-logtype="core" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view" href="@Raw(Model.Context.Paths.Home)">MultiPlug.Core</a></li>
+                    <li class="divider"></li>
+                    @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
+                    {
+                        <li><a class="btn-loadlog" href="#trace-logging" data-logtype="extension" data-multiplugapi="@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/extensions/@Extension.Meta.Assembly/view" href="@Raw(Model.Context.Paths.Home)@Extension.Meta.Assembly">@Extension.Meta.Assembly</a></li>
+                    }
+                </ul>
+            </li>
+        </ul>
     </div>
-    <div class="span9">
-        <div class="box">
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="@Raw(Model.Context.Paths.Home)">All</a>
-                </li>
-                @*<li><a href="@Raw(Model.Context.Paths.Home)?filter=errors">Errors</a></li>
-                <li><a href="@Raw(Model.Context.Paths.Home)?filter=warnings">Warnings</a></li>*@
-            </ul>
 
-            <div id="trace-log">
-                <p>Trace Log of MultiPlug System Components</p>
-                <div class="row-fluid">
-                    <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px;">@Model.Extension.Model.TraceLog
-</textarea>
+    <div class="box">
+        <div id="myTabContent" class="tab-content" style="margin-bottom: 10px">
+            <div class="tab-pane fade in active" id="notifications">
+                <div class="span12">
+                    <h3 class="box-header">
+                        <i class="icon-bell-alt"></i>
+                        Runtime Notifications
+                    </h3>
+                    <div class="box non-collapsible widget-comments" id="notificationslist">
+                    </div>
                 </div>
+            </div>
+
+            <div class="tab-pane fade" id="trace-logging">
+                <h4 id="ComponentHeading">Trace Log of MultiPlug.Core</h4>
+                <div class="row-fluid">
+                    <div class="input-append" style="user-select:none">
+                        <span class="add-on" style="margin-left: 0px;">Page:</span>
+                        <input class="span3" type="number" id="page" min="1" value="1">
+                        <a class="btn btn-blue" id="btn-viewup"><i class="icon-chevron-up"></i> Up</a>
+                        <a class="btn btn-blue" id="btn-viewdown"><i class="icon-chevron-down"></i> Down</a>
+                    </div>
+                </div>
+                <p><i class="icon-info-sign"></i> Hover over the Logging Window and use the Mouse Wheel</p>
+                <div id="trace-log">
+                    <div class="row-fluid">
+                        <textarea id="Logging" spellcheck="false" rows="3" class="input-block-level" wrap="off" style="margin: 0px; height: 450px; overflow-y: scroll; overflow-x: scroll;">
+                            @Model.Extension.Model.TraceLog
+                        </textarea>
+                    </div>
+                </div>
+                <ul class="nav nav-pills">
+                    <li class="active" id="filterInfo">
+                        <a class="toggleActive" href="#">Info</a>
+                    </li>
+                    <li class="active" id="filterWarn">
+                        <a class="toggleActive" href="#">Warn</a>
+                    </li>
+                    <li class="active" id="filterError">
+                        <a class="toggleActive" href="#">Error</a>
+                    </li>
+                    <li class="active" id="filterSuccess">
+                        <a class="toggleActive" href="#">Success</a>
+                    </li>
+                    <li class="active" id="filterFailure">
+                        <a class="toggleActive" href="#">Failure</a>
+                    </li>
+                    <li class="active" id="filterUnknown">
+                        <a class="toggleActive" href="#">Unknown</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
 </section>
 
 <script>
-
-    var CoreLogDisplayed = true;
-
-    function scrollLogToBottom(loggingTextArea) {
-        var textarea = document.getElementById(loggingTextArea);
-        textarea.scrollTop = textarea.scrollHeight;
-    }
-
-    $.connection.wS.on("Send", function (id, Group) {
-        if (id == '@Model.Extension.Model.TraceLogId' && CoreLogDisplayed) {
-            var loggingTextArea = $('#Logging');
-            loggingTextArea.val(loggingTextArea.val() + Group.Subjects[1].Value + '\n');
-            scrollLogToBottom('Logging');
-        }
-    });
-
-    $(".btn-loadlog").click(function (event) {
-        event.preventDefault();
-
-        CoreLogDisplayed = ($(this).attr("data-logtype") == "core");
-
-        var APIUrl = $(this).attr("data-multiplugapi");
-        $('#Logging').val('Loading File');
-
-        $.get(APIUrl, function (data) {
-
-        })
-        .done(function (data) {
-            var LoggingBox = $('#Logging');
-            var builder = [];
-            data.forEach(function (line) {
-                builder.push(line);
-                builder.push("\n");
-            });
-            LoggingBox.val('');
-            LoggingBox.val(builder.join(''));
-            scrollLogToBottom('Logging');
-        })
-        .fail(function (xhr, status, error) {
-            if (xhr.status == 401) {
-                $('#Logging').val('Action requires User Log On');
-            }
-            if (xhr.status == 403) {
-                $('#Logging').val('Insufficient user rights');
-            }
-        });
-    });
-
-    scrollLogToBottom('Logging');
+    // Used by analytics.js
+    var PathsCurrent = "@Raw(Model.Context.Paths.Current)";
+    var PathsSettings = "@Raw(Model.Context.Paths.Roots.Settings)";
+    var PathsSystem = "@Raw(Model.Context.Paths.System)";
+    var PathsMultiPlug = "@Raw(Model.Context.Paths.Roots.MultiPlug)";
+    var TraceLogId = "@Model.Extension.Model.TraceLogId";
+    var NotificationId = "@Model.Extension.Model.NotificationId";
 </script>
+<script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/scripts/timeago.js"></script>
+<script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/scripts/analytics.js"></script>

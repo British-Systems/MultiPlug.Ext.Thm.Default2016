@@ -118,23 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Authorisation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Authorisation.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="body_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\body-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="British_Systems_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\British-Systems-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="British_Systems_Logo_Fade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\British-Systems-Logo-Fade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="evaluation_stamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\evaluation-stamp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FrameApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FrameApp.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -168,15 +156,6 @@
   </data>
   <data name="MultiPlug_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\MultiPlug-Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NotFoundApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotFoundApp.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="NotFoundExtension" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotFoundExtension.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="NotFoundGlobal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotFoundGlobal.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,9 +226,6 @@
   <data name="SettingsAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SettingsAdd.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="InternalServerError" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InternalServerError.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="SettingsExtensions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SettingsExtensions.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -285,9 +261,6 @@
   </data>
   <data name="HomeAnalytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomeAnalytics.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Authentication" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Authentication.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SettingsPermissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SettingsPermissions.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -357,5 +330,29 @@
   </data>
   <data name="pages_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\pages.min.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="timeago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scripts\timeago.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="analytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scripts\analytics.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="multiplug_css" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Styles\multiplug.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="multiplug_eot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\multiplug.eot;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="multiplug_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\multiplug.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="multiplug_ttf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\multiplug.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="multiplug_woff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\multiplug.woff;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SettingsHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Controllers\Settings\SettingsHome.cshtml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

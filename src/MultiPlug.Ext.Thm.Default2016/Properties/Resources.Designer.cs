@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MultiPlug.Theme.Default2016.Properties {
+namespace MultiPlug.Ext.Thm.Default2016.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MultiPlug.Theme.Default2016.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MultiPlug.Ext.Thm.Default2016.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -84,7 +84,7 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:&quot;&quot;;line-height:0}.clearfix:after{clear:both}.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{background-image:url(&quot;../images/body-bg.png&quot;);min-width:1012px;padding:62px 0 0 112px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:bo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:&quot;&quot;;line-height:0}.clearfix:after{clear:both}.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{background-image:url(&quot;../images/body-bg.1.0.29.png&quot;);min-width:1012px;padding:62px 0 0 112px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-si [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string adminflare_min1 {
             get {
@@ -93,47 +93,30 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///   Looks up a localized string similar to var CoreLogDisplayed = true;
+        ///var Selected = null;
         ///
-        ///&lt;!DOCTYPE html&gt;
-        ///&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 8]&gt;&lt;html class=&quot;no-js lt-ie9&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if gt IE 8]&gt;&lt;!--&gt;
-        ///&lt;html class=&quot;no-js&quot;&gt;
-        ///&lt;!--&lt;![endif]--&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Log In - MultiPlug&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-        ///    &lt;meta name=&quot;vie [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Authentication {
-            get {
-                return ResourceManager.GetString("Authentication", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///function scrollLogToBottom(loggingTextArea) {
+        ///    var textarea = document.getElementById(loggingTextArea);
+        ///    textarea.scrollTop = textarea.scrollHeight;
+        ///}
         ///
-        ///&lt;!DOCTYPE html&gt;
-        ///&lt;!--[if lt IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 7]&gt;&lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if IE 8]&gt;&lt;html class=&quot;no-js lt-ie9&quot;&gt;&lt;![endif]--&gt;
-        ///&lt;!--[if gt IE 8]&gt;&lt;!--&gt;
-        ///&lt;html class=&quot;no-js&quot;&gt;
-        ///&lt;!--&lt;![endif]--&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Permission Denied - MultiPlug&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Log into Mul [rest of string was truncated]&quot;;.
+        ///function pageUp() {
+        ///    var CurrentPage = Number($(&apos;#page&apos;).val())
+        ///    CurrentPage++;
+        ///    $(&apos;#page&apos;).val(CurrentPage);
+        ///    GetFile();
+        ///}
+        ///
+        ///function pageDown() {
+        ///    var CurrentPage = Number($(&apos;#page&apos;).val())
+        ///    if (CurrentPage != 1) {
+        ///        CurrentPage--;
+        ///        $(&apos;#page&apos;).val(Curr [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Authorisation {
+        internal static string analytics {
             get {
-                return ResourceManager.GetString("Authorisation", resourceCulture);
+                return ResourceManager.GetString("analytics", resourceCulture);
             }
         }
         
@@ -176,30 +159,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap British_Systems_Logo {
-            get {
-                object obj = ResourceManager.GetObject("British_Systems_Logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap British_Systems_Logo_Fade {
-            get {
-                object obj = ResourceManager.GetObject("British_Systems_Logo_Fade", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to $(&quot;.btn-deploy&quot;).click(function (event) {
         ///    event.preventDefault();
-        ///
-        ///    var theRow = $(this).closest(&quot;tr&quot;);
         ///
         ///    $.post($(this).attr(&apos;href&apos;), function (data) {
         ///
@@ -217,16 +178,6 @@ namespace MultiPlug.Theme.Default2016.Properties {
         internal static string deploy_js {
             get {
                 return ResourceManager.GetString("deploy_js", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap evaluation_stamp {
-            get {
-                object obj = ResourceManager.GetObject("evaluation_stamp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -357,14 +308,14 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///
         ///&lt;section class=&quot;row-fluid&quot;&gt;
-        ///    &lt;div class=&quot;span3&quot;&gt;
-        ///        &lt;div class=&quot;box&quot;&gt;
-        ///            &lt;ul class=&quot;nav nav-list&quot;&gt;
-        ///                &lt;li class=&quot;nav-header&quot;&gt;Analytics&lt;/li&gt;
-        ///                &lt;li @*class=&quot;active&quot;*@&gt;&lt;a class=&quot;btn-loadlog&quot; data-logtype=&quot;core&quot; data-multiplugapi=&quot;@Raw(Model.Context.Paths.Roots.MultiPlug)diagnostics/logs/system/view&quot; href=&quot;@Raw(Model.Context.Paths.Home)&quot;&gt;MultiPlug.Core&lt;/a&gt;&lt;/li&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///    &lt;div class=&quot;row-fluid&quot;&gt;
+        ///        &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab&quot;&gt;
+        ///            &lt;li class=&quot;active&quot;&gt;&lt;a class=&quot;tab-focus&quot; href=&quot;#notifications&quot;&gt;Notifications&lt;/a&gt;&lt;/li&gt;
+        ///            &lt;li class=&quot;dropdown&quot;&gt;
+        ///                &lt;a class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot; &gt;Trace Logging &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+        ///                &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        ///                [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeAnalytics {
             get {
@@ -376,21 +327,28 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///   Looks up a localized string similar to @using MultiPlug.Base.Http
         ///@model MultiPlug.Base.Http.EdgeApp
         ///
+        ///&lt;style&gt;
+        ///    .extensions-heading h2 {
+        ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
+        ///    }
+        ///
+        ///    .quick-btn {
+        ///        height: 100px;
+        ///        padding: 2px;
+        ///        margin: 10px;
+        ///    }
+        ///&lt;/style&gt;
+        ///
         ///&lt;div class=&quot;extensions-heading&quot;&gt;
-        ///    &lt;h2&gt;Apps&lt;/h2&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-dashboard&quot;&gt;&lt;/i&gt;&amp;nbsp;Apps&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
         ///&lt;div class=&quot;box&quot;&gt;
         ///    &lt;div class=&quot;row-fluid&quot; style=&quot;margin-bottom: 20px&quot;&gt;
         ///
-        ///        @foreach (var Extension in @Model.MultiPlugAPI.Extensions)
-        ///        {
-        ///            foreach (var HttpEndpoint in Extension.HttpEndpoints)
-        ///            {
-        ///                if (HttpEndpoint.isHidden || (HttpEndpoint.Type != HttpEndpointType.App))
-        ///                {
-        ///                    continue;
-        ///    [rest of string was truncated]&quot;;.
+        ///        @foreach (var HttpEnd [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeApps {
             get {
@@ -401,18 +359,19 @@ namespace MultiPlug.Theme.Default2016.Properties {
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
-        ///&lt;div class=&quot;box&quot;&gt;
-        ///
+        ///&lt;div class=&quot;row-fluid&quot;&gt;
         ///    &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab&quot;&gt;
         ///        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#events-subs&quot;&gt;Extensions&lt;/a&gt;&lt;/li&gt;
         ///        &lt;li&gt;&lt;a href=&quot;#mappings&quot;&gt;Mappings&lt;/a&gt;&lt;/li&gt;
         ///    &lt;/ul&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div class=&quot;box&quot;&gt;
         ///    &lt;div id=&quot;myTabContent&quot; class=&quot;tab-content&quot; style=&quot;margin-bottom: 10px&quot;&gt;
         ///        &lt;div class=&quot;tab-pane fade in active&quot; id=&quot;events-subs&quot;&gt;
         ///            &lt;p&gt;Events, Subscriptions and Web Apps of the Extensions&lt;/p&gt;
         ///            &lt;div id=&quot;jstree&quot;&gt;
-        ///                &lt;ul&gt;
-        ///            [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeExtensions {
             get {
@@ -426,40 +385,27 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
-        ///    @if (Model.Extension.Model.UpdatePending)
-        ///    {
-        ///        &lt;div class=&quot;alert&quot;&gt;
-        ///            &lt;a href=&quot;#&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;×&lt;/a&gt;
-        ///            &lt;strong&gt;Updates Pending&lt;/strong&gt; Restart the system to apply pending updates.
-        ///        &lt;/div&gt;
+        ///&lt;style&gt;
+        ///    .setting-heading h2 {
+        ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
-        ///    &lt;h3 class=&quot;box-header&quot;&gt;Actions&lt;/h3&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///&lt;/style&gt;
+        ///
+        ///&lt;div class=&quot;setting-heading&quot;&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-tasks&quot;&gt;&lt;/i&gt;&amp;nbsp;System Overview&lt;/h2&gt;
+        ///&lt;/div&gt;
+        ///
+        ///@if (Model.Extension.Model.UpdatePending)
+        ///{
+        ///    &lt;div class=&quot;alert&quot;&gt;
+        ///        &lt;a href=&quot;#&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;×&lt;/a&gt;
+        ///        &lt;strong&gt;Updates Pending&lt;/stro [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HomeSettings {
             get {
                 return ResourceManager.GetString("HomeSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Internal Server Error - Multiplug&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Internal Server Error&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///
-        ///    &lt;link href=&quot;assets/default2016/styles/fonts.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;link href=&quot;assets/default2016/styles/bootstrap.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;bootstrap-css&quot;&gt;
-        ///
-        ///&lt;/head&gt;
-        ///&lt;body&gt; [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string InternalServerError {
-            get {
-                return ResourceManager.GetString("InternalServerError", resourceCulture);
             }
         }
         
@@ -748,6 +694,39 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @font-face {
+        ///    font-family: &apos;multiplug&apos;;
+        ///    src: url(&apos;../fonts/multiplug.eot&apos;);
+        ///    src: url(&apos;../fonts/multiplug.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;),
+        ///         url(&apos;../fonts/multiplug.woff&apos;) format(&apos;woff&apos;),
+        ///         url(&apos;../fonts/multiplug.ttf&apos;) format(&apos;truetype&apos;),
+        ///         url(&apos;../fonts/multiplug.svg#multiplug&apos;) format(&apos;svg&apos;);
+        ///    font-weight: normal;
+        ///    font-style: normal;
+        ///}
+        ///[class*=&apos;mpicon-&apos;]:before{
+        ///	display: inline-block;
+        ///   font-family: &apos;multiplug&apos;;
+        ///   font-style: normal;
+        ///   font-weight: norma [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string multiplug_css {
+            get {
+                return ResourceManager.GetString("multiplug_css", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] multiplug_eot {
+            get {
+                object obj = ResourceManager.GetObject("multiplug_eot", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap MultiPlug_Icon {
@@ -807,68 +786,32 @@ namespace MultiPlug.Theme.Default2016.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Multiplug App Not Found&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Not Found&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///
-        ///    &lt;link href=&quot;assets/default2016/styles/fonts.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;link href=&quot;assets/default2016/styles/bootstrap.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;bootstrap-css&quot;&gt;
-        ///
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///
-        ///    &lt;section class [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static string NotFoundApp {
+        internal static byte[] multiplug_svg {
             get {
-                return ResourceManager.GetString("NotFoundApp", resourceCulture);
+                object obj = ResourceManager.GetObject("multiplug_svg", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Multiplug Extension Not Found&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Not Found&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///
-        ///    &lt;link href=&quot;assets/default2016/styles/fonts.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;link href=&quot;assets/default2016/styles/bootstrap.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;bootstrap-css&quot;&gt;
-        ///
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///
-        ///    &lt;section [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static string NotFoundExtension {
+        internal static byte[] multiplug_ttf {
             get {
-                return ResourceManager.GetString("NotFoundExtension", resourceCulture);
+                object obj = ResourceManager.GetObject("multiplug_ttf", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        ///    &lt;title&gt;Multiplug&lt;/title&gt;
-        ///    &lt;meta name=&quot;description&quot; content=&quot;Not Found&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///
-        ///    &lt;link href=&quot;assets/default2016/styles/fonts.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
-        ///    &lt;link href=&quot;assets/default2016/styles/bootstrap.min.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;bootstrap-css&quot;&gt;
-        ///
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///
-        ///    &lt;section class=&quot;container&quot;&gt;        /// [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static string NotFoundGlobal {
+        internal static byte[] multiplug_woff {
             get {
-                return ResourceManager.GetString("NotFoundGlobal", resourceCulture);
+                object obj = ResourceManager.GetObject("multiplug_woff", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -936,8 +879,9 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;style&gt;
         ///    .setting-heading img,
         ///    .setting-heading h2 {
-        ///      display:inline-block;
-        ///      vertical-align:middle;
+        ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///    .setting-heading img {
         ///    opacity: 0.7; filter: alpha(opacity=70);
@@ -949,12 +893,8 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Add Extensions&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///
-        ///@if (Model.Extension.Model.UpdatePending)
-        ///{
-        ///    &lt;div class= [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-download-alt&quot;&gt;&lt;/i&gt;&amp;nbsp;Add Extensions&lt;/h2&gt;
+        ///&lt;/div&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsAdd {
             get {
@@ -969,26 +909,24 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Apps&lt;/h2&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-dashboard&quot;&gt;&lt;/i&gt;&amp;nbsp;Apps&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enct [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    Home App
+        ///&lt;/h3&gt;
+        ///&lt;div class=&quot;box non-collapsible&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot; id=&quot;div-defaultapp&quot;&gt;
+        ///        &lt;div class=&quot;span2&quot;&gt;
+        ///            &lt;p&gt;Def [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsApps {
             get {
@@ -1003,28 +941,24 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Environment&lt;/h2&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-umbrella&quot;&gt;&lt;/i&gt;&amp;nbsp;Environment&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
-        ///&lt;div class=&quot;box&quot;&gt;
-        ///    &lt;form method=&quot;p [rest of string was truncated]&quot;;.
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    General
+        ///&lt;/h3&gt;
+        ///&lt;div class=&quot;box non-collapsible&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot; id=&quot;div-logginglevel&quot;&gt;
+        ///        &lt;div class=&quot;span6&quot;&gt;
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsEnvironment {
             get {
@@ -1057,6 +991,27 @@ namespace MultiPlug.Theme.Default2016.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///
+        ///&lt;section class=&quot;row-fluid&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot;&gt;
+        ///        &lt;div class=&quot;span12&quot;&gt;
+        ///            &lt;h3 class=&quot;box-header&quot;&gt;About MultiPlug.Ext.Thm.Default2016&lt;/h3&gt;
+        ///            &lt;div class=&quot;box non-collapsible&quot;&gt;
+        ///                &lt;div class=&quot;row-fluid&quot;&gt;
+        ///                    &lt;div class=&quot;span6&quot;&gt;&lt;b&gt;Version&lt;/b&gt;&lt;/div&gt;
+        ///                    &lt;div class=&quot;span6&quot;&gt;@Raw(Model.Extension.Model.Version)&lt;/div&gt;
+        ///                &lt;/div&gt;
+        ///                &lt;div class=&quot;row-fluid&quot;&gt;
+        ///              [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SettingsHome {
+            get {
+                return ResourceManager.GetString("SettingsHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@{
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
@@ -1075,13 +1030,13 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Hosting&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///&lt;form style=&quot;display:contents&quot; method=&quot;post&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;&lt;i class=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHosting {
             get {
@@ -1109,15 +1064,13 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///
-        ///&lt;h3 class=&quot;box-header&quot;&gt;
-        ///    Storage        /// [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;&lt;i class=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeeping {
             get {
@@ -1131,25 +1084,23 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    Layout = &quot;MultiPlug.Ext.Thm.Default2016.Layout&quot;;
         ///}
         ///
-        ///&lt;div&gt;
-        ///    &lt;h2&gt;Housekeeping&lt;/h2&gt;
+        ///&lt;style&gt;
+        ///    .setting-heading h2 {
+        ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;div class=&quot;setting-heading&quot;&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-trash&quot;&gt;&lt;/i&gt;&amp;nbsp;Housekeeping&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
         ///&lt;div class=&quot;box&quot;&gt;
         ///    &lt;div class=&quot;row-fluid&quot;&gt;
         ///        &lt;div class=&quot;span5&quot;&gt;
         ///            &lt;h4&gt;Log Files&lt;/h4&gt;
-        ///        &lt;/div&gt;
-        ///        &lt;div class=&quot;span7&quot;&gt;
-        ///            &lt;h4 id=&quot;FileNameHeading&quot;&gt;File:&lt;/h4&gt;
-        ///        &lt;/div&gt;
-        ///    &lt;/div&gt;
-        ///
-        ///    &lt;div class=&quot;row-fluid&quot;&gt;
-        ///        &lt;div class=&quot;span5&quot;&gt;
-        ///            &lt;div id=&quot;jstree&quot;&gt;
-        ///                &lt;ul&gt;
-        ///                    &lt;li&gt;        /// [rest of string was truncated]&quot;;.
+        ///            &lt;p&gt;&lt;i class=&quot;icon-info-sign&quot;&gt;&lt;/i&gt; Use the shift key  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHousekeepingStorage {
             get {
@@ -1164,26 +1115,25 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
+        ///    }
+        ///
+        ///    input[type=&quot;radio&quot;],input[type=&quot;checkbox&quot;] {
+        ///        margin-top: 0px;
+        ///        margin-bottom: 10px;
+        ///        min-height: 30px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Performance&lt;/h2&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-signal&quot;&gt;&lt;/i&gt;&amp;nbsp;Performance&lt;/h2&gt;
         ///&lt;/div&gt;
-        ///&lt;form method=&quot;post&quot; accept-charset=&quot;utf- [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    As [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsPerformance {
             get {
@@ -1211,14 +1161,12 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///
         ///    .permissions-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
-        ///&lt;div class=&quot;permissions-heading&quot;&gt;
-        ///    &lt;h2&gt;Permissions&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///
-        ///&lt;div class=&quot;box&quot;&gt;        /// [rest of string was truncated]&quot;;.
+        ///&lt;div class=&quot;permissions-heading&quot;&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsPermissions {
             get {
@@ -1268,28 +1216,21 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;style&gt;
-        ///    .permissions-heading img,
-        ///    .permissions-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .permissions-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
-        ///    .permissions-heading h2 {
+        ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
-        ///&lt;div class=&quot;permissions-heading&quot;&gt;
-        ///    &lt;h2&gt;Security&lt;/h2&gt;
+        ///&lt;div class=&quot;setting-heading&quot;&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-lock&quot;&gt;&lt;/i&gt;&amp;nbsp;Security&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
         ///&lt;div class=&quot;box&quot;&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///    &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTopTab&quot;&gt;
+        ///        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#UsersEdit&quot;&gt;Users&lt;/a&gt;&lt;/li&gt;
+        ///        &lt;li&gt;&lt;a href=&quot;#ProvidersEdit&quot;&gt;Providers&lt;/a&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsSecurity {
             get {
@@ -1304,28 +1245,24 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///}
         ///
         ///&lt;style&gt;
-        ///    .setting-heading img,
-        ///    .setting-heading h2 {
-        ///        display: inline-block;
-        ///        vertical-align: middle;
-        ///    }
-        ///
-        ///    .setting-heading img {
-        ///        opacity: 0.7;
-        ///        filter: alpha(opacity=70);
-        ///    }
-        ///
         ///    .setting-heading h2 {
         ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Environment&lt;/h2&gt;
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-umbrella&quot;&gt;&lt;/i&gt;&amp;nbsp;Environment&lt;/h2&gt;
         ///&lt;/div&gt;
         ///
-        ///&lt;div class=&quot;box&quot;&gt;
-        ///    &lt;form method=&quot;p [rest of string was truncated]&quot;;.
+        ///&lt;h3 class=&quot;box-header&quot;&gt;
+        ///    General
+        ///&lt;/h3&gt;
+        ///&lt;div class=&quot;box non-collapsible&quot;&gt;
+        ///    &lt;div class=&quot;row-fluid&quot; id=&quot;div-logginglevel&quot;&gt;
+        ///        &lt;div class=&quot;span6&quot;&gt;
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsSystem {
             get {
@@ -1350,18 +1287,44 @@ namespace MultiPlug.Theme.Default2016.Properties {
         ///    }
         ///
         ///    .setting-heading h2 {
-        ///    margin-left:0.1em;
+        ///        margin-left: 0.1em;
+        ///        margin-top: 0px;
+        ///        margin-bottom: 20px;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;div class=&quot;setting-heading&quot;&gt;
-        ///    &lt;h2&gt;Update MultiPlug&lt;/h2&gt;
-        ///&lt;/div&gt;
-        ///&lt;form class=&quot;&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;h2&gt;&lt;i class=&quot;icon-download-alt&quot;&gt;&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsUpdate {
             get {
                 return ResourceManager.GetString("SettingsUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /**
+        /// * Timeago is a jQuery plugin that makes it easy to support automatically
+        /// * updating fuzzy timestamps (e.g. &quot;4 minutes ago&quot; or &quot;about 1 day ago&quot;).
+        /// *
+        /// * @name timeago
+        /// * @version 1.6.7
+        /// * @requires jQuery &gt;=1.5.0 &lt;4.0
+        /// * @author Ryan McGeary
+        /// * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+        /// *
+        /// * For usage and examples, visit:
+        /// * http://timeago.yarp.com/
+        /// *
+        /// * Copyright (c) 2008-2019, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
+        /// */
+        ///
+        ///(function (factory) {
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string timeago {
+            get {
+                return ResourceManager.GetString("timeago", resourceCulture);
             }
         }
     }

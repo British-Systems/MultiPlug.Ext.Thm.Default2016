@@ -1,9 +1,9 @@
 ﻿using System.Text;
 using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
-using MultiPlug.Theme.Default2016.Properties;
+using MultiPlug.Ext.Thm.Default2016.Properties;
 
-namespace MultiPlug.Theme.Default2016.Controllers
+namespace MultiPlug.Ext.Thm.Default2016.Controllers
 {
     [Route("scripts/*")]
     public class ScriptsController : AssetsEndpoint
@@ -28,7 +28,7 @@ namespace MultiPlug.Theme.Default2016.Controllers
             //{
             //    result = Resources.bootstrap_min;
             //}
-            else if (id == "adminflare.min.js")
+            else if (id.StartsWith("adminflare.min.") && id.EndsWith(".js"))
             {
                 result = Resources.adminflare_min;
             }
@@ -47,6 +47,14 @@ namespace MultiPlug.Theme.Default2016.Controllers
             else if (id == "multiplug.selectize.js")
             {
                 result = Resources.multiplug_selectize;
+            }
+            else if(id == "analytics.js")
+            {
+                result = Resources.analytics;
+            }
+            else if (id == "timeago.js")
+            {
+                result = Resources.timeago;
             }
             else if (id == "deploy.js")
             {

@@ -1,23 +1,19 @@
 ﻿using System.Drawing;
 using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
-using MultiPlug.Theme.Default2016.Properties;
+using MultiPlug.Ext.Thm.Default2016.Properties;
 
-namespace MultiPlug.Theme.Default2016.Controllers
+namespace MultiPlug.Ext.Thm.Default2016.Controllers
 {
     [Route("images/*")]
     public class ImagesController : AssetsEndpoint
     {
         public Response Get(string image)
         {
-            System.Drawing.Bitmap result = null; ;
+            Bitmap result = null; ;
 
             string type = "image/png";
 
-            //if (id == "brand.png")
-            //{
-            //    result = Resources.logo_png;
-            //}
             if (image == "MultiPlug.png")
             {
                 result = Resources.MultiPlug_Small;
@@ -30,15 +26,11 @@ namespace MultiPlug.Theme.Default2016.Controllers
             {
                 result = Resources.MultiPlug_Icon;
             }
-            //else if (image == "af-logo-signin.png")
-            //{
-            //    result = Resources.afaf_logo_signin;
-            //}
             else if (image == "avatar.png")
             {
                 result = Resources.avatar;
             }
-            else if (image == "body-bg.png")
+            else if (image.StartsWith("body-bg.") && image.EndsWith(".png"))
             {
                 result = Resources.body_bg;
             }
@@ -53,16 +45,6 @@ namespace MultiPlug.Theme.Default2016.Controllers
             else if (image == "multiplug.png")
             {
                 result = Resources.MultiPlug;
-                type = "image/png";
-            }
-            else if (image == "evaluation-stamp.png")
-            {
-                result = Resources.evaluation_stamp;
-                type = "image/png";
-            }
-            else if (image == "british-systems-fade.png")
-            {
-                result = Resources.British_Systems_Logo_Fade;
                 type = "image/png";
             }
 

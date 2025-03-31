@@ -68,9 +68,10 @@
     <base href="@Model.Context.Paths.Base">
 
     <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/fonts.css" media="all" rel="stylesheet" type="text/css">
+    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/multiplug.css" media="all" rel="stylesheet" type="text/css">
     <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
     <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/font.awesome.min.css" media="all" rel="stylesheet" type="text/css">
-    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/adminflare.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/adminflare.min.1.0.29.css" media="all" rel="stylesheet" type="text/css">
 
     <style type="text/css">
 		/* ======================================================================= */
@@ -106,7 +107,7 @@
 
 		/* ======================================================================= */
 		/* Status panel */
-		.status-example { line-height: 0; position:relative; top: 22px }
+		.status-example { line-height: 0; position:relative; top: 22px; }
     </style>
 
     <link href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/styles/selectize.default.css" rel="stylesheet" />
@@ -125,7 +126,8 @@
     <header class="navbar navbar-fixed-top" id="main-navbar">
         <div class="navbar-inner">
             <div class="container">
-                <a class="logo" href=""><img height="30" width="120" alt="MultiPlug Home" src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/images/MultiPlug.png"></a>
+                <a class="logo" href="">@*<span class="mpicon-multiplug-solo"></span>*@</a>
+                @*<a class="logo" href=""><img height="30" width="120" alt="MultiPlug Home" src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/images/MultiPlug.png"></a>*@
                 <a class="btn nav-button collapsed" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-reorder"></span>
                 </a>
@@ -149,26 +151,30 @@
                         <li class="divider-vertical"></li>
                         <li id="li-btn-deploy" class="@((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"active":"")"><a class="btn-deploy" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/deploy/"><i class="icon-save"></i>&nbsp;&nbsp;Deploy @((Model.MultiPlugAPI.Runtime.Deploy.Pending)?"Pending":"")</a></li>
                         <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle usermenu" data-toggle="dropdown">
+                        <li class="dropdown" id="device-menu">
+                            <a id="device-current" href="#" class="dropdown-toggle usermenu" data-toggle="dropdown">
                                 <i class="icon-desktop"></i>&nbsp;&nbsp;
                                 <span class="responsive-text">Machine Name: </span>@Model.MultiPlugAPI.Environment.MachineName
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul id="device-list" class="dropdown-menu">
                                 <li>
                                     <a href="@Raw(Model.Context.Paths.Current)"><i class="icon-desktop"></i><span>&nbsp;&nbsp;@Model.MultiPlugAPI.Environment.MachineName</span></a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="separator"></li>
-                        <li>
-                            <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-comment-alt"></i>&nbsp;&nbsp;<span class="responsive-text">Notifications:</span> 0</a>
+                        <li class="separator notification-enabled"></li>
+                        <li class="notification-enabled">
+                            <a href="@Raw(Model.Context.Paths.Roots.Analytics)"><i class="icon-bell"></i><span class="responsive-text">&nbsp;&nbsp;Notifications:</span> <span id="notification-count">&nbsp;&nbsp;</span></a>
                         </li>
                         <li class="separator"></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle usermenu" data-toggle="dropdown">
                                 <img alt="Avatar" src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/images/avatar.png">
-                                <span>&nbsp;&nbsp;@Model.Context.User.Identity.Name</span>
+                                <span>@if(!string.IsNullOrEmpty(Model.Context.User.Identity.Name))
+                                    {
+                                        @Raw("&nbsp;&nbsp;")
+                                        @Model.Context.User.Identity.Name
+                                    }</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -194,10 +200,10 @@
                                     <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/power/restart"><i class="icon-undo"></i><span>&nbsp;&nbsp;Restart Device</span></a>
                                 </li>
                                 <li>
-                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/service/restart"><i class="icon-undo"></i><span>&nbsp;&nbsp;Restart Host</span></a>
+                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/power/shutdown"><i class="icon-off"></i><span>&nbsp;&nbsp;Shutdown Device</span></a>
                                 </li>
                                 <li>
-                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/power/shutdown"><i class="icon-off"></i><span>&nbsp;&nbsp;Shutdown Device</span></a>
+                                    <a class="btn-apicall" href="@Raw(Model.Context.Paths.Roots.MultiPlug)actions/service/restart"><i class="icon-undo"></i><span>&nbsp;&nbsp;Restart Host Service</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -226,7 +232,7 @@
                 </li>
 
                 <li class="@ExtensionsActive lp-dropdown">
-                    <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-cogs"></span>Extensions</a>
+                    <a href="#" class="lp-dropdown-toggle" id="pages-dropdown2"><span class="icon-wrench"></span>Extensions</a>
                     <ul class="lp-dropdown-menu simple" id="pages-dropdown2-ul" data-dropdown-owner="pages-dropdown2">
                         <li>
                             <a tabindex="" href="#"><i class="icon-dashboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -235,37 +241,37 @@
                 </li>
 
                 <li class="@SettingsActive lp-dropdown">
-                    <a href="#" class="lp-dropdown-toggle" id="pages-dropdown3"><span class="icon-wrench"></span>Settings</a>
+                    <a href="#" class="lp-dropdown-toggle" id="pages-dropdown3"><span class="mpicon-multiplug-icon"></span>Settings</a>
                     <ul class="lp-dropdown-menu simple" data-dropdown-owner="pages-dropdown3">
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/"><i class="icon-wrench"></i>&nbsp;&nbsp;Overview</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)"><i class="icon-tasks"></i>&nbsp;&nbsp;Overview</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/environment/"><i class="icon-info-sign"></i>&nbsp;&nbsp;Environment</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)environment/"><i class="icon-umbrella"></i>&nbsp;&nbsp;Environment</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/hosting/"><i class="icon-cloud"></i>&nbsp;&nbsp;Hosting</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)hosting/"><i class="icon-cloud"></i>&nbsp;&nbsp;Hosting</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/extensions/"><i class="icon-puzzle-piece"></i>&nbsp;&nbsp;Extensions</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)extensions/"><i class="icon-puzzle-piece"></i>&nbsp;&nbsp;Extensions</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/apps/"><i class="icon-dashboard"></i>&nbsp;&nbsp;Apps</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)apps/"><i class="icon-dashboard"></i>&nbsp;&nbsp;Apps</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/recipes/"><i class="icon-sort-by-attributes-alt"></i>&nbsp;&nbsp;Recipes</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)recipes/"><i class="icon-sort-by-attributes-alt"></i>&nbsp;&nbsp;Recipes</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/security/"><i class="icon-lock"></i>&nbsp;&nbsp;Security</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)security/"><i class="icon-lock"></i>&nbsp;&nbsp;Security</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/permissions/"><i class="icon-star"></i>&nbsp;&nbsp;Permissions</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)permissions/"><i class="icon-star"></i>&nbsp;&nbsp;Permissions</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/performance/"><i class="icon-signal"></i>&nbsp;&nbsp;Performance</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)performance/"><i class="icon-signal"></i>&nbsp;&nbsp;Performance</a>
                         </li>
                         <li>
-                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)/settings/housekeeping/"><i class="icon-trash"></i>&nbsp;&nbsp;Housekeeping</a>
+                            <a tabindex="@GetTabIndex()" href="@Raw(Model.Context.Paths.Roots.System)housekeeping/"><i class="icon-trash"></i>&nbsp;&nbsp;Housekeeping</a>
                         </li>
                     </ul>
                 </li>
@@ -276,7 +282,7 @@
     </nav>
 
     <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/bootstrap.js" type="text/javascript"></script>
-    <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/scripts/adminflare.min.js" type="text/javascript"></script>
+    <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.thm.default2016/scripts/adminflare.min.1.0.29.js" type="text/javascript"></script>
     <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/websocket.min.js" type="text/javascript"></script>
     <script src="stream/hubs"></script>
     <script src="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/scripts/multiplug.js?id=@Model.Context.WebSocketId" type="text/javascript"></script>
@@ -310,8 +316,8 @@
             $(".btn-deploy").html('<i class="icon-save"></i>&nbsp;&nbsp;Deploy');
         }
 
-        function NewMenuItem(theHref, theName) {
-            return '<li style="display: block; width: 100%;"><a style="display: block; width: 100%;" href="' + theHref + '"><i class="icon-dashboard"></i>&nbsp;&nbsp;' + theName + '</a></li>'
+        function NewMenuItem(theHref, theName, theIcon) {
+            return '<li style="display: block; width: 100%;"><a style="display: block; width: 100%;" href="' + theHref + '"><i class="' + theIcon + '"></i>&nbsp;&nbsp;' + theName + '</a></li>'
         }
 
         function NewMobileMenuItem(theHref, theName, theSection) {
@@ -333,7 +339,7 @@
                                 builder.push(NewMobileMenuItem(data[i].href, data[i].name, "Apps"));
                             }
                             else {
-                                builder.push(NewMenuItem(data[i].href, data[i].name));
+                                builder.push(NewMenuItem(data[i].href, data[i].name, 'icon-dashboard'));
                             }
                         }
                     }
@@ -348,7 +354,7 @@
                         builder.push(NewMobileMenuItem('@Raw(Model.Context.Paths.Roots.Apps)', 'Overview', "Apps"));
                     }
                     else {
-                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Apps)', 'Overview'));
+                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Apps)', 'Overview', 'icon-dashboard'));
                     }
                     AppsUL.empty();
                     AppsUL.append(builder.join(''));
@@ -375,7 +381,7 @@
                                 builder.push(NewMobileMenuItem(data[i].href, data[i].name, "Extenions"));
                             }
                             else {
-                                builder.push(NewMenuItem(data[i].href, data[i].name));
+                                builder.push(NewMenuItem(data[i].href, data[i].name, 'icon-puzzle-piece'));
                             }
 
                         }
@@ -391,7 +397,7 @@
                         builder.push(NewMobileMenuItem('@Raw(Model.Context.Paths.Roots.Settings)', 'Overview', "Extenions"));
                     }
                     else {
-                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Settings)', 'Overview'));
+                        builder.push(NewMenuItem('@Raw(Model.Context.Paths.Roots.Settings)', 'Overview', 'icon-puzzle-piece'));
                     }
                     SettingsUL.empty();
                     SettingsUL.append(builder.join(''));
@@ -406,12 +412,16 @@
             $.connection.wS.on("Send", function (id, Group) {
                 if (id == "@Raw(Model.MultiPlugAPI.Runtime.Deploy.EventId)") {
 
-                    if (Group.Pairs[0].Value == 'true') {
+                    if (Group.Subjects[0].Value == 'true') {
                         StartToggleActiveClass();
                     }
                     else {
                         StopToggleActiveClass();
                     }
+                }
+                else if(id == "System-Notification")
+                {
+                    $("#notification-count").text(Group.Subjects[6].Value);
                 }
             });
 
@@ -508,6 +518,42 @@
                         }
                     });
                 });
+            });
+
+            $("#device-current").click(function (event) {
+                event.preventDefault();
+
+                if ($("#device-menu").hasClass("open")) // Closing
+                {
+                    return;
+                }
+                var DeviceList = $("#device-list");
+                DeviceList.append('<li><a href=""><i class="icon-refresh icon-spin"></i><span>&nbsp;&nbsp;Updating List...</span></a></li>');
+
+                $.get("/multiplug/ssdp/discover", function (data) {
+
+                    var builder = [];
+                    builder.push('<li><a href="@Raw(Model.Context.Paths.Current)"><i class="icon-desktop"></i><span>&nbsp;&nbsp;@Raw(Model.MultiPlugAPI.Environment.MachineName)</span></a></li>');
+                    for (let i in data.discovered) {
+                        builder.push('<li><a href="' + data.discovered[i].presentationURL + '" target="_blank"><i class="icon-desktop"></i><span>&nbsp;&nbsp;' + data.discovered[i].friendlyName + '</span></a></li>');
+                    }
+                    DeviceList.empty();
+                    DeviceList.append(builder.join(''));
+                })
+                .fail(function () {
+                    $("#device-list li").last().remove();
+                });
+            });
+
+            $.ajax({
+                url: "@Raw(Model.Context.Paths.Roots.MultiPlug)notifications/count",
+                type: "get",
+                success: function (data) {
+                    $("#notification-count").text(data.count);
+                },
+                error: function (data) {
+                    $(".notification-enabled").remove();
+                }
             });
 
             @if(Model.Context.Paths.Breadcrumb.Length > 0)

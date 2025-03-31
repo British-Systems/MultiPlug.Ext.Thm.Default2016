@@ -1,9 +1,9 @@
 ﻿using System.Text;
 using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
-using MultiPlug.Theme.Default2016.Properties;
+using MultiPlug.Ext.Thm.Default2016.Properties;
 
-namespace MultiPlug.Theme.Default2016.Controllers
+namespace MultiPlug.Ext.Thm.Default2016.Controllers
 {
     [Route("styles/*")]
     public class StylesController : AssetsEndpoint
@@ -12,7 +12,7 @@ namespace MultiPlug.Theme.Default2016.Controllers
         {
             string result = "";
 
-            if (FileName == "adminflare.min.css")
+            if (FileName.StartsWith("adminflare.min.") && FileName.EndsWith(".css"))
             {
                 result = Resources.adminflare_min1;
             }
@@ -43,6 +43,10 @@ namespace MultiPlug.Theme.Default2016.Controllers
             else if (FileName == "fonts.css")
             {
                 result = Resources.fonts;
+            }
+            else if (FileName == "multiplug.css")
+            {
+                result = Resources.multiplug_css;
             }
 
             if (result != "")

@@ -6,8 +6,9 @@
 <style>
     .setting-heading img,
     .setting-heading h2 {
-      display:inline-block;
-      vertical-align:middle;
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
     }
     .setting-heading img {
     opacity: 0.7; filter: alpha(opacity=70);
@@ -19,7 +20,7 @@
 </style>
 
 <div class="setting-heading">
-    <h2>Add Extensions</h2>
+    <h2><i class="icon-download-alt"></i>&nbsp;Add Extensions</h2>
 </div>
 
 @if (Model.Extension.Model.UpdatePending)

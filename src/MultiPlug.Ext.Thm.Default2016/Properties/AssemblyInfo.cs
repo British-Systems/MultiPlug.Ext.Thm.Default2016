@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Default 2016 MultiPlug Theme")]
-[assembly: AssemblyDescription("Default 2016 MultiPlug Theme")]
+[assembly: AssemblyDescription("Theme for MultiPlug 2.2.82")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("British Systems")]
 [assembly: AssemblyProduct("Default2016")]
-[assembly: AssemblyCopyright("Great British Systems Ltd 2024")]
+[assembly: AssemblyCopyright("Great British Systems Ltd 2025")]
 [assembly: AssemblyTrademark("MultiPlug")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.28.0")]
-[assembly: AssemblyFileVersion("1.0.28.0")]
+[assembly: AssemblyVersion("1.0.29.0")]
+[assembly: AssemblyFileVersion("1.0.29.0")]

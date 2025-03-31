@@ -12,49 +12,208 @@
 </style>
 
 <div class="setting-heading">
-    <h2>Apps</h2>
+    <h2><i class="icon-dashboard"></i>&nbsp;Apps</h2>
 </div>
-<form method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
 
-    <div class="box">
-
-        <div class="row-fluid">
-            <div class="span4">
-                <div class="row-fluid"><div class="span12">Default App</div></div>
-                <div class="row-fluid">
-                    <select class="span12" name="DefaultDashboard">
-                        <option value=""></option>
-                        @foreach (var x in @Model.Extension.Model.Dashboards)
-                        {
-                            <option value="@x.Key" @if (x.Value) { <text> selected </text> }>@x.Key</option>
-                        }
-                    </select>
+<h3 class="box-header">
+    Home App
+</h3>
+<div class="box non-collapsible">
+    <div class="row-fluid" id="div-defaultapp">
+        <div class="span2">
+            <p>Default URL:</p>
+        </div>
+        <div class="span8">
+            <div class="span11 input-prepend">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret">
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu" id="apps-suggestion"></ul>
                 </div>
+                <input id="input-defaultapp" type="text" class="input-block-level" autocomplete="off" />
             </div>
-
-            <div class="span4">
-            </div>
-
-            <div class="span4">
-            </div>
+        </div>
+        <div class="span2">
+            <a id="btn-localisationsave" class="btn btn-green"><i class="icon-save"></i> Save</a>
         </div>
     </div>
+</div>
 
-    <div class="row-fluid">
-        <div class="span4"></div>
-        <div class="span2">
-            <button type="submit" value="submit" class="btn btn-green btn-block">Save</button>
-        </div>
-        <div class="span2">
-            <button id="cancel-btn" type="button" class="btn  btn-block">Cancel</button>
-        </div>
-        <div class="span4">
+<h3 class="box-header">
+    Global Event Subscriptions
+</h3>
+<form id="form-globaleventsubscriptions" autocomplete="off">
+    <div class="box non-collapsible">
+        <div class="row-fluid" id="div-defaultapp">
+            <table id="globalEventSubscriptionsTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="span11">Subscription ID</th>
+                        <th class="span1"></th>
+                    </tr>
+                </thead>
+                <tbody id="globalEventSubscriptionsTableBody"></tbody>
+            </table>
         </div>
     </div>
 </form>
-
 <script>
-    $('#cancel-btn').click(function () {
-        location.reload();
+    function OnDefaultAppSuccess(data) {
+        $("#input-defaultapp").val(data.default);
+
+        var input = $("#apps-suggestion")
+        input.empty();
+
+        for (let i in data.suggestions) {
+            input.append('<li><a class="AppSuggestion" data-suggestion="' + data.suggestions[i] + '" href="#">' + data.suggestions[i] + '</a></li>');
+        }
+
+        $('.AppSuggestion').click(function (event) {
+            event.preventDefault();
+            $("#input-defaultapp").val($(this).attr("data-suggestion"));
+        });
+    }
+
+    function GenerateSuggestion(systemEvents)
+    {
+        var html = [];
+        html.push('<div class="btn-group"><button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button><ul class="dropdown-menu" >');
+
+        for (let i in systemEvents) {
+            html.push('<li><a class="event-suggestion" data-suggestion="' + systemEvents[i] + '" href="#">' + systemEvents[i] + '</a></li>');
+        }
+
+        html.push('</ul></div>');
+        return html.join("");
+    }
+
+    function OnGlobalEventSubscriptionsSuccess(data) {
+
+        var input = $("#globalEventSubscriptionsTableBody")
+        input.empty();
+
+        var eventSuggestions = GenerateSuggestion(data.systemEvents);
+
+        for (let i in data.subscriptions) {
+            input.append('<tr><td class="span11"><div class="span11 input-prepend">' + eventSuggestions + '<input name="subscriptions" class="mp-event-picker span11" type="text" value="' + data.subscriptions[i] + '"></div></td><td class="span1"><button type="button" class="item btn btn-red delete-sub"><i class="icon-trash icon-large"></i></button></div></td></tr>');
+        }
+
+        input.append('<tr id="action-bar"><td class="span11"><button type="submit" id="btn-subscriptionssave" class="btn btn-green"><i class="icon-save"></i> Save</button></td><td class="span1"><button type="button" id="btn-newsubscription" class="btn btn-green"><i class="icon-plus"></i></button></td></tr>')
+
+        $("#btn-newsubscription").click(function (event) {
+            event.preventDefault();
+            $("#action-bar").before('<tr><td class="span11"><div class="span11 input-prepend">' + eventSuggestions + '<input name="subscriptions" class="mp-event-picker span11" type="text" value=""></div></td><td class="span1"></td></tr>');
+            ApplyEventSuggestion();
+            ApplyMultiPlugEventPicker();
+        });
+
+        $(".delete-sub").click(function (event) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete the Subscription?") == true)
+            {
+                $(this).closest("tr").remove();
+                SaveSubscriptions();
+            }
+        });
+
+        ApplyEventSuggestion();
+        ApplyMultiPlugEventPicker();
+    }
+
+    function ApplyMultiPlugEventPicker()
+    {
+        $(".mp-event-picker").unbind("click");
+        applyMPEventPickerOnClick();
+    }
+
+    function ApplyEventSuggestion()
+    {
+        $(".event-suggestion").unbind("click");
+        $('.event-suggestion').click(function (event) {
+            event.preventDefault();
+            $(this).closest(".input-prepend").find("input").val($(this).attr("data-suggestion"));
+        });
+    }
+
+    function OnError(xhr) {
+        if (xhr.status == 401) {
+            alert('Action requires User Log On');
+        }
+        if (xhr.status == 403) {
+            alert('Insufficient user rights');
+        }
+    }
+
+    function SaveSubscriptions()
+    {
+        $.ajax({
+            type: 'POST',
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)configuration/apps/subscriptions?" + $("#form-globaleventsubscriptions").serialize(),
+            async: false,
+            success: function (data) {
+                OnGlobalEventSubscriptionsSuccess(data);
+                alert("Save Successful");
+            },
+            error: function (data) {
+                OnError(data);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        $("#btn-localisationsave").click(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: "@Raw(Model.Context.Paths.Roots.MultiPlug)configuration/apps/default?default=" + $('#input-defaultapp').val(),
+                async: false,
+                success: function (data) {
+                    OnDefaultAppSuccess(data);
+                    alert("Save Successful");
+                },
+                error: function (data) {
+                    OnError(data);
+                }
+            });
+        });
+
+        $("#form-globaleventsubscriptions").on("submit", function (event) {
+            event.preventDefault();
+            SaveSubscriptions();
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)configuration/apps/default",
+            type: "GET",
+            success: function (data) {
+                OnDefaultAppSuccess(data);
+            },
+            error: function (data) {
+                if (data.status == 401 || data.status == 403) {
+                    var d = $("#div-defaultapp");
+                    d.empty();
+                    d.append('<div class="span5"><p>Default Home App :</p></div><div class="span5"><span class="label label-red">INSUFFICIENT USER RIGHTS</span></div>');
+                }
+            }
+        });
+
+        $.ajax({
+            url: "@Raw(Model.Context.Paths.Roots.MultiPlug)configuration/apps/subscriptions",
+            type: "GET",
+            success: function (data) {
+                OnGlobalEventSubscriptionsSuccess(data);
+            },
+            error: function (data) {
+                if (data.status == 401 || data.status == 403) {
+                    var d = $("#globalEventSubscriptionsTable");
+                    d.empty();
+                    d.append('<span class="label label-red">INSUFFICIENT USER RIGHTS</span>');
+                }
+            }
+        });
     });
 </script>

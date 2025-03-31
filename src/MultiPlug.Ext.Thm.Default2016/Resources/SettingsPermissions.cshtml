@@ -17,11 +17,13 @@
 
     .permissions-heading h2 {
         margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
     }
 </style>
 
 <div class="permissions-heading">
-    <h2>Permissions</h2>
+    <h2><i class="icon-star"></i>&nbsp;Permissions</h2>
 </div>
 
 <div class="box">
@@ -121,6 +123,10 @@
                                 </div>
                             </div>
 
+                            <div class="row-fluid">
+                                <p><i class="icon-info-sign"></i> Pages without Users or Groups are Unrestricted.</p>
+                            </div>
+
                             <div class="row-fluid mt-2">
                                 <div id="jstreegroups">
                                     <ul id="groups"></ul>
@@ -151,6 +157,9 @@
                                                 <li class="divider"></li>
                                                 <li>
                                                     <a class="RouteSuggestion" data-suggestion="/apps/*" href="#">/apps/*</a>
+                                                </li>
+                                                <li>
+                                                    <a class="RouteSuggestion" data-suggestion="/analytics/*" href="#">/analytics/*</a>
                                                 </li>
                                                 <li>
                                                     <a class="RouteSuggestion" data-suggestion="/extensions/*" href="#">/extensions/*</a>
@@ -229,6 +238,10 @@
                                 <div class="span2">
                                     <a class="btn btn-red" id="btn-deleteroute"><i class="icon-trash"></i></a>
                                 </div>
+                            </div>
+
+                            <div class="row-fluid">
+                                <p><i class="icon-info-sign"></i> APIs without Users or Groups are Unrestricted.</p>
                             </div>
                             <div class="row-fluid mt-2">
                                 <div id="jstreeroutes">
@@ -320,6 +333,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12"></div>
 </div>
 
 <link rel="stylesheet" href="@Raw(Model.Context.Paths.Roots.Assets)multiplug.ext.mplib/styles/jstree.style.min.css" />
@@ -473,7 +490,7 @@
         {
             $(".groupuserlist").empty();
             for (let i in data) {
-                $(".groupuserlist").append('<li><a class="GroupUserSuggestion" data-suggestion="' + data[i] + '" href="#">' + data[i] + '</a></li>');
+                $(".groupuserlist").append('<li><a class="GroupUserSuggestion" data-suggestion="' + data[i].user + '" href="#">' + data[i].user + '</a></li>');
             }
         }
         else

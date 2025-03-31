@@ -39,12 +39,14 @@
         }
 
     .setting-heading h2 {
-            margin-left: 0.1em;
+        margin-left: 0.1em;
+        margin-top: 0px;
+        margin-bottom: 20px;
         }
 </style>
 
 <div class="setting-heading">
-    <h2>Extensions</h2>
+    <h2><i class="icon-puzzle-piece"></i>&nbsp;Extensions</h2>
 </div>
 @if (Model.Extension.Model.UpdatePending)
         {
@@ -55,14 +57,14 @@
 }
 
 <h3 class="box-header">Actions</h3>
-<div class="box">
+<div class="box non-collapsible">
     <div class="row-fluid">
         <a href="settings/add/" class="btn btn-blue">Add</a>
         <a href="settings/update/" class="btn btn-blue">Update</a>
     </div>
 </div>
 <h3 class="box-header">Status</h3>
-<div class="box">
+<div class="box non-collapsible">
     <div class="row-fluid">
 
         <table class="table table-condensed">
@@ -90,7 +92,7 @@
                                 <textarea id="@x.AssemblyName-Status">@x.Status</textarea>
                             }
                         </td>
-                        <td><a class="btn btn-red btn-deleteextension" href="multiplug/extensions/remove/?extension=@x.AssemblyName"><i class="icon-trash"></i></a></td>
+                        <td><a class="btn btn-red btn-deleteextension" data-assemblyname="@x.AssemblyName" href="multiplug/extensions/remove/?extension=@x.AssemblyName"><i class="icon-trash"></i></a></td>
                     </tr>
                 }
             </tbody>
@@ -140,37 +142,64 @@
                 }
 
                 ApplyLoadClick($(jq(data.assemblyName) + "-btnStartStop"));
+            })
+            .fail(function (xhr, status, error) {
+                OnError(xhr);
             });
         });
     }
 
+    function OnError(xhr) {
+        if (xhr.status == 401) {
+            alert('Action requires User Log On');
+        }
+        if (xhr.status == 403) {
+            alert('Insufficient user rights');
+        }
+    }
+
     $(document).ready(function () {
         $('.check-enableextension').change(function () {
+            var thischeckbox = $(this);
+
             if (this.checked)
             {
-                $.post('multiplug/extensions/enable/?extension=' + this.value, function (data) {
+                $.post('@Raw(Model.Context.Paths.Roots.MultiPlug)extensions/enable/?extension=' + this.value, function (data) {
                     })
                 .done(function (data) {
-                    });
+                })
+                .fail(function (xhr, status, error) {
+                    $(thischeckbox).prop('checked', false);
+                    OnError(xhr);
+                });
                 }
             else
             {
-                $.post('multiplug/extensions/disable/?extension=' + this.value, function (data) {
+                $.post('@Raw(Model.Context.Paths.Roots.MultiPlug)extensions/disable/?extension=' + this.value, function (data) {
                     })
                 .done(function (data) {
-                    });
+                })
+                .fail(function (xhr, status, error) {
+                    $(thischeckbox).prop('checked', true);
+                    OnError(xhr);
+                });
             }
         });
 
         $(".btn-deleteextension").click(function (event) {
             event.preventDefault();
 
-            $.post($(this).attr('href'), function (data) {
+            if (confirm("Are you sure you want to remove " + $(this).attr("data-assemblyname") + " ?" ) ) {
+                $.post($(this).attr('href'), function (data) {
 
-            })
-            .done(function (data) {
-                $(jq(data.assemblyName) + '-Row').remove();
-            });
+                })
+                .done(function (data) {
+                    $(jq(data.assemblyName) + '-Row').remove();
+                })
+                .fail(function (xhr, status, error) {
+                    OnError(xhr);
+                });
+            }
         });
 
         ApplyLoadClick($('.btn-loadextension'));

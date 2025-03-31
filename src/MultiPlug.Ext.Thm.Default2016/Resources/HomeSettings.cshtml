@@ -12,7 +12,7 @@
 </style>
 
 <div class="setting-heading">
-    <h2>System Overview</h2>
+    <h2><i class="icon-tasks"></i>&nbsp;System Overview</h2>
 </div>
 
 @if (Model.Extension.Model.UpdatePending)
@@ -68,6 +68,14 @@
                             { @x.Key }
                         }
                     </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><a href="/settings/Performance/">Internet</a></td>
+                    <td>@Raw(Model.MultiPlugAPI.Environment.InternetConnection ? "Connected" : "Not Connected")</td>
                     <td></td>
                     <td></td>
                     <td></td>

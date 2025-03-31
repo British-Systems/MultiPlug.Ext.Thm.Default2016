@@ -7,7 +7,7 @@
     <ProjectGuid>{006895A7-85A2-4C7A-902D-D5C25856CD0C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MultiPlug.Theme.Default2016</RootNamespace>
+    <RootNamespace>MultiPlug.Ext.Thm.Default2016</RootNamespace>
     <AssemblyName>MultiPlug.Ext.Thm.Default2016</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -31,12 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MultiPlug.Base, Version=1.0.69.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MultiPlug.Base.1.0.69\lib\net472\MultiPlug.Base.dll</HintPath>
+    <Reference Include="MultiPlug.Base, Version=1.0.76.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\i4Core\Connector\packages\MultiPlug.Base.1.0.76\lib\net472\MultiPlug.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MultiPlug.Extension.Core, Version=1.0.63.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MultiPlug.Extension.Core.1.0.63\lib\net472\MultiPlug.Extension.Core.dll</HintPath>
+    <Reference Include="MultiPlug.Extension.Core, Version=1.0.64.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\i4Core\Connector\packages\MultiPlug.Extension.Core.1.0.64\lib\net472\MultiPlug.Extension.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -54,8 +54,11 @@
     <Compile Include="Controllers\FontsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ScriptsController.cs" />
+    <Compile Include="Controllers\Settings\HomeController.cs" />
+    <Compile Include="Controllers\Settings\SettingsApp.cs" />
     <Compile Include="Controllers\StylesController.cs" />
     <Compile Include="Default2016.cs" />
+    <Compile Include="Models\Settings\About.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -64,9 +67,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Controllers\Settings\SettingsHome.cshtml" />
     <None Include="packages.config" />
-    <None Include="Resources\Authentication.cshtml" />
-    <None Include="Resources\Authorisation.cshtml" />
     <None Include="Resources\Fonts\fontawesome-webfont.eot" />
     <None Include="Resources\Fonts\fontawesome-webfont.ttf" />
     <None Include="Resources\Fonts\fontawesome-webfont.woff" />
@@ -91,12 +93,15 @@
     <None Include="Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTS_muw.woff2" />
     <None Include="Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTUGmu1aB.woff2" />
     <None Include="Resources\Fonts\memvYaGs126MiZpBA_UvWbX2vVnXBbObj2OVTVOmu1aB.woff2" />
+    <None Include="Resources\Fonts\multiplug.eot" />
+    <None Include="Resources\Fonts\multiplug.ttf" />
+    <None Include="Resources\Fonts\multiplug.woff" />
     <None Include="Resources\FrameApp.cshtml" />
     <None Include="Resources\FrameExtension.cshtml" />
     <None Include="Resources\HomeAnalytics.cshtml" />
     <None Include="Resources\HomeApps.cshtml" />
     <None Include="Resources\HomeExtensions.cshtml" />
-    <None Include="Resources\InternalServerError.cshtml" />
+    <None Include="Resources\mpwebicons\glyphter-font.zip" />
     <None Include="Resources\SettingsAdd.cshtml" />
     <None Include="Resources\SettingsApps.cshtml" />
     <None Include="Resources\SettingsEnvironment.cshtml" />
@@ -111,9 +116,6 @@
     <None Include="Resources\SettingsUpdate.cshtml" />
     <None Include="Resources\HomeSettings.cshtml" />
     <None Include="Resources\Layout.cshtml" />
-    <None Include="Resources\NotFoundApp.cshtml" />
-    <None Include="Resources\NotFoundExtension.cshtml" />
-    <None Include="Resources\NotFoundGlobal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,9 +126,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Images\32px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\40px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -134,15 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\body-bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\British-Systems-Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\British-Systems-Logo-Fade.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\evaluation-stamp.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\left-menu-bg.png" />
@@ -158,9 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\MultiPlug-Small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\throbber.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Scripts\adminflare.min.js" />
@@ -200,16 +187,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\Fonts\multiplug.svg" />
+    <Content Include="Resources\mpwebicons\Multiplug-Full-Logo.png" />
+    <Content Include="Resources\mpwebicons\Multiplug-Full-LogoR.png" />
+    <Content Include="Resources\mpwebicons\Multiplug-Icon-Flat.png" />
+    <Content Include="Resources\mpwebicons\multiplug-icon-flat.svg" />
+    <Content Include="Resources\mpwebicons\Multiplug-Icon.png" />
+    <Content Include="Resources\mpwebicons\multiplug-icon.svg" />
+    <Content Include="Resources\mpwebicons\multiplug-logo-r.svg" />
+    <Content Include="Resources\mpwebicons\multiplug-logo.svg" />
+    <Content Include="Resources\mpwebicons\Multiplug-Solo.png" />
+    <Content Include="Resources\mpwebicons\multiplug-solo.svg" />
+    <Content Include="Resources\Scripts\analytics.js" />
     <Content Include="Resources\Scripts\deploy.js" />
     <Content Include="Resources\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Resources\Scripts\timeago.js" />
     <Content Include="Resources\Styles\bootstrap.min.css" />
     <Content Include="Resources\Styles\font.awesome.css" />
     <Content Include="Resources\Styles\fonts.css" />
+    <Content Include="Resources\Styles\multiplug.css" />
     <Content Include="Resources\Styles\pages.min.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\MultiPlug.Ext.Thm.Default2016.dll" "C:\projects\i4Core\Connector\MultiPlug.CLI\bin\Debug\extensions\MultiPlug.Ext.Thm.Default2016" /Y /I</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
